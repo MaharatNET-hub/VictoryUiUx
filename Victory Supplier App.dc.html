@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="ext-resource-dependency" content="assets/clean/cat-food.png"><meta name="ext-resource-dependency" content="assets/clean/cat-clean.png"><meta name="ext-resource-dependency" content="assets/clean/cat-drinks.png"><meta name="ext-resource-dependency" content="assets/clean/cat-canned.png"><meta name="ext-resource-dependency" content="assets/clean/cat-dairy.png"><meta name="ext-resource-dependency" content="assets/clean/cat-oil.png"><meta name="ext-resource-dependency" content="assets/clean/cat-rice.png"><meta name="ext-resource-dependency" content="assets/clean/cat-spices.png"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0A1F3D"/><path d="M62 132 L88 96 L108 116 L140 68" fill="none" stroke="#FF8A00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M124 66 h18 v18" fill="none" stroke="#FF8A00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></template><meta name="design_doc_mode" content="canvas"><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet"><script src="./image-slot.js"></script><style>
+html,body{height:100%}
+body{margin:0;background:#050E1C;font-family:'Cairo','Segoe UI',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#00CBFF;text-decoration:none}a:hover{color:#FF8A00}
+[data-theme]{--navy:#0A1F3D;--navy-ink:#071A33;--navy-tint:#123A6B;--blue:#0D47A1;--cyan:#00CBFF;--cyan-ink:#0B7FA8;--amber:#FF8A00;--amber-ink:#C26A00;--ok:#37C98B;--ok-ink:#1E9268;--bad:#FF6B6B;--bad-ink:#C0392B;--bg:#F2F5F9;--surf:#FFFFFF;--surf2:#F7FAFD;--line:rgba(10,31,61,.11);--text:#0A1F3D;--muted:#5C7396;--chip:rgba(10,31,61,.05);--shadow:0 8px 24px rgba(10,31,61,.07);--login-bg:linear-gradient(180deg,#FFFFFF 0%,#F7FAFD 62%,#F7FAFD 100%);--login-fg:#0A1F3D;--login-sub:#5C7396;--login-dim:#5C7396;--login-field:#FFFFFF;--login-field-bd:rgba(10,31,61,.16);--login-rule:rgba(10,31,61,.12)}
+::-webkit-scrollbar{width:0;height:0}
+@keyframes vfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes vMarkIn{0%{opacity:0;transform:scale(.72) translateY(14px)}60%{opacity:1}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes vWordIn{0%{opacity:0;letter-spacing:.52em;transform:translateY(6px)}100%{opacity:1;letter-spacing:.17em;transform:translateY(0)}}
+@keyframes vSubIn{0%{opacity:0;transform:translateY(8px)}100%{opacity:.95;transform:translateY(0)}}
+@keyframes vRule{0%{width:0;opacity:0}100%{width:72px;opacity:1}}
+@keyframes vFadeIn{from{opacity:0}to{opacity:1}}
+      @keyframes vSheetUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+      @keyframes vSweep{0%{transform:translateX(-130%) skewX(-14deg);opacity:0}35%{opacity:.85}100%{transform:translateX(230%) skewX(-14deg);opacity:0}}
+@keyframes vRing{0%{transform:scale(.6);opacity:.55}100%{transform:scale(1.5);opacity:0}}
+@keyframes vBar{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@keyframes vLift{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes vFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes vReveal{
+  0%{opacity:0;clip-path:inset(100% 0 0 0);transform:scale(.94)}
+  40%{opacity:1}
+  100%{opacity:1;clip-path:inset(0 0 0 0);transform:scale(1)}
+}
+@keyframes vDraw{to{stroke-dashoffset:0}}
+@keyframes vGlow{0%,100%{opacity:.28;transform:scale(1)}50%{opacity:.6;transform:scale(1.06)}}
+@keyframes vTileIn{0%{opacity:0;transform:scale(.7) rotate(-8deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+</style></helmet>
+
+<div dir="rtl" style="min-height:100%;display:flex;padding:32px 24px 48px;box-sizing:border-box;align-items:flex-start;justify-content:center;background:radial-gradient(1200px 700px at 50% -10%, #123A6B 0%, #050E1C 60%)">
+
+  <div data-theme="{{ mode }}" style="flex:none;animation:vfade .3s ease">
+    <x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" dark="{{ isDark }}" width="{{ deviceW }}" height="{{ deviceH }}" hint-size="428px,896px">
+      <div dir="rtl" data-app="1" ref="{{ rootRef }}" style="height:100%;display:flex;flex-direction:column;background:var(--bg);color:var(--text);font-family:'Cairo',system-ui,sans-serif;position:relative">
+        <div style="position:absolute;inset:0;z-index:60;pointer-events:none;background:var(--bg);opacity:{{ langFade }};transition:opacity .26s ease"></div>
+        <sc-if value="{{ langSheet }}">
+          <div style="position:absolute;inset:0;z-index:70;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(4,16,32,.5);animation:vFadeIn .22s ease both">
+            <div onClick="{{ closeLangSheet }}" style="flex:1"></div>
+            <div style="background:var(--surf2);border-top-left-radius:20px;border-top-right-radius:20px;padding:18px 18px 22px;animation:vSheetUp .34s cubic-bezier(.2,.8,.25,1) both">
+              <div style="width:38px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 16px"></div>
+              <div style="font-size:15px;font-weight:800">اللغة</div>
+              <div style="font-size:11.5px;color:var(--muted);margin-top:6px">اختر لغة التطبيق</div>
+              <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+                <sc-for list="{{ langOpts }}" as="l" hint-placeholder-count="2">
+                  <div onClick="{{ l.pick }}" style="display:flex;align-items:center;gap:12px;padding:14px;border-radius:13px;background:{{ l.bg }};border:1px solid {{ l.bd }};cursor:pointer;transition:background .2s,border-color .2s">
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:13.5px;font-weight:800">{{ l.ar }}</div>
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:11px;color:var(--muted);margin-top:4px;text-align:right">{{ l.en }}</div>
+                    </div>
+                    <sc-if value="{{ l.on }}">
+                      <div style="width:20px;height:20px;border-radius:50%;background:#00CBFF;display:flex;align-items:center;justify-content:center;flex:none">
+                        <div style="width:7px;height:4px;border-left:2px solid #071A33;border-bottom:2px solid #071A33;transform:rotate(-45deg);margin-top:-2px"></div>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+              <div onClick="{{ closeLangSheet }}" style="margin-top:16px;height:46px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;cursor:pointer">إلغاء</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isSplash }}" hint-placeholder-val="{{ true }}">
+          <div onClick="{{ goLogin }}" style="cursor:pointer;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(120% 80% at 50% 12%,#123A6B 0%,#0A1F3D 46%,#071A33 100%);position:relative;overflow:hidden">
+            <div style="position:absolute;width:230px;height:230px;border-radius:50%;border:1px solid rgba(0,203,255,.30);animation:vRing 2.6s ease-out .35s infinite"></div>
+            <div style="position:absolute;width:230px;height:230px;border-radius:50%;border:1px solid rgba(255,138,0,.20);animation:vRing 2.6s ease-out 1.1s infinite"></div>
+            <div style="position:relative;width:268px;flex:none;display:flex;align-items:center;justify-content:center">
+              <div style="position:absolute;inset:-26px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,0,.22) 0%,transparent 66%);animation:vGlow 3.2s ease-in-out 1.9s infinite"></div>
+              <svg viewBox="0 0 200 200" style="position:absolute;left:50%;top:50%;width:300px;height:300px;transform:translate(-50%,-50%);display:block">
+                <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(0,203,255,.42)" stroke-width="1.2" stroke-linecap="round" transform="rotate(-90 100 100)" style="stroke-dasharray:578;stroke-dashoffset:578;animation:vDraw 2.1s cubic-bezier(.35,.8,.25,1) .15s forwards"></circle>
+              </svg>
+              <img src="assets/logo-plate-light.png" alt="VICTORY B2B System &amp; Application" style="position:relative;width:268px;height:auto;object-fit:contain;display:block;animation:vReveal 2.2s cubic-bezier(.32,.78,.28,1) .3s both" />
+            </div>
+            <div style="height:1px;width:150px;background:linear-gradient(90deg,transparent,#FF8A00,transparent);margin:24px 0 16px;animation:vRule .8s ease-out 2.5s both"></div>
+            <div style="font-size:11.5px;font-weight:600;color:#A9C6E8;letter-spacing:.06em;animation:vSubIn .8s ease-out 2.7s both">شبكة التوريد الذكية</div>
+            <div style="position:absolute;bottom:74px;width:104px;height:2px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden">
+              <div style="width:100%;height:100%;background:linear-gradient(90deg,transparent,#FF8A00,transparent);animation:vBar 1.35s ease-in-out infinite"></div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isLogin }}">
+          <div style="flex:1;display:flex;flex-direction:column;background:var(--login-bg);overflow:auto">
+            <div style="flex:none;padding:14px 18px;background:linear-gradient(180deg,#123A6B 0%,#0A1F3D 62%,#071A33 100%);display:flex;align-items:center;gap:11px;box-shadow:0 8px 20px rgba(7,26,51,.22);position:relative;overflow:hidden;z-index:5">
+              <div style="position:absolute;top:-58px;left:-24px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.07)"></div>
+              <div style="flex:1;min-width:0;display:flex;align-items:center;animation:vTileIn .6s cubic-bezier(.2,.8,.25,1) both">
+                <img src="assets/logo-plate-light.png" alt="VICTORY B2B System & Application" style="height:58px;width:auto;max-width:100%;object-fit:contain;display:block" />
+              </div>
+              <div dir="ltr" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);flex:none">
+                <div onClick="{{ setAr }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navArBg }};color:{{ navArFg }}">AR</div>
+                <div onClick="{{ setEn }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navEnBg }};color:{{ navEnFg }}">EN</div>
+              </div>
+            </div>
+
+            <div style="flex:1;padding:26px 30px 30px;animation:vLift .55s ease .08s both">
+              <div style="font-size:19px;font-weight:800;color:var(--login-fg)">تسجيل الدخول</div>
+              <div style="font-size:12.5px;color:var(--login-sub);margin-top:8px;line-height:1.8">أدخل رقم جوالك المسجّل لدى الشبكة لإدارة طلباتك ومشترياتك.</div>
+
+              <div style="margin-top:26px;display:flex;flex-direction:column;gap:22px">
+                <div style="position:relative">
+                  <div style="font-size:9.5px;color:var(--muted);letter-spacing:.16em;font-weight:600">رقم الجوال</div>
+                  <div dir="ltr" style="display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1.5px solid {{ phoneBd }};transition:border-color .2s">
+                    <div onClick="{{ toggleCountry }}" style="display:flex;align-items:center;gap:6px;cursor:pointer;flex:none">
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--login-fg)">{{ dialCode }}</div>
+                      <div style="width:5px;height:5px;border-bottom:1.6px solid #FF8A00;border-right:1.6px solid #FF8A00;transform:rotate({{ countryArrow }}) translateY(-1px)"></div>
+                    </div>
+                    <div style="width:1px;height:16px;background:var(--login-rule);flex:none"></div>
+                    <input dir="ltr" value="{{ phone }}" placeholder="50 418 2276" onChange="{{ onPhone }}" onFocus="{{ focusPhone }}" onBlur="{{ blurField }}" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.06em;text-align:left;padding:0;margin:0" />
+                  </div>
+                  <sc-if value="{{ countryOpen }}">
+                    <div style="position:absolute;top:100%;right:0;left:0;z-index:5;margin-top:6px;background:#fff;border:1px solid var(--login-field-bd);border-radius:10px;overflow:hidden;box-shadow:0 16px 34px rgba(10,31,61,.14)">
+                      <sc-for list="{{ countries }}" as="c" hint-placeholder-count="4">
+                        <div onClick="{{ c.pick }}" style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;background:{{ c.bg }};border-bottom:1px solid var(--line)">
+                          <div style="font-size:12.5px;font-weight:600;color:var(--text)">{{ c.name }}</div>
+                          <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:{{ c.fg }}">{{ c.code }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+                <div>
+                  <div style="font-size:9.5px;color:var(--muted);letter-spacing:.16em;font-weight:600">كلمة المرور</div>
+                  <div style="display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1.5px solid {{ passBd }};transition:border-color .2s">
+                    <input dir="ltr" type="{{ passType }}" value="{{ pass }}" placeholder="••••••••" onChange="{{ onPass }}" onFocus="{{ focusPass }}" onBlur="{{ blurField }}" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.14em;text-align:right;padding:0;margin:0" />
+                    <div onClick="{{ togglePass }}" style="width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;position:relative;color:var(--muted)">
+                      <div style="width:18px;height:11px;border:1.5px solid currentColor;border-radius:50% / 60%;display:flex;align-items:center;justify-content:center">
+                        <div style="width:5px;height:5px;border-radius:50%;background:currentColor"></div>
+                      </div>
+                      <sc-if value="{{ passHidden }}">
+                        <div style="position:absolute;width:22px;height:1.5px;background:currentColor;transform:rotate(-38deg)"></div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:0 2px">
+                  <div onClick="{{ toggleRemember }}" style="display:flex;align-items:center;gap:8px;cursor:pointer">
+                    <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid {{ rememberBd }};background:{{ rememberBg }};display:flex;align-items:center;justify-content:center;transition:background .18s,border-color .18s">
+                      <sc-if value="{{ remember }}">
+                        <div style="width:9px;height:5px;border-left:2px solid #0A1F3D;border-bottom:2px solid #0A1F3D;transform:rotate(-45deg);margin-top:-2px"></div>
+                      </sc-if>
+                    </div>
+                    <div style="font-size:11.5px;color:var(--login-sub);white-space:nowrap">تذكرني</div>
+                  </div>
+                  <div onClick="{{ goForgot }}" style="font-size:11.5px;color:#0D47A1;cursor:pointer;font-weight:700;white-space:nowrap">نسيت كلمة المرور؟</div>
+                </div>
+              </div>
+
+              <div onClick="{{ goOtpLogin }}" style="margin-top:28px;height:52px;border-radius:8px;background:#0A1F3D;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14.5px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 12px 26px rgba(10,31,61,.18)">
+                دخول
+                <div style="width:7px;height:7px;border-top:1.8px solid #FF8A00;border-left:1.8px solid #FF8A00;transform:rotate(-45deg)"></div>
+              </div>
+
+              <div style="margin-top:24px;display:flex;align-items:center;gap:12px">
+                <div style="flex:1;height:1px;background:var(--login-rule)"></div>
+                <div style="font-size:10.5px;color:var(--muted)">أو</div>
+                <div style="flex:1;height:1px;background:var(--login-rule)"></div>
+              </div>
+              <div onClick="{{ goKyc }}" style="margin-top:20px;height:50px;border-radius:8px;border:1.5px solid var(--login-field-bd);display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;color:var(--login-fg);cursor:pointer">تسجيل مورد جديد</div>
+              <div style="margin-top:24px;text-align:center;font-family:'Montserrat',sans-serif;font-size:8.5px;color:var(--login-dim);letter-spacing:.26em">B2B NETWORK</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isForgot }}">
+          <div style="flex:1;display:flex;flex-direction:column;background:var(--login-bg);overflow:auto">
+            <div style="flex:none;padding:14px 18px;background:linear-gradient(180deg,#123A6B 0%,#0A1F3D 62%,#071A33 100%);display:flex;align-items:center;gap:11px;box-shadow:0 8px 20px rgba(7,26,51,.22);position:relative;overflow:hidden;z-index:5">
+              <div style="position:absolute;top:-58px;left:-24px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.07)"></div>
+              <div onClick="{{ goLogin }}" style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+                <div data-chev="back" style="width:8px;height:8px;border-top:1.8px solid #fff;border-right:1.8px solid #fff;transform:rotate(45deg)"></div>
+              </div>
+              <div style="flex:1;min-width:0;display:flex;align-items:center;animation:vTileIn .6s cubic-bezier(.2,.8,.25,1) both">
+                <img src="assets/logo-plate-light.png" alt="VICTORY B2B System & Application" style="height:58px;width:auto;max-width:100%;object-fit:contain;display:block" />
+              </div>
+              <div dir="ltr" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);flex:none">
+                <div onClick="{{ setAr }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navArBg }};color:{{ navArFg }}">AR</div>
+                <div onClick="{{ setEn }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navEnBg }};color:{{ navEnFg }}">EN</div>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;padding:0 30px">
+            <div style="flex:1;display:flex;flex-direction:column;padding-top:30px">
+              <div style="width:50px;height:50px;border-radius:14px;background:rgba(13,71,161,.09);border:1px solid rgba(13,71,161,.16);display:flex;align-items:center;justify-content:center">
+                <div style="width:15px;height:11px;border:1.7px solid #0D47A1;border-radius:2px;position:relative;margin-top:5px">
+                  <div style="position:absolute;left:2.5px;top:-8px;width:9px;height:9px;border:1.7px solid #0D47A1;border-bottom:0;border-radius:6px 6px 0 0;box-sizing:border-box"></div>
+                </div>
+              </div>
+              <div style="font-family:'Montserrat',sans-serif;font-size:9px;color:var(--muted);letter-spacing:.26em;font-weight:600;margin-top:24px">PASSWORD RESET</div>
+              <div style="font-size:21px;font-weight:800;color:var(--login-fg);margin-top:11px">نسيت كلمة المرور</div>
+              <div style="font-size:12.5px;color:var(--login-sub);margin-top:9px;line-height:1.8">أدخل رقم الجوال المسجّل وسنرسل كود تحقق لإعادة تعيين كلمة المرور.</div>
+              <div style="margin-top:30px;position:relative">
+                <div style="font-size:9.5px;color:var(--muted);letter-spacing:.16em;font-weight:600">رقم الجوال</div>
+                <div dir="ltr" style="display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1.5px solid {{ phoneBd }};transition:border-color .2s">
+                  <div onClick="{{ toggleCountry }}" style="display:flex;align-items:center;gap:6px;cursor:pointer;flex:none">
+                    <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--login-fg)">{{ dialCode }}</div>
+                    <div style="width:5px;height:5px;border-bottom:1.6px solid #FF8A00;border-right:1.6px solid #FF8A00;transform:rotate({{ countryArrow }}) translateY(-1px)"></div>
+                  </div>
+                  <div style="width:1px;height:16px;background:var(--login-rule);flex:none"></div>
+                  <input dir="ltr" value="{{ phone }}" placeholder="50 418 2276" onChange="{{ onPhone }}" onFocus="{{ focusPhone }}" onBlur="{{ blurField }}" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.06em;text-align:left;padding:0;margin:0" />
+                </div>
+                <sc-if value="{{ countryOpen }}">
+                  <div style="position:absolute;top:100%;right:0;left:0;z-index:5;margin-top:6px;background:#fff;border:1px solid var(--login-field-bd);border-radius:10px;overflow:hidden;box-shadow:0 16px 34px rgba(10,31,61,.14)">
+                    <sc-for list="{{ countries }}" as="c" hint-placeholder-count="4">
+                      <div onClick="{{ c.pick }}" style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;background:{{ c.bg }};border-bottom:1px solid var(--line)">
+                        <div style="font-size:12.5px;font-weight:600;color:var(--text)">{{ c.name }}</div>
+                        <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:{{ c.fg }}">{{ c.code }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+          </div>
+                </sc-if>
+              </div>
+              <div onClick="{{ goForgotOtp }}" style="margin-top:32px;height:52px;border-radius:8px;background:#0A1F3D;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14.5px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 12px 26px rgba(10,31,61,.18)">
+                إرسال كود التحقق
+                <div style="width:7px;height:7px;border-top:1.8px solid #FF8A00;border-left:1.8px solid #FF8A00;transform:rotate(-45deg)"></div>
+              </div>
+              <div onClick="{{ goLogin }}" style="margin-top:18px;text-align:center;font-size:12px;color:var(--login-sub);cursor:pointer">العودة لتسجيل الدخول</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isForgotOtp }}">
+          <div style="flex:1;display:flex;flex-direction:column;background:var(--login-bg);overflow:auto">
+            <div style="flex:none;padding:14px 18px;background:linear-gradient(180deg,#123A6B 0%,#0A1F3D 62%,#071A33 100%);display:flex;align-items:center;gap:11px;box-shadow:0 8px 20px rgba(7,26,51,.22);position:relative;overflow:hidden;z-index:5">
+              <div style="position:absolute;top:-58px;left:-24px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.07)"></div>
+              <div onClick="{{ goForgot }}" style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+                <div data-chev="back" style="width:8px;height:8px;border-top:1.8px solid #fff;border-right:1.8px solid #fff;transform:rotate(45deg)"></div>
+              </div>
+              <div style="flex:1;min-width:0;display:flex;align-items:center;animation:vTileIn .6s cubic-bezier(.2,.8,.25,1) both">
+                <img src="assets/logo-plate-light.png" alt="VICTORY B2B System & Application" style="height:58px;width:auto;max-width:100%;object-fit:contain;display:block" />
+              </div>
+              <div dir="ltr" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);flex:none">
+                <div onClick="{{ setAr }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navArBg }};color:{{ navArFg }}">AR</div>
+                <div onClick="{{ setEn }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navEnBg }};color:{{ navEnFg }}">EN</div>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;padding:0 30px">
+            <div style="flex:1;display:flex;flex-direction:column;padding-top:30px">
+              <div style="font-family:'Montserrat',sans-serif;font-size:9px;color:var(--muted);letter-spacing:.26em;font-weight:600">VERIFICATION</div>
+              <div style="font-size:21px;font-weight:800;color:var(--login-fg);margin-top:11px">أدخل كود التحقق</div>
+              <div style="font-size:12.5px;color:var(--login-sub);margin-top:9px;line-height:1.8">أرسلنا كوداً من أربع خانات إلى<br /><span dir="ltr" style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--login-fg);unicode-bidi:isolate">{{ fullPhone }}</span></div>
+              <div dir="ltr" style="display:flex;gap:14px;margin-top:28px;justify-content:flex-start">
+                <sc-for list="{{ resetOtpBoxes }}" as="o" hint-placeholder-count="4">
+                  <div style="width:54px;text-align:center;padding-bottom:11px;border-bottom:2px solid {{ o.bd }};font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:{{ o.fg }};line-height:1.1;transition:border-color .2s">{{ o.char }}</div>
+                </sc-for>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:24px">
+                <div style="font-size:11.5px;color:var(--login-sub)">لم يصلك الكود؟</div>
+                <div style="font-size:11.5px;color:#0D47A1;font-weight:700;cursor:pointer">إعادة الإرسال <span dir="ltr" style="font-family:'Montserrat',sans-serif;color:var(--muted);unicode-bidi:isolate">00:45</span></div>
+              </div>
+              <div onClick="{{ goNewPass }}" style="margin-top:32px;height:52px;border-radius:8px;background:#0A1F3D;display:flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 12px 26px rgba(10,31,61,.18)">تحقّق ومتابعة</div>
+            </div>
+          </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isNewPass }}">
+          <div style="flex:1;display:flex;flex-direction:column;background:var(--login-bg);overflow:auto">
+            <div style="flex:none;padding:14px 18px;background:linear-gradient(180deg,#123A6B 0%,#0A1F3D 62%,#071A33 100%);display:flex;align-items:center;gap:11px;box-shadow:0 8px 20px rgba(7,26,51,.22);position:relative;overflow:hidden;z-index:5">
+              <div style="position:absolute;top:-58px;left:-24px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.07)"></div>
+              <div onClick="{{ goForgotOtp }}" style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+                <div data-chev="back" style="width:8px;height:8px;border-top:1.8px solid #fff;border-right:1.8px solid #fff;transform:rotate(45deg)"></div>
+              </div>
+              <div style="flex:1;min-width:0;display:flex;align-items:center;animation:vTileIn .6s cubic-bezier(.2,.8,.25,1) both">
+                <img src="assets/logo-plate-light.png" alt="VICTORY B2B System & Application" style="height:58px;width:auto;max-width:100%;object-fit:contain;display:block" />
+              </div>
+              <div dir="ltr" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);flex:none">
+                <div onClick="{{ setAr }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navArBg }};color:{{ navArFg }}">AR</div>
+                <div onClick="{{ setEn }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navEnBg }};color:{{ navEnFg }}">EN</div>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;padding:0 30px">
+            <div style="flex:1;display:flex;flex-direction:column;padding-top:30px">
+              <div style="font-family:'Montserrat',sans-serif;font-size:9px;color:var(--muted);letter-spacing:.26em;font-weight:600">NEW PASSWORD</div>
+              <div style="font-size:21px;font-weight:800;color:var(--login-fg);margin-top:11px">كلمة مرور جديدة</div>
+              <div style="font-size:12.5px;color:var(--login-sub);margin-top:9px;line-height:1.8">اختر كلمة مرور من 8 خانات على الأقل تحتوي حرفاً ورقماً.</div>
+              <div style="margin-top:30px;display:flex;flex-direction:column;gap:22px">
+                <div>
+                  <div style="font-size:9.5px;color:var(--muted);letter-spacing:.16em;font-weight:600">كلمة المرور الجديدة</div>
+                  <div style="display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1.5px solid {{ passBd }};transition:border-color .2s">
+                    <input dir="ltr" type="{{ passType }}" value="{{ newPass }}" placeholder="••••••••" onChange="{{ onNewPass }}" onFocus="{{ focusPass }}" onBlur="{{ blurField }}" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.14em;text-align:right;padding:0;margin:0" />
+                    <div onClick="{{ togglePass }}" style="width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;position:relative;color:var(--muted)">
+                      <div style="width:18px;height:11px;border:1.5px solid currentColor;border-radius:50% / 60%;display:flex;align-items:center;justify-content:center">
+                        <div style="width:5px;height:5px;border-radius:50%;background:currentColor"></div>
+                      </div>
+                      <sc-if value="{{ passHidden }}">
+                        <div style="position:absolute;width:22px;height:1.5px;background:currentColor;transform:rotate(-38deg)"></div>
+          </div>
+                      </sc-if>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:5px;margin-top:12px">
+                    <sc-for list="{{ strengthBars }}" as="b" hint-placeholder-count="3">
+                      <div style="flex:1;height:3px;border-radius:2px;background:{{ b.bg }}"></div>
+                    </sc-for>
+                  </div>
+                  <div style="font-size:10.5px;color:{{ strengthFg }};margin-top:8px;font-weight:600">{{ strengthLabel }}</div>
+                </div>
+                <div>
+                  <div style="font-size:9.5px;color:var(--muted);letter-spacing:.16em;font-weight:600">تأكيد كلمة المرور</div>
+                  <div style="display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1.5px solid var(--login-rule)">
+                    <input dir="ltr" type="{{ passType }}" value="{{ confirmPass }}" placeholder="••••••••" onChange="{{ onConfirmPass }}" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.14em;text-align:right;padding:0;margin:0" />
+                    <sc-if value="{{ passMatch }}">
+                      <div style="width:11px;height:6px;border-left:1.8px solid #37C98B;border-bottom:1.8px solid #37C98B;transform:rotate(-45deg);margin-top:-3px;flex:none"></div>
+                    </sc-if>
+                  </div>
+                </div>
+              </div>
+              <div onClick="{{ goLogin }}" style="margin-top:34px;height:52px;border-radius:8px;background:#0A1F3D;display:flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 12px 26px rgba(10,31,61,.18)">حفظ ودخول</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isOtpLogin }}">
+          <div style="flex:1;display:flex;flex-direction:column;background:var(--login-bg);overflow:auto">
+            <div style="flex:none;padding:14px 18px;background:linear-gradient(180deg,#123A6B 0%,#0A1F3D 62%,#071A33 100%);display:flex;align-items:center;gap:11px;box-shadow:0 8px 20px rgba(7,26,51,.22);position:relative;overflow:hidden;z-index:5">
+              <div style="position:absolute;top:-58px;left:-24px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.07)"></div>
+              <div onClick="{{ goLogin }}" style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+                <div data-chev="back" style="width:8px;height:8px;border-top:1.8px solid #fff;border-right:1.8px solid #fff;transform:rotate(45deg)"></div>
+              </div>
+              <div style="flex:1;min-width:0;display:flex;align-items:center;animation:vTileIn .6s cubic-bezier(.2,.8,.25,1) both">
+                <img src="assets/logo-plate-light.png" alt="VICTORY B2B System & Application" style="height:58px;width:auto;max-width:100%;object-fit:contain;display:block" />
+              </div>
+              <div dir="ltr" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);flex:none">
+                <div onClick="{{ setAr }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navArBg }};color:{{ navArFg }}">AR</div>
+                <div onClick="{{ setEn }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navEnBg }};color:{{ navEnFg }}">EN</div>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;padding:0 30px">
+            <div style="flex:1;display:flex;flex-direction:column;padding-top:30px">
+              <div style="font-family:'Montserrat',sans-serif;font-size:9.5px;color:var(--muted);letter-spacing:.26em;font-weight:600">VERIFICATION</div>
+              <div style="font-size:22px;font-weight:800;color:var(--login-fg);margin-top:12px;line-height:1.5">أدخل كود التحقق</div>
+              <div style="font-size:12.5px;color:var(--login-sub);margin-top:9px;line-height:1.8">أرسلنا كوداً من أربع خانات إلى<br /><span dir="ltr" style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--login-fg);unicode-bidi:isolate">{{ fullPhone }}</span></div>
+              <div style="width:44px;height:1px;background:linear-gradient(90deg,#FF8A00,transparent);margin:24px 0 8px"></div>
+              <div dir="ltr" style="display:flex;gap:14px;margin-top:14px;justify-content:flex-start">
+                <sc-for list="{{ loginOtpBoxes }}" as="o" hint-placeholder-count="4">
+                  <div style="width:54px;text-align:center;padding-bottom:11px;border-bottom:2px solid {{ o.bd }};font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:{{ o.fg }};line-height:1.1;transition:border-color .2s">{{ o.char }}</div>
+                </sc-for>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:26px">
+                <div style="font-size:11.5px;color:var(--login-sub)">لم يصلك الكود؟</div>
+                <div style="font-size:11.5px;color:#0D47A1;font-weight:700;cursor:pointer">إعادة الإرسال <span dir="ltr" style="font-family:'Montserrat',sans-serif;color:var(--muted);unicode-bidi:isolate">00:38</span></div>
+              </div>
+              <div onClick="{{ goHome }}" style="margin-top:34px;height:52px;border-radius:8px;background:#0A1F3D;display:flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:800;color:#fff;cursor:pointer;box-shadow:0 12px 26px rgba(10,31,61,.18)">تحقّق ودخول</div>
+              <div style="margin-top:18px;text-align:center;font-size:11.5px;color:var(--muted);line-height:1.8">بالدخول أنت توافق على شروط الاستخدام<br />وسياسة الخصوصية لشبكة Victory</div>
+            </div>
+          </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isKyc }}">
+          <div style="padding:20px 22px 22px;background:radial-gradient(130% 120% at 50% 0%,#123A6B 0%,#0A1F3D 58%,#071A33 100%);border-radius:0 0 26px 26px;position:relative;overflow:hidden;flex:none">
+            <div style="position:absolute;top:-58px;left:-34px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(255,255,255,.08)"></div>
+            <div style="display:flex;align-items:center;gap:12px;position:relative">
+              <div onClick="{{ kycBack }}" style="width:34px;height:34px;border-radius:9px;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+                <div style="width:8px;height:8px;border-top:1.8px solid #fff;border-right:1.8px solid #fff;transform:rotate(45deg)"></div>
+              </div>
+              <div style="width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex:none;animation:vTileIn .6s cubic-bezier(.2,.8,.25,1) both">
+                <img src="assets/logo-mark.png" alt="Victory" style="width:26px;height:26px;object-fit:contain;display:block" />
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:'Montserrat',sans-serif;font-size:8.5px;color:#A9C6E8;letter-spacing:.24em">REGISTRATION</div>
+                <div style="font-size:15.5px;font-weight:800;color:#fff;margin-top:6px">{{ kycStepLabel }}</div>
+              </div>
+              <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#FF8A00;flex:none">{{ kycCounter }}</div>
+              <div dir="ltr" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);flex:none">
+                <div onClick="{{ setAr }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navArBg }};color:{{ navArFg }}">AR</div>
+                <div onClick="{{ setEn }}" style="padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;cursor:pointer;transition:background .2s;background:{{ navEnBg }};color:{{ navEnFg }}">EN</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:5px;margin-top:16px;position:relative">
+              <sc-for list="{{ kycSteps }}" as="s" hint-placeholder-count="4">
+                <div style="flex:1;height:3px;border-radius:2px;background:{{ s.bar }};transition:background .3s"></div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:18px 20px 24px">
+            <div style="font-size:12.5px;color:var(--muted);margin-bottom:20px;line-height:1.8">{{ kycHint }}</div>
+
+            <sc-if value="{{ kycStep1 }}">
+              <div style="display:flex;flex-direction:column;gap:18px">
+                <div>
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">اسم الشركة كما هو في الرخصة</div>
+                  <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;font-size:14px;font-weight:600">الأندلس للأغذية</div>
+                </div>
+                <div>
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">البريد الإلكتروني</div>
+                  <div dir="ltr" style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;justify-content:flex-end;font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:600">nokhba@mail.ae</div>
+                </div>
+                <div style="position:relative">
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">رقم الجوال</div>
+                  <div dir="ltr" style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;gap:10px">
+                    <div onClick="{{ toggleCountry }}" style="display:flex;align-items:center;gap:6px;cursor:pointer;flex:none">
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:700;color:var(--text)">{{ dialCode }}</div>
+                      <div style="width:5px;height:5px;border-bottom:1.6px solid #FF8A00;border-right:1.6px solid #FF8A00;transform:rotate({{ countryArrow }}) translateY(-1px);transition:transform .2s"></div>
+                    </div>
+                    <div style="width:1px;height:18px;background:var(--line);flex:none"></div>
+                    <div dir="ltr" style="flex:1;min-width:0;display:flex;align-items:center;justify-content:flex-end;font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:600">50 418 2276</div>
+                  </div>
+                  <sc-if value="{{ countryOpen }}">
+                    <div style="position:absolute;top:100%;right:0;left:0;z-index:5;margin-top:6px;background:var(--surf);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 16px 34px rgba(10,31,61,.16)">
+                      <sc-for list="{{ countries }}" as="c" hint-placeholder-count="4">
+                        <div onClick="{{ c.pick }}" style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;background:{{ c.bg }};border-bottom:1px solid var(--line)">
+                          <div style="font-size:12.5px;font-weight:600;color:var(--text)">{{ c.name }}</div>
+                          <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:{{ c.fg }}">{{ c.code }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+                <div>
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">كلمة المرور</div>
+                  <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 11px 0 13px;display:flex;align-items:center;gap:9px">
+                    <div dir="ltr" style="flex:1;min-width:0;text-align:right;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;letter-spacing:{{ kycPassSpacing }};color:var(--text)">{{ kycPassText }}</div>
+                    <div onClick="{{ togglePass }}" style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;position:relative;color:var(--muted)">
+                      <div style="width:19px;height:12px;border:1.5px solid currentColor;border-radius:50% / 60%;display:flex;align-items:center;justify-content:center">
+                        <div style="width:5px;height:5px;border-radius:50%;background:currentColor"></div>
+                      </div>
+                      <sc-if value="{{ passHidden }}">
+                        <div style="position:absolute;width:23px;height:1.5px;background:currentColor;transform:rotate(-38deg)"></div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </div>
+                <div style="background:rgba(0,203,255,.07);border:1px solid rgba(0,203,255,.24);border-radius:11px;padding:12px 13px;font-size:11.5px;color:var(--muted);line-height:1.8">تكفي هذه البيانات لإنشاء الحساب. بيانات النشاط والوثائق تُرفع لاحقاً من ملف المتجر.</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ kycStep2 }}">
+              <div style="text-align:center;padding:6px 0 4px">
+                <div style="width:52px;height:52px;border-radius:15px;background:rgba(0,203,255,.12);margin:0 auto;display:flex;align-items:center;justify-content:center">
+                  <div style="width:16px;height:22px;border:1.8px solid #00CBFF;border-radius:4px"></div>
+                </div>
+                <div style="font-size:14px;font-weight:700;margin-top:14px">أدخل كود التحقق</div>
+                <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;color:var(--muted);margin-top:6px">+971 50 418 2276</div>
+                <div style="display:flex;gap:14px;justify-content:flex-start;margin-top:26px" dir="ltr">
+                  <sc-for list="{{ otpBoxes }}" as="o" hint-placeholder-count="4">
+                    <div style="width:54px;text-align:center;padding-bottom:10px;border-bottom:2px solid {{ o.bd }};font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;color:{{ o.fg }};line-height:1.1">{{ o.char }}</div>
+                  </sc-for>
+                </div>
+                <div style="font-size:11.5px;color:var(--muted);margin-top:20px">لم يصلك الكود؟ <span onClick="{{ sendOtp }}" style="color:#0D47A1;font-weight:700;cursor:pointer">إعادة الإرسال</span> بعد <span dir="ltr" style="font-family:'Montserrat',sans-serif;unicode-bidi:isolate">00:42</span></div>
+              </div>
+            </sc-if>
+
+            <div onClick="{{ kycNext }}" style="margin-top:24px;height:50px;border-radius:12px;background:#FF8A00;display:flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:800;color:#071A33;cursor:pointer">{{ kycCta }}</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isProfile }}">
+          <div style="padding:20px 22px 22px;background:radial-gradient(130% 120% at 50% 0%,#123A6B 0%,#0A1F3D 58%,#071A33 100%);border-radius:0 0 26px 26px;position:relative;overflow:hidden;flex:none">
+            <div style="position:absolute;top:-58px;left:-34px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(255,255,255,.08)"></div>
+            <div style="display:flex;align-items:center;gap:12px;position:relative">
+              <div onClick="{{ goAccount }}" style="width:34px;height:34px;border-radius:9px;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+                <div style="width:8px;height:8px;border-top:1.8px solid #fff;border-right:1.8px solid #fff;transform:rotate(45deg)"></div>
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:'Montserrat',sans-serif;font-size:8.5px;color:#A9C6E8;letter-spacing:.24em">SUPPLIER PROFILE</div>
+                <div style="font-size:15.5px;font-weight:800;color:#fff;margin-top:6px">إكمال ملف المورد</div>
+              </div>
+              <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#FF8A00;flex:none">{{ profilePct }}</div>
+            </div>
+            <div style="margin-top:15px;height:4px;border-radius:2px;background:rgba(255,255,255,.16);overflow:hidden;position:relative">
+              <div style="height:100%;width:{{ profilePct }};background:linear-gradient(90deg,#FF8A00,#FF8A00);transition:width .3s"></div>
+            </div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:18px 20px 24px">
+            <div style="display:flex;align-items:center;gap:11px;background:{{ approvalBg }};border:1px solid {{ approvalBd }};border-radius:12px;padding:13px 14px">
+              <div style="width:9px;height:9px;border-radius:50%;background:{{ approvalDot }};flex:none"></div>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:12.5px;font-weight:800;color:{{ approvalFg }}">{{ approvalTitle }}</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.6">{{ approvalSub }}</div>
+              </div>
+            </div>
+
+            <div style="font-size:12.5px;font-weight:800;margin:22px 0 14px">بيانات النشاط</div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div>
+                <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">نوع النشاط</div>
+                <div style="position:relative">
+                  <div onClick="{{ toggleActivity }}" style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid {{ activityBd }};border-radius:10px;padding:0 13px;display:flex;align-items:center;justify-content:space-between;cursor:pointer">
+                    <div style="font-size:14px;font-weight:600;color:{{ activityFg }}">{{ activity }}</div>
+                    <div style="width:6px;height:6px;border-bottom:1.7px solid var(--muted);border-right:1.7px solid var(--muted);transform:rotate({{ activityArrow }}) translateY(-1px)"></div>
+                  </div>
+                  <sc-if value="{{ activityOpen }}">
+                    <div style="position:absolute;top:50px;right:0;left:0;z-index:6;background:var(--surf);border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:0 16px 36px rgba(10,31,61,.16)">
+                      <sc-for list="{{ activities }}" as="a" hint-placeholder-count="6">
+                        <div onClick="{{ a.pick }}" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;background:{{ a.bg }};border-bottom:1px solid var(--line)">
+                          <div style="font-size:12.5px;font-weight:600;color:{{ a.fg }}">{{ a.label }}</div>
+                          <sc-if value="{{ a.on }}">
+                            <div style="width:13px;height:7px;border-left:1.8px solid #FF8A00;border-bottom:1.8px solid #FF8A00;transform:rotate(-45deg);margin-top:-3px"></div>
+                          </sc-if>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+              <div style="position:relative">
+                <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">رقم هاتف مسؤول المشتريات</div>
+                <div dir="ltr" style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;gap:10px">
+                  <div onClick="{{ togglePoCountry }}" style="display:flex;align-items:center;gap:6px;cursor:pointer;flex:none">
+                    <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:700;color:var(--text)">{{ poDialCode }}</div>
+                    <div style="width:5px;height:5px;border-bottom:1.6px solid #FF8A00;border-right:1.6px solid #FF8A00;transform:rotate({{ poCountryArrow }}) translateY(-1px);transition:transform .2s"></div>
+                  </div>
+                  <div style="width:1px;height:18px;background:var(--line);flex:none"></div>
+                  <div style="flex:1;min-width:0;display:flex;align-items:center;justify-content:flex-end;font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:600">55 902 4471</div>
+                </div>
+                <sc-if value="{{ poCountryOpen }}">
+                  <div style="position:absolute;top:100%;right:0;left:0;z-index:5;margin-top:6px;background:var(--surf);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 16px 34px rgba(10,31,61,.16)">
+                    <sc-for list="{{ poCountries }}" as="c" hint-placeholder-count="4">
+                      <div onClick="{{ c.pick }}" style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;background:{{ c.bg }};border-bottom:1px solid var(--line)">
+                        <div style="font-size:12.5px;font-weight:600;color:var(--text)">{{ c.name }}</div>
+                        <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:{{ c.fg }}">{{ c.code }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+              <div>
+                <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">الإمارة / المدينة</div>
+                <div style="position:relative">
+                  <div onClick="{{ toggleEmirate }}" style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid {{ emirateBd }};border-radius:10px;padding:0 13px;display:flex;align-items:center;justify-content:space-between;cursor:pointer">
+                    <div style="font-size:14px;font-weight:600;color:{{ emirateFg }}">{{ emirate }}</div>
+                    <div style="width:6px;height:6px;border-bottom:1.7px solid var(--muted);border-right:1.7px solid var(--muted);transform:rotate({{ emirateArrow }}) translateY(-1px)"></div>
+                  </div>
+                  <sc-if value="{{ emirateOpen }}">
+                    <div style="position:absolute;top:50px;right:0;left:0;z-index:6;background:var(--surf);border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:0 16px 36px rgba(10,31,61,.16)">
+                      <sc-for list="{{ emirates }}" as="e" hint-placeholder-count="4">
+                        <div onClick="{{ e.pick }}" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;background:{{ e.bg }};border-bottom:1px solid var(--line)">
+                          <div style="font-size:12.5px;font-weight:600;color:{{ e.fg }}">{{ e.label }}</div>
+                          <sc-if value="{{ e.on }}">
+                            <div style="width:13px;height:7px;border-left:1.8px solid #FF8A00;border-bottom:1.8px solid #FF8A00;transform:rotate(-45deg);margin-top:-3px"></div>
+                          </sc-if>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">عنوان المستودع</div>
+                <div style="min-height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:12px 13px;font-size:13.5px;font-weight:600;line-height:1.6">شارع 14، مبنى 6، محل 3 — المصفح</div>
+              </div>
+              <div>
+                <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">الموقع الجغرافي</div>
+                <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surf2)">
+                  <div style="height:112px;position:relative;background:linear-gradient(#F7FAFD,#F2F5F9)">
+                    <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(10,31,61,.07) 0 1px,transparent 1px 26px),repeating-linear-gradient(90deg,rgba(10,31,61,.07) 0 1px,transparent 1px 26px)"></div>
+                    <div style="position:absolute;top:26px;left:0;right:0;height:9px;background:rgba(13,71,161,.13)"></div>
+                    <div style="position:absolute;top:0;bottom:0;right:74px;width:9px;background:rgba(13,71,161,.13)"></div>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,0,.26) 0%,transparent 70%)"></div>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-100%) rotate(-45deg);width:16px;height:16px;border-radius:50% 50% 50% 0;background:#FF8A00;box-shadow:0 4px 10px rgba(255,138,0,.4)"></div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-top:1px solid var(--line)">
+                    <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:var(--text)">24.3821° N, 54.5108° E</div>
+                    <div style="font-size:11.5px;font-weight:700;color:#0D47A1;cursor:pointer">تحديد على الخريطة</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size:12.5px;font-weight:800;margin:24px 0 12px">الوثائق المطلوبة</div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <sc-for list="{{ kycDocs }}" as="d" hint-placeholder-count="3">
+                <div onClick="{{ d.toggle }}" style="display:flex;align-items:center;gap:13px;background:var(--surf2);border:1px solid {{ d.bd }};border-radius:13px;padding:14px;cursor:pointer">
+                  <div style="width:40px;height:46px;border-radius:6px;background:{{ d.tint }};border:1px solid {{ d.bd }};flex:none;display:flex;align-items:flex-end;padding:6px;box-sizing:border-box;gap:2px">
+                    <div style="flex:1;height:3px;border-radius:2px;background:{{ d.icon }};opacity:.55"></div>
+                    <div style="flex:1;height:7px;border-radius:2px;background:{{ d.icon }}"></div>
+                  </div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:13px;font-weight:700">{{ d.label }}</div>
+                    <div style="font-size:11px;color:{{ d.stateFg }};margin-top:4px">{{ d.state }}</div>
+                    <div style="font-family:'Montserrat',sans-serif;font-size:9.5px;color:var(--muted);margin-top:5px">PDF · JPG · حتى 5MB</div>
+                  </div>
+                  <sc-if value="{{ d.done }}">
+                    <div style="width:15px;height:8px;border-left:1.8px solid #37C98B;border-bottom:1.8px solid #37C98B;transform:rotate(-45deg);margin-top:-3px;flex:none"></div>
+                  </sc-if>
+                  <sc-if value="{{ d.pending }}">
+                    <div style="font-size:11.5px;font-weight:700;color:#FF8A00;flex:none">ارفع</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:14px;background:var(--surf);border:1px solid var(--line);border-radius:13px;padding:13px 14px">
+              <div style="font-size:12px;font-weight:800">بيانات الرخصة التجارية</div>
+              <div style="display:flex;gap:10px;margin-top:11px">
+                <div style="flex:1">
+                  <div style="font-size:10px;color:var(--muted);margin-bottom:7px">تاريخ الإصدار</div>
+                  <div dir="ltr" style="height:42px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 12px;display:flex;align-items:center;justify-content:flex-end;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700">2024-11-14</div>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:10px;color:var(--muted);margin-bottom:7px">تاريخ الانتهاء</div>
+                  <div dir="ltr" style="height:42px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 12px;display:flex;align-items:center;justify-content:flex-end;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700">2026-11-13</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:9px;margin-top:11px;background:rgba(0,203,255,.09);border:1px solid rgba(0,203,255,.28);border-radius:10px;padding:9px 11px">
+                <div style="width:7px;height:7px;border-radius:50%;background:#0B7FA8;flex:none"></div>
+                <div style="font-size:10.5px;color:var(--text);line-height:1.6">سنذكّرك بتجديد الرخصة قبل 30 يوم من تاريخ الانتهاء</div>
+              </div>
+            </div>
+            <div style="margin-top:14px;background:rgba(255,138,0,.10);border:1px solid rgba(255,138,0,.28);border-radius:12px;padding:13px;font-size:11.5px;line-height:1.8;color:var(--text)">بعد الاعتماد تحصل على شارة «تاجر موثوق» وحدود شراء آجل يحددها كل مورد — اشترِ الآن وادفع لاحقاً.</div>
+            <div onClick="{{ submitProfile }}" style="margin-top:20px;height:50px;border-radius:12px;background:#FF8A00;display:flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:800;color:#071A33;cursor:pointer">{{ profileCta }}</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isHome }}">
+          <div style="padding:11px 16px 12px;background:linear-gradient(160deg,#0D47A1,#0A1F3D);flex:none">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:30px;height:30px;flex:none">
+                <img src="assets/logo-mark.png" alt="Victory" style="width:30px;height:30px;object-fit:contain;display:block" />
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:#A9C6E8;letter-spacing:.2em">SUPPLIER</div>
+                <div style="font-size:12.5px;font-weight:800;color:#fff;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">الأندلس للأغذية — دبي</div>
+              </div>
+              <div onClick="{{ goNotifs }}" style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.11);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none">
+                <div style="position:relative;width:14px;height:15px">
+                  <div style="position:absolute;top:1px;left:50%;transform:translateX(-50%);width:2.4px;height:2.4px;border-radius:50%;background:#fff"></div>
+                  <div style="position:absolute;top:3px;left:2px;width:10px;height:8px;border:1.7px solid #fff;border-bottom:0;border-radius:5px 5px 0 0;box-sizing:border-box"></div>
+                  <div style="position:absolute;top:10px;left:0;width:14px;height:1.7px;background:#fff;border-radius:1px"></div>
+                  <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:3.6px;height:3.6px;border-radius:0 0 3px 3px;background:#fff"></div>
+                </div>
+                <div style="position:absolute;top:-3px;left:-3px;min-width:15px;height:15px;border-radius:8px;background:#FF8A00;color:#071A33;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 4px">{{ notifCount }}</div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:0 0 20px;background:var(--bg)">
+
+            <sc-if value="{{ profilePending }}">
+              <div onClick="{{ goProfile }}" style="display:flex;align-items:center;gap:9px;padding:11px 16px;background:rgba(255,138,0,.13);cursor:pointer">
+                <div style="width:5px;height:5px;border-radius:50%;background:#FF8A00;flex:none"></div>
+                <div style="flex:1;min-width:0;font-size:11.5px;font-weight:700;color:#C26A00;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ profileTitle }}</div>
+                <div style="font-size:11px;font-weight:700;color:#C26A00;flex:none">أكمل</div>
+                <div style="width:6px;height:6px;border-top:1.6px solid #C26A00;border-left:1.6px solid #C26A00;transform:rotate(-45deg);flex:none"></div>
+              </div>
+            </sc-if>
+
+            <div style="padding:16px 16px 0;display:grid;grid-template-columns:1fr 1fr;gap:11px">
+              <sc-for list="{{ supKpis }}" as="k" hint-placeholder-count="4">
+                <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:13px">
+                  <div style="font-size:10.5px;color:var(--muted)">{{ k.label }}</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;margin-top:6px;color:{{ k.fg }}">{{ k.value }}</div>
+                  <div style="font-size:10px;color:var(--muted);margin-top:5px">{{ k.sub }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="padding:20px 16px 0">
+              <div style="background:var(--surf);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)">
+                <div style="display:flex;align-items:center;gap:9px;padding:11px 14px;background:rgba(0,203,255,.10);border-bottom:1px solid var(--line)">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#0B7FA8;flex:none"></div>
+                  <div style="flex:1;min-width:0;font-size:11.5px;font-weight:800;color:#0B7FA8">{{ newOrdersLine }}</div>
+                </div>
+                <div style="display:flex;flex-direction:column">
+                  <sc-for list="{{ newOrders }}" as="o" hint-placeholder-count="2">
+                    <div style="padding:13px 14px;border-bottom:1px solid var(--line)">
+                      <div style="display:flex;align-items:center;gap:11px">
+                        <div style="width:36px;height:36px;border-radius:11px;background:{{ o.bg }};color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">{{ o.mono }}</div>
+                        <div style="flex:1;min-width:0">
+                          <div style="font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ o.buyer }}</div>
+                          <div style="font-size:10.5px;color:var(--muted);margin-top:4px">{{ o.meta }}</div>
+                        </div>
+                        <div style="text-align:left;flex:none">
+                          <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ o.totalStr }}</div>
+                          <div style="font-size:9.5px;color:var(--muted);margin-top:3px">{{ o.time }}</div>
+                        </div>
+                      </div>
+                      <div style="display:flex;gap:8px;margin-top:11px">
+                        <div onClick="{{ o.accept }}" style="flex:1;height:38px;border-radius:10px;background:#FF8A00;color:#071A33;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">قبول الطلب</div>
+                        <div onClick="{{ goOrders }}" style="flex:1;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surf2);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">عرض التفاصيل</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div onClick="{{ goOrders }}" style="margin:12px 14px 14px;height:42px;border-radius:11px;border:1px solid var(--line);background:var(--surf2);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;cursor:pointer">كل الطلبات الواردة</div>
+              </div>
+            </div>
+
+            <div style="padding:26px 16px 0">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px">
+                <div style="font-size:14.5px;font-weight:800">أصناف قاربت على النفاد</div>
+                <div onClick="{{ goProducts }}" style="font-size:11.5px;color:#0D47A1;cursor:pointer;font-weight:700">منتجاتي</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ supLowStock }}" as="p" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:11px;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:11px">
+                    <div style="width:52px;height:52px;border-radius:11px;flex:none;overflow:hidden;background:#FFFFFF;border:1px solid var(--line)">
+                      <div style="width:100%;height:100%;background-image:url({{ p.img }});background-size:cover;background-position:center"></div>
+                    </div>
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:12.5px;font-weight:700;line-height:1.4">{{ p.name }}</div>
+                      <div style="font-size:10.5px;color:var(--muted);margin-top:4px">{{ p.pcsLine }}</div>
+                    </div>
+                    <div style="flex:none;padding:5px 10px;border-radius:8px;background:{{ p.tint }};color:{{ p.fg }};font-size:10.5px;font-weight:800">{{ p.state }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isOrders }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);flex:none">
+            <div style="font-size:16.5px;font-weight:800">الطلبات الواردة</div>
+            <div style="display:flex;gap:8px;margin-top:12px;overflow:auto">
+              <sc-for list="{{ orderTabs }}" as="f" hint-placeholder-count="4">
+                <div onClick="{{ f.pick }}" style="flex:none;padding:7px 13px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }};border:1px solid {{ f.bd }}">{{ f.label }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:14px 18px 22px;display:flex;flex-direction:column;gap:11px">
+            <sc-for list="{{ supOrders }}" as="o" hint-placeholder-count="4">
+              <div style="background:var(--surf);border:1px solid var(--line);border-right:3px solid {{ o.accent }};border-radius:14px;padding:13px">
+                <div style="display:flex;align-items:center;gap:11px">
+                  <div style="width:36px;height:36px;border-radius:11px;background:{{ o.bg }};color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">{{ o.mono }}</div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ o.buyer }}</div>
+                    <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:10px;color:var(--muted);margin-top:4px;text-align:right">{{ o.id }}</div>
+                  </div>
+                  <div style="flex:none;padding:4px 10px;border-radius:8px;background:{{ o.tint }};color:{{ o.accent }};font-size:10.5px;font-weight:800">{{ o.statusLabel }}</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)">
+                  <div style="font-size:10.5px;color:var(--muted)">{{ o.meta }}</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ o.totalStr }}</div>
+                </div>
+                <sc-if value="{{ o.isNew }}">
+                  <div onClick="{{ o.accept }}" style="margin-top:11px;height:40px;border-radius:10px;background:#FF8A00;color:#071A33;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">قبول الطلب وبدء التجهيز</div>
+                </sc-if>
+              </div>
+            </sc-for>
+            <sc-if value="{{ ordersEmpty }}">
+              <div style="padding:48px 24px;text-align:center">
+                <div style="font-size:14px;font-weight:800">لا توجد طلبات في هذه الحالة</div>
+                <div style="font-size:11.5px;color:var(--muted);margin-top:8px">جرّب حالة أخرى من الأعلى</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isProducts }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);flex:none">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div style="font-size:16.5px;font-weight:800">منتجاتي</div>
+              <div onClick="{{ goAddProduct }}" style="font-size:11.5px;color:#0D47A1;font-weight:700;cursor:pointer">إضافة صنف</div>
+            </div>
+            <div style="font-size:11px;color:var(--muted);margin-top:6px">{{ productsLine }}</div>
+            <sc-if value="{{ hasPendingCats }}">
+              <div style="margin-top:11px;background:rgba(255,138,0,.09);border:1px solid rgba(255,138,0,.30);border-radius:11px;padding:10px 12px">
+                <div style="font-size:11px;font-weight:800;color:#C26A00">أصناف بانتظار موافقة الإدارة</div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+                  <sc-for list="{{ pendingCats }}" as="pc" hint-placeholder-count="1">
+                    <div style="font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:7px;background:var(--surf);border:1px dashed rgba(255,138,0,.5);color:#C26A00">{{ pc.name }} · قيد المراجعة</div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+          <div style="flex:1;overflow:auto;padding:14px 18px 22px;display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ supProducts }}" as="p" hint-placeholder-count="6">
+              <div style="display:flex;gap:12px;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:11px">
+                <div style="width:60px;height:60px;border-radius:11px;flex:none;overflow:hidden;background:#FFFFFF;border:1px solid var(--line)">
+                  <div style="width:100%;height:100%;background-image:url({{ p.img }});background-size:cover;background-position:center"></div>
+                </div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:12.5px;font-weight:700;line-height:1.4">{{ p.name }}</div>
+                  <div style="font-size:10.5px;color:var(--muted);margin-top:4px">{{ p.pcsLine }}</div>
+                  <div style="display:flex;align-items:baseline;gap:9px;margin-top:8px">
+                    <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ p.priceStr }}</div>
+                    <div style="font-size:10px;color:var(--muted)">مخزون {{ p.stock }}</div>
+                  </div>
+                </div>
+                <div style="flex:none;align-self:flex-start;padding:4px 9px;border-radius:7px;background:{{ p.tint }};color:{{ p.fg }};font-size:10px;font-weight:800">{{ p.state }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAddProduct }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex:none">
+            <div onClick="{{ goProducts }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer">
+              <div style="width:8px;height:8px;border-top:2px solid var(--text);border-right:2px solid var(--text);transform:rotate(45deg)"></div>
+            </div>
+            <div style="font-size:16.5px;font-weight:800">إضافة صنف جديد</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:16px 18px 22px">
+            <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:14px">
+              <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">اسم المنتج</div>
+              <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;font-size:12.5px;color:var(--muted)">مثال: زيت زيتون بكر ١ ل</div>
+              <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin:14px 0 8px">الصنف</div>
+              <div onClick="{{ toggleCatPick }}" style="height:44px;box-sizing:border-box;background:{{ catFieldBg }};border:1px solid {{ catFieldBd }};border-radius:10px;padding:0 13px;display:flex;align-items:center;gap:10px;cursor:pointer">
+                <div style="flex:1;min-width:0;font-size:12.5px;font-weight:700;color:{{ catFieldFg }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ pickedCatLabel }}</div>
+                <div style="width:5px;height:5px;border-bottom:1.6px solid var(--muted);border-right:1.6px solid var(--muted);transform:rotate({{ catArrow }});flex:none"></div>
+              </div>
+              <div style="font-size:10.5px;color:var(--muted);margin-top:8px;line-height:1.7">اختر صنفاً من الأصناف المعتمدة من الإدارة.</div>
+              <sc-if value="{{ catPickOpen }}">
+                <div style="margin-top:10px;border:1px solid var(--line);border-radius:12px;overflow:hidden">
+                  <sc-for list="{{ adminCats }}" as="c" hint-placeholder-count="6">
+                    <div onClick="{{ c.pick }}" style="display:flex;align-items:center;gap:9px;padding:11px 13px;cursor:pointer;background:{{ c.bg }};border-bottom:1px solid var(--line)">
+                      <div style="width:14px;height:14px;border-radius:50%;border:1.6px solid {{ c.ring }};box-sizing:border-box;display:flex;align-items:center;justify-content:center;flex:none">
+                        <div style="width:6px;height:6px;border-radius:50%;background:{{ c.dot }}"></div>
+                      </div>
+                      <div style="flex:1;min-width:0;font-size:12.5px;font-weight:600;color:{{ c.fg }}">{{ c.name }}</div>
+                      <div style="font-size:9.5px;color:var(--muted);flex:none">معتمد</div>
+                    </div>
+                  </sc-for>
+                  <div onClick="{{ openCatRequest }}" style="display:flex;align-items:center;gap:9px;padding:12px 13px;cursor:pointer;background:rgba(255,138,0,.07)">
+                    <div style="width:16px;height:16px;border-radius:5px;background:#FF8A00;color:#071A33;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;line-height:1">+</div>
+                    <div style="flex:1;min-width:0;font-size:12.5px;font-weight:800;color:#C26A00">الصنف غير موجود — اطلب إضافة صنف جديد</div>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ catReqOpen }}">
+                <div style="margin-top:12px;background:rgba(255,138,0,.08);border:1px solid rgba(255,138,0,.30);border-radius:12px;padding:13px">
+                  <div style="font-size:12px;font-weight:800;color:#C26A00">طلب إضافة صنف جديد</div>
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin:11px 0 7px">اسم الصنف المقترح</div>
+                  <input value="{{ catReqName }}" onChange="{{ onCatReqName }}" placeholder="مثال: المخللات والمقبلات" style="width:100%;box-sizing:border-box;height:42px;background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:0 12px;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:600;color:var(--text);outline:0" />
+                  <div style="font-size:10.5px;color:var(--muted);margin-top:9px;line-height:1.7">لن يُنشر الصنف قبل موافقة الإدارة. سيبقى المنتج مسودة حتى الاعتماد.</div>
+                  <div style="display:flex;gap:9px;margin-top:12px">
+                    <div onClick="{{ submitCatReq }}" style="flex:1;height:42px;border-radius:10px;background:#FF8A00;color:#071A33;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">أرسل للإدارة</div>
+                    <div onClick="{{ cancelCatReq }}" style="flex:none;padding:0 16px;height:42px;border-radius:10px;background:var(--surf);border:1px solid var(--line);font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">إلغاء</div>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ catReqSent }}">
+                <div style="margin-top:12px;background:rgba(0,203,255,.08);border:1px solid rgba(0,203,255,.28);border-radius:12px;padding:12px 13px;display:flex;align-items:center;gap:10px">
+                  <div style="width:8px;height:8px;border-radius:50%;background:#0B7FA8;flex:none"></div>
+                  <div style="flex:1;min-width:0;font-size:11.5px;font-weight:700;color:#0B7FA8;line-height:1.7">{{ catReqSentLine }}</div>
+                </div>
+              </sc-if>
+              <div style="display:flex;gap:10px;margin-top:16px">
+                <div style="flex:1">
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">القطع بالكرتونة</div>
+                  <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700">12</div>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">سعر الكرتونة</div>
+                  <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700">29.00</div>
+                </div>
+              </div>
+            </div>
+            <div onClick="{{ saveProduct }}" style="margin-top:16px;height:50px;border-radius:13px;background:{{ saveBg }};color:{{ saveFg }};font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">{{ saveLabel }}</div>
+            <div style="font-size:10.5px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.7">{{ saveHint }}</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isNotifs }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between">
+            <div style="font-size:16.5px;font-weight:800">الإشعارات</div>
+            <div onClick="{{ goCoupons }}" style="font-size:12.5px;color:#00CBFF;font-weight:700;cursor:pointer">الكوبونات</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:14px 18px 20px;display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ notifications }}" as="n" hint-placeholder-count="5">
+              <div style="display:flex;gap:12px;background:{{ n.bg }};border:1px solid var(--line);border-radius:14px;padding:13px">
+                <div style="width:36px;height:36px;border-radius:11px;flex:none;background:{{ n.tint }};display:flex;align-items:center;justify-content:center">
+                  <div style="width:12px;height:12px;border-radius:3px;background:{{ n.icon }}"></div>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:12.5px;font-weight:700;line-height:1.5">{{ n.title }}</div>
+                  <div style="font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6">{{ n.body }}</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:10px;color:var(--muted);margin-top:7px">{{ n.time }}</div>
+                  <sc-if value="{{ n.call }}">
+                    <div style="display:flex;align-items:center;gap:8px;margin-top:11px;background:rgba(55,201,139,.12);border:1px solid rgba(55,201,139,.34);border-radius:10px;padding:8px 11px;cursor:pointer;width:fit-content">
+                      <div style="width:14px;height:14px;border-radius:4px 4px 8px 4px;background:#1E9268;flex:none"></div>
+                      <div style="font-size:11.5px;font-weight:800;color:#1E9268">اتصل بالمندوب</div>
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:10.5px;color:var(--muted);unicode-bidi:isolate">{{ n.call }}</div>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAccount }}">
+          <div style="padding:20px 18px 22px;background:linear-gradient(160deg,#0D47A1,#0A1F3D);display:flex;align-items:center;gap:14px">
+            <div style="width:58px;height:58px;border-radius:16px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#fff">ن</div>
+            <div style="flex:1">
+              <div style="font-size:15.5px;font-weight:800;color:#fff">الأندلس للأغذية</div>
+              <div style="font-size:11.5px;color:#A9C6E8;margin-top:4px">CN-7742-2026 · دبي</div>
+              <div style="display:flex;gap:6px;margin-top:8px">
+                <sc-if value="{{ isTrusted }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;align-items:center;gap:5px;background:rgba(0,203,255,.18);border:1px solid rgba(0,203,255,.34);border-radius:7px;padding:3px 9px">
+                    <div style="width:9px;height:5px;border-left:1.6px solid #00CBFF;border-bottom:1.6px solid #00CBFF;transform:rotate(-45deg);margin-top:-2px"></div>
+                    <div style="font-size:10px;font-weight:700;color:#00CBFF">مورد موثوق</div>
+                  </div>
+                </sc-if>
+                <div style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:7px;background:{{ statusBg }};color:{{ statusFg }}">{{ statusLabel }}</div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:16px 18px 22px">
+            <div style="background:var(--surf);border:1px solid var(--line);border-radius:15px;overflow:hidden">
+              <sc-for list="{{ accountRows }}" as="r" hint-placeholder-count="6">
+                <div onClick="{{ r.go }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid var(--line);cursor:pointer">
+                  <div style="width:30px;height:30px;border-radius:9px;background:{{ r.tint }};flex:none"></div>
+                  <div style="flex:1;font-size:13px;font-weight:600">{{ r.label }}</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-size:11.5px;color:var(--muted)">{{ r.value }}</div>
+                  <div style="width:7px;height:7px;border-top:2px solid var(--muted);border-left:2px solid var(--muted);transform:rotate(-45deg)"></div>
+                </div>
+              </sc-for>
+            </div>
+            <div onClick="{{ goLogin }}" style="margin-top:16px;height:48px;border-radius:13px;border:1.5px solid rgba(255,138,0,.4);color:#FF8A00;font-size:13.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">تسجيل الخروج</div>
+            <div style="margin-top:20px;text-align:center;font-family:'Montserrat',sans-serif;font-size:10px;color:var(--muted);letter-spacing:.08em">VICTORY B2B · v1.0.0</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showNav }}">
+          <div style="display:flex;background:var(--surf);border-top:1px solid var(--line);padding:8px 6px 6px">
+            <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
+              <div onClick="{{ n.go }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 0;cursor:pointer;position:relative">
+                <div style="width:22px;height:22px;border-radius:7px;background:{{ n.iconBg }};position:relative">
+                  <div style="position:absolute;top:-6px;left:-8px;min-width:16px;height:16px;border-radius:8px;background:{{ n.badgeBg }};color:#071A33;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 3px">{{ n.badge }}</div>
+                </div>
+                <div style="font-size:10.5px;font-weight:700;color:{{ n.fg }}">{{ n.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+      </div>
+    </x-import>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;role&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;owner&quot;,&quot;staff&quot;],&quot;default&quot;:&quot;owner&quot;,&quot;tsType&quot;:&quot;'owner'|'staff'&quot;,&quot;section&quot;:&quot;الصلاحيات&quot;},&quot;mode&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;screen&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;chrome&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;}}">
+const AED = n => n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' د.إ';
+const PRODUCTS = [
+  {id:1, tags:['الأغذية','منتجات عربية','مستلزمات مطعم عربي','أفضل العروض'], img:'assets/clean/cat-oil.png', name:'زيت زيتون بكر فاخر ١ل', en:'Extra Virgin Olive Oil 12*1L', cat:'الأغذية', supplier:'الأندلس للأغذية', cost:22.5, sell:29, unit:'كرتون', pcs:12, own:6, stock:'420 كرتون', badge:'جديد'},
+  {id:2, tags:['البقوليات','منتجات آسيوية','مستلزمات مطعم آسيوي','مستلزمات مطعم هندي'], img:'assets/clean/cat-rice.png', name:'أرز بسمتي ٥ كغ', en:'Sunwhite Rice 12*1', cat:'البقوليات', supplier:'الخليج للحبوب', cost:38, sell:46.5, unit:'كرتون', pcs:12, own:0, stock:'180 كرتون', badge:'الأكثر طلباً'},
+  {id:3, tags:['المنظفات','منتجات عالمية'], img:'assets/clean/cat-clean.png', name:'مناديل ورقية ×٦', en:'Facial Tissue 6*200', cat:'المنظفات', supplier:'نظافة بلس', cost:11.75, sell:15, unit:'كرتون', pcs:6, own:14, stock:'900 كرتون', badge:'عرض'},
+  {id:4, tags:['المعلبات','منتجات آسيوية'], img:'assets/clean/cat-canned.png', name:'تونة معلبة ×٤', en:'Canned Tuna 24*185g', cat:'المعلبات', supplier:'البحر الأزرق', cost:18.4, sell:24, unit:'كرتون', pcs:24, own:9, stock:'260 كرتون', badge:'ربح عالي'},
+  {id:5, tags:['المنظفات','منتجات عالمية','أفضل العروض'], img:'assets/clean/cat-clean.png', name:'مسحوق غسيل ٣ كغ', en:'Washing Powder 6*3kg', cat:'المنظفات', supplier:'نظافة بلس', cost:27, sell:34.5, unit:'كرتون', pcs:6, own:0, stock:'340 كرتون', badge:'عرض'},
+  {id:6, tags:['المشروبات والعصائر','منتجات هندية','مستلزمات مطعم هندي'], img:'assets/clean/cat-spices.png', name:'شاي أسود ١٠٠ ظرف', en:'Black Tea 12*100 Bags', cat:'المشروبات والعصائر', supplier:'الأندلس للأغذية', cost:14.2, sell:19, unit:'كرتون', pcs:12, own:2, stock:'510 كرتون', badge:'ربح عالي'},
+  {id:7, tags:['المشروبات والعصائر','منتجات عربية','مستلزمات مطعم عربي'], img:'assets/clean/cat-drinks.png', name:'عصير برتقال ١ل ×٦', en:'Orange Juice 6*1L', cat:'المشروبات والعصائر', supplier:'الواحة للعصائر', cost:31, sell:39, unit:'كرتون', pcs:6, own:11, stock:'150 كرتون', badge:'جديد'},
+  {id:8, tags:['الأغذية','منتجات سورية'], img:'assets/clean/cat-food.png', name:'سكر أبيض ١٠ كغ', en:'White Sugar 10kg*4', cat:'الأغذية', supplier:'الخليج للحبوب', cost:42, sell:49.5, unit:'كرتون', pcs:4, own:0, stock:'220 كرتون', badge:'أساسي'},
+  {id:9, tags:['الألبان والأجبان','منتجات سورية','مستلزمات مطعم عربي'], img:'assets/clean/cat-dairy.png', name:'جبنة بيضاء ٥ كغ', en:'White Cheese 4*5kg', cat:'الألبان والأجبان', supplier:'الأندلس للأغذية', cost:64, sell:78, unit:'كرتون', pcs:4, own:7, stock:'130 كرتون', badge:'جديد'},
+  {id:10, tags:['الألبان والأجبان','منتجات عالمية','أفضل العروض'], img:'assets/clean/cat-dairy.png', name:'حليب طويل الأمد ١ل', en:'UHT Milk 12*1L', cat:'الألبان والأجبان', supplier:'نظافة بلس', cost:36, sell:44, unit:'كرتون', pcs:12, own:2, stock:'290 كرتون', badge:'عرض'},
+  {id:11, tags:['منتجات هندية','مستلزمات مطعم هندي','الأغذية'], img:'assets/clean/cat-spices.png', name:'مسالا كاري ١ كغ', en:'Curry Masala 10*1kg', cat:'الأغذية', supplier:'بهارات دلهي', cost:52, sell:67, unit:'كرتون', pcs:10, own:5, stock:'160 كرتون', badge:'ربح عالي'},
+  {id:12, tags:['منتجات هندية','البقوليات','مستلزمات مطعم هندي'], img:'assets/clean/cat-rice.png', name:'عدس أحمر ٢٥ كغ', en:'Red Lentils 25kg', cat:'البقوليات', supplier:'بهارات دلهي', cost:118, sell:139, unit:'كرتون', pcs:1, own:1, stock:'85 كرتون', badge:'أساسي'},
+  {id:13, tags:['منتجات آسيوية','مستلزمات مطعم آسيوي','المعلبات'], img:'assets/clean/cat-canned.png', name:'صلصة صويا ٥ل', en:'Soy Sauce 4*5L', cat:'المعلبات', supplier:'البحر الأزرق', cost:88, sell:108, unit:'كرتون', pcs:4, own:8, stock:'70 كرتون', badge:'جديد'},
+  {id:14, tags:['منتجات عالمية','الأغذية','مستلزمات مطعم آسيوي'], img:'assets/clean/cat-oil.png', name:'زيت قلي ١٦ ل', en:'Frying Oil 16L', cat:'الأغذية', supplier:'نظافة بلس', cost:126, sell:148, unit:'كرتون', pcs:1, own:12, stock:'110 كرتون', badge:'الأكثر طلباً'}
+];
+const SHORTAGE = [
+  {id:2, need:12, level:'out'},
+  {id:5, need:6, level:'out'},
+  {id:8, need:4, level:'out'},
+  {id:6, need:6, level:'low'},
+  {id:10, need:5, level:'low'},
+  {id:12, need:3, level:'low'}
+];
+const PROFIT_BY_MONTH = {'مارس':4120,'أبريل':5380,'مايو':3460,'يونيو':6410,'يوليو':5720,'أغسطس':7845,'سبتمبر':8210};
+const CATS = [
+  {name:'الأغذية', img:'assets/clean/cat-food.png'},
+  {name:'المنظفات', img:'assets/clean/cat-clean.png'},
+  {name:'المشروبات', img:'assets/clean/cat-drinks.png'},
+  {name:'معلبات', img:'assets/clean/cat-canned.png'}
+];
+const BANNERS = [
+  {kicker:'عرض الموسم', title:'خصم 12% على المنظفات', sub:'حتى 30 سبتمبر', tag:'#FF8A00', img:'assets/clean/cat-clean.png'},
+  {kicker:'وصل حديثاً', title:'منتجات الأندلس للأغذية', sub:'42 صنف جديد', tag:'#00CBFF', img:'assets/clean/cat-food.png'},
+  {kicker:'موثوقية', title:'اربح شارة تاجر موثوق', sub:'سدد فواتيرك في الوقت', tag:'#FF8A00', img:'assets/clean/cat-dairy.png'}
+];
+const CREDIT = {limit:50000, used:18450, due:9820};
+
+const ORDERS = [
+  {id:'ORD-2471', supplier:'الأندلس للأغذية', items:4, total:842.00, status:'قيد المراجعة', date:'اليوم 10:12 ص'},
+  {id:'ORD-2418', supplier:'الخليج للحبوب', items:6, total:1284.50, status:'قيد التوصيل', date:'أمس 4:40 م'},
+  {id:'ORD-2390', supplier:'نظافة بلس', items:3, total:518.75, status:'تم التسليم', date:'20 أغسطس'},
+  {id:'ORD-2361', supplier:'البحر الأزرق', items:5, total:962.00, status:'تم التسليم', date:'14 أغسطس'},
+  {id:'ORD-2344', supplier:'الواحة للعصائر', items:2, total:310.00, status:'مرفوض', date:'9 أغسطس'}
+];
+const INVOICES = [
+  {id:'INV-9042', supplier:'الخليج للحبوب', amount:1284.50, due:'2026-09-02', status:'مستحقة'},
+  {id:'INV-8977', supplier:'نظافة بلس', amount:3410.00, due:'2026-08-11', status:'متأخرة'},
+  {id:'INV-8930', supplier:'الأندلس للأغذية', amount:2145.25, due:'2026-09-18', status:'غير مستحقة'},
+  {id:'INV-8814', supplier:'البحر الأزرق', amount:962.00, due:'2026-08-01', status:'مدفوعة'},
+  {id:'INV-8790', supplier:'الواحة للعصائر', amount:1490.00, due:'2026-07-28', status:'مدفوعة'}
+];
+const RETURNS = [
+  {id:'RET-311', product:'أرز بسمتي ٥ كغ — 2 كرتون', reason:'تلف بالتغليف', invoice:'INV-9042', amount:76.00, status:'قيد المراجعة'},
+  {id:'RET-298', product:'مسحوق غسيل ٣ كغ — 1 كرتون', reason:'خطأ في الطلب', invoice:'INV-8977', amount:27.00, status:'مقبولة'},
+  {id:'RET-274', product:'تونة معلبة ×٤ — 3 كراتين', reason:'عدم تطابق المواصفات', invoice:'INV-8814', amount:55.20, status:'مرفوضة'}
+];
+const NOTIFS = [
+  {title:'طلب جديد ORD-4182', body:'بقالة النخبة — 7 أصناف بقيمة 1,284.50 د.إ بانتظار القبول.', time:'قبل 12 دقيقة', unread:true, tint:'rgba(0,203,255,.16)', icon:'#00CBFF'},
+  {title:'طلب جديد ORD-4181', body:'هايبر الواحة — 14 صنف بقيمة 3,620.00 د.إ.', time:'قبل ساعة', unread:true, tint:'rgba(0,203,255,.16)', icon:'#00CBFF'},
+  {title:'نفد مخزون 3 أصناف', body:'أرز بسمتي، مسحوق غسيل، سكر أبيض — حدّث الكميات قبل استقبال طلبات جديدة.', time:'اليوم 7:30 ص', unread:true, tint:'rgba(255,107,107,.16)', icon:'#FF6B6B'},
+  {title:'دفعة مسددة INV-8977', body:'سدد التاجر 3,410.00 د.إ عن الفاتورة المتأخرة.', time:'أمس', unread:true, tint:'rgba(55,201,139,.14)', icon:'#1E9268'},
+  {title:'تم تسليم ORD-4168', body:'أكد التاجر الاستلام وتم إصدار الفاتورة.', time:'28 أغسطس', unread:false, tint:'rgba(255,255,255,.08)', icon:'#5C7396'}
+];
+const COUPONS = [
+  {code:'VICTORY5', value:'5%', kind:'خصم', terms:'على المنظفات — حد أدنى 500 د.إ', expiry:'2026-09-15', bg:'linear-gradient(120deg,#0D47A1,#00CBFF)'},
+  {code:'RAMADAN12', value:'12%', kind:'خصم', terms:'الأغذية والمعلبات — حد أدنى 1,000 د.إ', expiry:'2026-10-01', bg:'linear-gradient(120deg,#FF8A00,#FF8A00)'},
+  {code:'FREESHIP', value:'0', kind:'شحن', terms:'شحن مجاني على أي طلب من الخليج للحبوب', expiry:'2026-09-30', bg:'linear-gradient(120deg,#123A6B,#0A1F3D)'}
+];
+const STATUS_COLORS = {
+  'قيد المراجعة':['rgba(255,138,0,.16)','#FF8A00'],
+  'قيد التوصيل':['rgba(0,203,255,.16)','#00CBFF'],
+  'تم التسليم':['rgba(55,201,139,.15)','#37C98B'],
+  'مرفوض':['rgba(255,107,107,.15)','#FF6B6B'],
+  'مقبولة':['rgba(55,201,139,.15)','#37C98B'],
+  'مرفوضة':['rgba(255,107,107,.15)','#FF6B6B']
+};
+const INV_ACCENT = {'مستحقة':'#FF8A00','متأخرة':'#FF6B6B','مدفوعة':'#37C98B','غير مستحقة':'#5C7396'};
+
+const KYC_LABELS = ['البيانات الأساسية','تحقق الجوال'];
+const SUPPLIERS = ['الخليج للحبوب','الأندلس للأغذية','نظافة بلس','البحر الأزرق','الواحة للعصائر'];
+const ORIGINS = ['الكل','مورد عالمي','مورد سوري','مورد عربي','مورد إماراتي','مورد هندي','مورد آسيوي'];
+const SUPPLIER_DIR = [
+  {name:'الخليج للحبوب', mono:'خ', origin:'مورد إماراتي', items:184, rating:'4.8', badges:['الأفضل مبيعاً','موثوق'], logoBg:'linear-gradient(135deg,#0D47A1,#0D47A1)'},
+  {name:'الأندلس للأغذية', mono:'أن', origin:'مورد سوري', items:142, rating:'4.7', badges:['جودة عالية','موثوق'], logoBg:'linear-gradient(135deg,#FF8A00,#FF8A00)'},
+  {name:'نظافة بلس', mono:'نب', origin:'مورد عالمي', items:96, rating:'4.5', badges:['الأفضل مبيعاً'], logoBg:'linear-gradient(135deg,#0B7FA8,#00CBFF)'},
+  {name:'البحر الأزرق', mono:'بح', origin:'مورد آسيوي', items:78, rating:'4.3', badges:['أسعار منافسة'], logoBg:'linear-gradient(135deg,#123A6B,#0A1F3D)'},
+  {name:'الواحة للعصائر', mono:'وع', origin:'مورد عربي', items:64, rating:'4.6', badges:['جودة عالية'], logoBg:'linear-gradient(135deg,#FF8A00,#FF8A00)'},
+  {name:'بهارات دلهي', mono:'بد', origin:'مورد هندي', items:118, rating:'4.4', badges:['موثوق'], logoBg:'linear-gradient(135deg,#C26A00,#C26A00)'}
+];
+const CAT_IMG = {
+  'أفضل العروض':'assets/clean/cat-food.png',
+  'الأغذية':'assets/clean/cat-food.png','المشروبات والعصائر':'assets/clean/cat-drinks.png',
+  'الألبان والأجبان':'assets/clean/cat-dairy.png','البقوليات':'assets/clean/cat-rice.png',
+  'المعلبات':'assets/clean/cat-canned.png','المنظفات':'assets/clean/cat-clean.png',
+  'منتجات عالمية':'assets/clean/cat-clean.png','منتجات سورية':'assets/clean/cat-oil.png',
+  'منتجات عربية':'assets/clean/cat-drinks.png','منتجات هندية':'assets/clean/cat-spices.png',
+  'منتجات آسيوية':'assets/clean/cat-rice.png',
+  'مستلزمات مطعم عربي':'assets/clean/cat-oil.png','مستلزمات مطعم هندي':'assets/clean/cat-spices.png',
+  'مستلزمات مطعم آسيوي':'assets/clean/cat-rice.png'
+};
+const MAIN_CATS = ['أفضل العروض','الأغذية','المشروبات والعصائر','الألبان والأجبان','البقوليات','المعلبات','المنظفات','منتجات عالمية','منتجات سورية','منتجات عربية','منتجات هندية','منتجات آسيوية','مستلزمات مطعم عربي','مستلزمات مطعم هندي','مستلزمات مطعم آسيوي'];
+const ORIGIN_CATS = ['منتجات عالمية','منتجات سورية','منتجات عربية','منتجات هندية','منتجات آسيوية'];
+const RESTO_CATS = ['مستلزمات مطعم عربي','مستلزمات مطعم هندي','مستلزمات مطعم آسيوي'];
+const CAT_GROUPS = [['التصنيفات الأساسية', MAIN_CATS]];
+const KEY_CATEGORIES = MAIN_CATS;
+const CATEGORIES = MAIN_CATS;
+const BADGE_STYLE = {
+  'الأفضل مبيعاً': ['rgba(255,138,0,.13)','#C26A00'],
+  'موثوق': ['rgba(0,203,255,.13)','#0B7FA8'],
+  'جودة عالية': ['rgba(55,201,139,.14)','#1E9268'],
+  'أسعار منافسة': ['rgba(13,71,161,.10)','#0D47A1']
+};
+const EMIRATES = ['أبو ظبي','دبي','الشارقة','عجمان','أم القيوين','رأس الخيمة','الفجيرة'];
+const ACTIVITIES_MERCHANT = ['هايبر ماركت','سوبر ماركت','بقالة','مركز تخفيضات','مطعم','خدمات الطعام (كاترينغ)','شركة بيع بالجملة','فندق'];
+const ACTIVITIES = ['موزع معتمد','مستورد','مصنع','وكيل حصري','تاجر جملة','مورد خدمات طعام'];
+const SUP_ORDERS = [
+  {id:'ORD-4182', buyer:'بقالة النخبة', city:'أبو ظبي', mono:'ن', bg:'#0D47A1', items:7, total:1284.50, status:'new', time:'قبل 12 دقيقة'},
+  {id:'ORD-4181', buyer:'هايبر الواحة', city:'دبي', mono:'ه', bg:'#123A6B', items:14, total:3620.00, status:'new', time:'قبل ساعة'},
+  {id:'ORD-4179', buyer:'سوبر ماركت الخليج', city:'الشارقة', mono:'س', bg:'#0A1F3D', items:5, total:842.75, status:'prep', time:'اليوم 9:10 ص'},
+  {id:'ORD-4175', buyer:'مطعم دلهي', city:'دبي', mono:'م', bg:'#123A6B', items:9, total:2140.00, status:'ship', time:'أمس'},
+  {id:'ORD-4168', buyer:'بقالة النخبة', city:'أبو ظبي', mono:'ن', bg:'#0D47A1', items:11, total:1975.25, status:'done', time:'28 أغسطس'}
+];
+const SUP_STATUS = {
+  'new': {label:'طلب جديد', accent:'#C26A00', tint:'rgba(255,138,0,.12)'},
+  'prep': {label:'قيد التجهيز', accent:'#0B7FA8', tint:'rgba(0,203,255,.11)'},
+  'ship': {label:'في الطريق', accent:'#0D47A1', tint:'rgba(13,71,161,.11)'},
+  'done': {label:'تم التسليم', accent:'#1E9268', tint:'rgba(55,201,139,.12)'}
+};
+const TODAY = new Date('2026-09-03');
+const SUPPLIER_CREDIT = [
+  {name:'الخليج للحبوب', limit:20000, used:8420, terms:'45 يوم', trusted:true, nextDue:'2026-09-08', dueAmount:1284.50},
+  {name:'الأندلس للأغذية', limit:15000, used:6130, terms:'30 يوم', trusted:true, nextDue:'2026-09-18', dueAmount:2145.25},
+  {name:'نظافة بلس', limit:9000, used:3900, terms:'30 يوم', trusted:false, nextDue:'2026-08-11', dueAmount:3410.00},
+  {name:'البحر الأزرق', limit:0, used:0, terms:'نقدي فقط', trusted:false}
+];
+
+const I18N = {
+'يُسلَّم من مستودع المورد خلال 48 ساعة. الاستلام يعتمد على الفاتورة المرفقة مع الشحنة، مع إمكانية مسح الباركود للتحقق من الكميات.':'Delivered from the supplier warehouse within 48 hours. Receiving is based on the invoice attached to the shipment, with optional barcode scanning to verify quantities.',
+'لا يلزمك اختيار طريقة التوصيل. إذا اختار المورد شركة شحن، ستظهر لك بياناتها وحالة التوصيل في شاشة تتبع الطلب.':'You do not need to choose a delivery method. If the supplier assigns a carrier, its details and delivery status appear in the order tracking screen.',
+'بعد الاعتماد تحصل على شارة «تاجر موثوق» وحدود شراء آجل يحددها كل مورد — اشترِ الآن وادفع لاحقاً.':'Once approved you get the "Trusted Merchant" badge and deferred purchase limits set by each supplier — buy now, pay later.',
+'تكفي هذه البيانات لإنشاء الحساب. بيانات النشاط والوثائق تُرفع لاحقاً من ملف المتجر.':'These details are enough to create the account. Business details and documents are uploaded later from the store profile.',
+'أدخل رقم الجوال المسجّل وسنرسل كود تحقق لإعادة تعيين كلمة المرور.':'Enter your registered mobile number and we will send a verification code to reset your password.',
+'فاتورة واحدة متأخرة بقيمة':'One overdue invoice of','للمحافظة على حد ائتمانك':'to maintain your credit limit',
+'أدخل رقم جوالك المسجّل لدى الشبكة لإدارة طلباتك ومشترياتك.':'Enter the mobile number registered with the network to manage your orders and purchases.',
+'اختر كلمة مرور من 8 خانات على الأقل تحتوي حرفاً ورقماً.':'Choose a password of at least 8 characters containing a letter and a number.',
+'إضافة صنف جديد':'Add new item','إضافة صنف':'Add item','اختر الصنف':'Choose item','الصنف':'Item','معتمد':'Approved',
+'اختر صنفاً من الأصناف المعتمدة من الإدارة.':'Choose an item from the categories approved by the admin.',
+'الصنف غير موجود — اطلب إضافة صنف جديد':'Item not listed — request a new one','طلب إضافة صنف جديد':'Request a new item',
+'اسم الصنف المقترح':'Proposed item name','أرسل للإدارة':'Send to admin','نشر المنتج':'Publish product','حفظ كمسودة':'Save as draft',
+'اختر الصنف أولاً':'Choose an item first','أصناف بانتظار موافقة الإدارة':'Items awaiting admin approval','قيد المراجعة':'Under review',
+'لن يُنشر الصنف قبل موافقة الإدارة. سيبقى المنتج مسودة حتى الاعتماد.':'The item will not be published before admin approval. The product stays a draft until then.',
+'سيُنشر المنتج مباشرة تحت صنف معتمد.':'The product will be published under an approved item straight away.',
+'المنتج يبقى مسودة حتى توافق الإدارة على الصنف المقترح.':'The product stays a draft until the admin approves the proposed item.',
+'الصنف إلزامي — اختره من قائمة الأصناف المعتمدة.':'The item is required — pick it from the approved list.',
+'اسم المنتج':'Product name','القطع بالكرتونة':'Pieces per carton','سعر الكرتونة':'Carton price',
+'هذا الصنف يُباع كعبوة واحدة — لا يوجد تقسيم بالقطعة.':'This item is sold as a single pack — no per-piece split.',
+'سنذكّرك بتجديد الرخصة قبل 30 يوم من تاريخ الانتهاء':'We will remind you to renew the licence 30 days before expiry',
+'شركة الشحن: الاتحاد لوجستيك · متوقع اليوم 4:30 م':'Carrier: Etihad Logistics · Expected today 4:30 PM',
+'بانتظار موافقة المورد. سيصلك إشعار عند التجهيز.':'Awaiting supplier approval. You will be notified when it is being prepared.',
+'صنف واحد ناقص كرتونة — تم تسجيل ملاحظة للمورد':'One item short by a carton — a note was logged for the supplier',
+'تذكير قبل 3 أيام':'Reminder 3 days before',
+'جرّب كلمة أخرى مثل «مطعم» أو «هندية».':'Try another word such as "restaurant" or "Indian".',
+'حد الشراء الآجل يحدده كل مورد على حدة':'The deferred purchase limit is set by each supplier separately',
+'بدون ائتمان — الدفع نقدي عند الاستلام':'No credit — cash on delivery',
+'بالدخول أنت توافق على شروط الاستخدام':'By signing in you agree to the Terms of Use',
+'اختر «الكل» لعرض جميع أصناف التصنيف.':'Choose "All" to see every item in the category.',
+'جرّب تصنيفاً آخر أو أزل فلتر المورد.':'Try another category or clear the supplier filter.',
+'لا توجد منتجات في':'No products in',
+'شارع 14، مبنى 6، محل 3 — المصفح':'Street 14, Building 6, Shop 3 — Al Mushrif',
+'أرسلنا كوداً من أربع خانات إلى':'We sent a four-digit code to',
+'لا مستحقات مفتوحة — تعامل نقدي':'No open dues — cash terms',
+'وسياسة الخصوصية لشبكة Victory':'and the Victory network Privacy Policy',
+'مدة السداد 45 يوم · الاستحقاق':'Payment term 45 days · Due',
+'مسح الباركود للتحقق (اختياري)':'Scan barcode to verify (optional)',
+'فتح تذكرة إرجاع بدلاً من ذلك':'Open a return ticket instead',
+'اسم الشركة كما هو في الرخصة':'Store name as printed on the licence',
+'الكرتونة =':'Carton =','ربح متوقع':'Expected profit','وصلت كرتونتان بأكياس ممزقة':'Two cartons arrived with torn bags',
+'اطلب الآن':'Order now','بالفاتورة':'On invoice','لا توجد أصناف بهذا المنشأ':'No items from this origin',
+'بيع مقترح':'Suggested price','رقم هاتف مسؤول المشتريات':'Purchasing officer phone',
+'أضف كل النواقص إلى السلة':'Add all shortages to cart','لا يوجد تصنيف بهذا الاسم':'No category by that name',
+'اطلب النواقص من الموردين':'Order shortages from suppliers','ابحث بالاسم أو الباركود':'Search by name or barcode',
+'جهاز DS2800 متصل بالشبكة':'DS2800 device connected to the network',
+'بيانات الرخصة التجارية':'Trade licence details','بقالة النخبة — أبو ظبي':'Elite Grocery — Abu Dhabi',
+'ربحك المتوقع لكل كرتون':'Your expected profit per carton',
+'ابحث عن مورد أو منتج':'Search for a supplier or product','ربح':'Profit','أصناف':'items','صنف':'item',
+'العودة لتسجيل الدخول':'Back to sign in','الربح المتوقع شهرياً':'Expected monthly profit',
+'شبكة التوريد الذكية':'Smart Supply Network','كلمة المرور الجديدة':'New password','حتى':'up to',
+'هامش':'Margin','عدد القطع بالكرتونة':'Pieces per carton','قيمة البيع المتوقعة':'Expected sales value',
+'النواقص حسب المورد':'Shortages by supplier','حدك عند هذا المورد':'Your limit with this supplier',
+'الائتمان والفواتير':'Credit & invoices','حدودك عند الموردين':'Your supplier limits','صور المنتج المرتجع':'Returned product photos',
+'البيانات الأساسية':'Basic details','تحقق الجوال':'Phone verification','غير مستحقة':'Not due yet','تأكيد كلمة المرور':'Confirm password','البريد الإلكتروني':'Email',
+'الإمارة / المدينة':'Emirate / City','تحديد على الخريطة':'Pick on map','ابحث باسم المورد':'Search by supplier name',
+'سعر البيع المقترح':'Suggested selling price','تذكرة إرجاع جديدة':'New return ticket','الفاتورة المرتبطة':'Linked invoice',
+'الكوبونات والعروض':'Coupons & offers','نسيت كلمة المرور':'Forgot password','إرسال كود التحقق':'Send verification code',
+'إكمال ملف المورد':'Complete store profile','الوثائق المطلوبة':'Required documents','استلام بالفاتورة':'Receive by invoice',
+'ملاحظات الاستلام':'Receiving notes','تسجيل متجر جديد':'Register a new store','أدخل كود التحقق':'Enter verification code',
+'كلمة مرور جديدة':'New password','الموقع الجغرافي':'Location','المستخدم حالياً':'Currently used','رقم تتبع الشحنة':'Shipment tracking number',
+'إجمالي المستخدم':'Total used','تفاصيل الفاتورة':'Invoice details','لم يصلك الكود؟':'Did not get the code?',
+'تاريخ الانتهاء':'Expiry date','عرض كل النواقص':'View all shortages','أقل كمية للطلب':'Minimum order quantity',
+'تأكيد الاستلام':'Confirm receipt','مطابقة الأصناف':'Match items','ملاحظات إضافية':'Additional notes',
+'إعادة الإرسال':'Resend','تحقّق ومتابعة':'Verify & continue','بيانات النشاط':'Business details','تاريخ الإصدار':'Issue date',
+'نفد من مخزونك':'Out of your stock','إزالة الفلاتر':'Clear filters','الوحدة: كرتون':'Unit: carton','البيع بالقطعة':'Per-piece sale',
+'أضف إلى السلة':'Add to cart','الحد ممنوح من':'Limit granted by','تم إرسال طلبك':'Your order was sent',
+'قيمة الفاتورة':'Invoice amount','إجمالي المتاح':'Total available','إرسال التذكرة':'Submit ticket','اتصل بالمندوب':'Call the agent',
+'أعلى الموردين':'Top suppliers','مخزونك الحالي':'Your current stock','تسجيل الدخول':'Sign in','عنوان المستودع':'Store address',
+'كل التصنيفات':'All categories','السلة الذكية':'Smart cart','ملخص الربحية':'Profitability summary','إجمالي الطلب':'Order total',
+'ربحك المتوقع':'Your expected profit','يحدده المورد':'Set by supplier','متابعة الطلب':'Continue order','رقم الفاتورة':'Invoice number',
+'جدولة السداد':'Payment schedule','كرتون · قطعة':'carton · piece','تسجيل الخروج':'Sign out','كلمة المرور':'Password',
+'تحقّق ودخول':'Verify & sign in','شراء القطعة':'Piece cost','ابدأ التصفح':'Start browsing','تأكيد الطلب':'Confirm order',
+'طريقة الدفع':'Payment method','إرسال الطلب':'Send order','تذكرة جديدة':'New ticket','سبب الإرجاع':'Return reason',
+'رقم الجوال':'Mobile number','نوع النشاط':'Business type','سعر الشراء':'Cost price','بيع القطعة':'Piece price',
+'سلتك فاضية':'Your cart is empty','دفعة مسددة':'Payment settled','تاجر موثوق':'Trusted merchant','حفظ ودخول':'Save & sign in',
+'أضف للسلة':'Add to cart','التصنيفات':'Categories','كوبون خصم':'Discount coupon','رقم الطلب':'Order number',
+'المرتجعات':'Returns','الإشعارات':'Notifications','الكوبونات':'Coupons','الموردون':'Suppliers','عرض الكل':'See all',
+'المنتجات':'Products','التفاصيل':'Details','الرئيسية':'Home','سدد الآن':'Pay now','التقارير':'Reports',
+'كراتين':'cartons','كرتونة':'carton','كرتون':'carton','المتوفر':'Available','التوصيل':'Delivery','استحقاق':'Due',
+'المتبقي':'Remaining','تذكرني':'Remember me','المزيد':'More','المنشأ':'Origin','المورد':'Supplier','طلباتي':'My orders',
+'موثوق':'Trusted','طباعة':'Print','ينتهي':'Expires','دخول':'Sign in','ارفع':'Upload','أكمل':'Complete','اطلب':'Order',
+'متاح':'Available','من':'of','قطعة':'piece','أصناف ناقصة':'short items','د.إ':'AED',
+'أفضل العروض':'Best Offers','الأغذية':'Food','المشروبات والعصائر':'Drinks & Juices','الألبان والأجبان':'Dairy & Cheese',
+'البقوليات':'Legumes & Grains','المعلبات':'Canned Food','المنظفات':'Cleaning','منتجات عالمية':'International Products',
+'منتجات سورية':'Syrian Products','منتجات عربية':'Arabic Products','منتجات هندية':'Indian Products','منتجات آسيوية':'Asian Products',
+'مستلزمات مطعم عربي':'Arabic Restaurant Supplies','مستلزمات مطعم هندي':'Indian Restaurant Supplies','مستلزمات مطعم آسيوي':'Asian Restaurant Supplies',
+'التصنيفات الرئيسية':'Main categories','حسب المنشأ':'By origin','مستلزمات المطاعم':'Restaurant supplies',
+'الخليج للحبوب':'Gulf Grains','الأندلس للأغذية':'Andalus Foods','نظافة بلس':'Nazafa Plus','البحر الأزرق':'Blue Sea',
+'الواحة للعصائر':'Al Waha Juices','بهارات دلهي':'Delhi Spices','بقالة النخبة':'Elite Grocery',
+'كل الموردين':'All suppliers','كل المناشئ':'All origins','الكل':'All',
+'زيت زيتون بكر فاخر ١ل':'Extra Virgin Olive Oil 1L','أرز بسمتي ٥ كغ':'Basmati Rice 5kg','مناديل ورقية':'Facial Tissue',
+'تونة معلبة':'Canned Tuna','شحن':'Shipping','مسحوق غسيل ٣ كغ':'Washing Powder 3kg','شاي أسود ١٠٠ ظرف':'Black Tea 100 Bags',
+'عصير برتقال ١ل':'Orange Juice 1L','سكر أبيض ١٠ كغ':'White Sugar 10kg','جبنة بيضاء ٥ كغ':'White Cheese 5kg',
+'حليب طويل الأمد ١ل':'UHT Milk 1L','مسالا كاري ١ كغ':'Curry Masala 1kg','عدس أحمر ٢٥ كغ':'Red Lentils 25kg',
+'صلصة صويا ٥ل':'Soy Sauce 5L','زيت قلي ١٦ ل':'Frying Oil 16L',
+'جديد':'New','الأكثر طلباً':'Most ordered','عرض':'Offer','ربح عالي':'High margin','أساسي':'Essential',
+'نفد من المخزون':'Out of stock','قارب على النفاد':'Running low','نفد':'Out','منخفض':'Low','متوفر':'In stock',
+'قيد المراجعة':'Under review','قيد التوصيل':'Out for delivery','قيد التجهيز':'Being prepared','تم التسليم':'Delivered',
+'مدفوعة':'Paid','متأخرة':'Overdue','مستحقة قريباً':'Due soon','مستحقة':'Due','مقبولة':'Accepted','مرفوضة':'Rejected',
+'تلف بالتغليف':'Packaging damage','خطأ في الطلب':'Wrong order','عدم تطابق المواصفات':'Spec mismatch','السبب:':'Reason:',
+'المستحقات':'Receivables','المشتريات التي تم تسديدها':'Purchases settled','متأخر السداد':'Overdue','عدد الطلبات':'Orders',
+'مرتجعات مفتوحة':'Open returns','نفدت تماماً':'fully out','هامش 23%':'23% margin',
+'خصم':'Discount','على المنظفات — حد أدنى 500 د.إ':'On cleaning — min 500 AED','الأغذية والمعلبات — حد أدنى 1,000 د.إ':'Food & canned — min 1,000 AED',
+'مورد عالمي':'International supplier','مورد سوري':'Syrian supplier','مورد عربي':'Arabic supplier','مورد إماراتي':'UAE supplier',
+'مورد هندي':'Indian supplier','مورد آسيوي':'Asian supplier','الأفضل مبيعاً':'Best selling','جودة عالية':'High quality','أسعار منافسة':'Competitive prices',
+'أبو ظبي':'Abu Dhabi','دبي':'Dubai','الشارقة':'Sharjah','عجمان':'Ajman','أم القيوين':'Umm Al Quwain','رأس الخيمة':'Ras Al Khaimah','الفجيرة':'Fujairah',
+'هايبر ماركت':'Hypermarket','سوبر ماركت':'Supermarket','بقالة':'Grocery','مركز تخفيضات':'Discount store','مطعم':'Restaurant',
+'خدمات الطعام (كاترينغ)':'Catering','شركة بيع بالجملة':'Wholesaler','فندق':'Hotel',
+'ملف المتجر والوثائق':'Store profile & documents','أكمل واحصل على ائتمان':'Complete to unlock credit','طلبات':'orders',
+'اللغة':'Language','العربية':'Arabic','الإنكليزية':'English','الإعدادات':'Settings','الحساب':'Account',
+'مارس':'March','أبريل':'April','مايو':'May','يونيو':'June','يوليو':'July','أغسطس':'August','سبتمبر':'September',
+'اليوم':'Today','أمس':'Yesterday','قبل 12 دقيقة':'12 minutes ago','قبل ساعتين':'2 hours ago',
+'تم قبول طلبك':'Your order was accepted','المورد بدأ تجهيز الطلب، سيصلك رقم التتبع قريباً.':'The supplier started preparing your order; a tracking number will follow shortly.',
+'فاتورة متأخرة':'Overdue invoice','تأخر السداد 14 يوم.':'Payment 14 days late.',
+'زيارة مندوب تحصيل':'Collection agent visit','مندوب التحصيل سيزور المتجر غداً 11:00 ص.':'The collection agent will visit the store tomorrow at 11:00 AM.',
+'نفد مخزون 3 أصناف':'3 items out of stock','أرز بسمتي، مسحوق غسيل، سكر أبيض — اطلبها من الموردين بضغطة واحدة.':'Basmati rice, washing powder, white sugar — order from suppliers in one tap.',
+'تم تسليم':'Delivered','تم تأكيد الاستلام وإصدار الفاتورة.':'Receipt confirmed and invoice issued.',
+'نفد مخزون':'Out of stock:','صنف نفد و':'items out and ','صنف قارب على النفاد':'items running low','موزعة على':'across',
+'موردين':'suppliers','صنف ناقص ·':'short items ·','كرتون مقترح':'cartons suggested','متأخر':'Overdue','يستحق اليوم':'Due today',
+'يستحق بعد':'Due in','يوم':'days','مستحق':'Due','عن يوليو':'vs July','من أصل':'of','من 5 طلبات':'of 5 orders',
+'جاهز للطلب':'Ready to order','لا توجد نتائج':'No results',
+'أدخل البيانات الأساسية لإنشاء حسابك.':'Enter the basic details to create your account.',
+'أرسلنا كود تحقق من أربع خانات إلى رقم جوالك.':'We sent a four-digit verification code to your mobile number.',
+'اشترِ الآن وادفع لاحقاً بعد إكمال التحقق':'Buy now, pay later once verification is complete',
+'سنمنحك شارة «تاجر موثوق» وحدود ائتمان لدى الموردين عند الاعتماد.':'On approval you get the "Trusted Merchant" badge and credit limits with suppliers.',
+'أكمل وثائقك واشترِ الآن وادفع لاحقاً — حتى 45 يوم سداد.':'Complete your documents and buy now, pay later — up to 45 days.',
+'خطوة واحدة تفصلك عن الشراء الآجل':'One step away from deferred purchasing',
+'أكمل التحقق واحصل على ائتمان':'Complete verification to unlock credit',
+'تذكير مُرسل — يرجى السداد':'Reminder sent — please settle',
+'تذكير قبل 3 أيام من الاستحقاق':'Reminder 3 days before the due date',
+'يُسلَّم المبلغ لمندوب المورد':'Cash handed to the supplier agent',
+'دفع نقدي عند الاستلام':'Cash on delivery','دفع إلكتروني':'Online payment','دفع آجل (ائتمان)':'Deferred payment (credit)',
+'خصم من حدك الائتماني':'Deducted from your credit limit','أدخل رمز الكوبون':'Enter coupon code',
+'تم إرسال الطلب':'Order sent','تم الاستلام من المورد':'Picked up from supplier','تم التجهيز':'Prepared',
+'وافق المورد':'Supplier approved','في الطريق إليك':'On the way to you','الطلب المرتبط':'Linked order',
+'تاريخ الاستحقاق':'Due date','قرب انتهاء الصلاحية':'Nearing expiry','الإجمالي المستحق':'Total due',
+'تم الإرسال للمراجعة':'Submitted for review','طلبك قيد المراجعة':'Your request is under review',
+'الرخصة التجارية':'Trade licence','الشهادة الضريبية':'Tax certificate','صورة هوية المالك':'Owner ID copy',
+'اختر نوع النشاط':'Choose business type','اختر الإمارة':'Choose emirate','تحقّق وإنشاء الحساب':'Verify & create account',
+'الأقل سعراً':'Lowest price','أعلى ربح':'Highest profit','أغذية ومواد':'Food & goods','هذا الفلتر':'this filter',
+'خصم الكوبون':'Coupon discount','على المنصة':'on the platform','آجل — 45 يوم':'Deferred — 45 days',
+'الإمارات':'UAE','السعودية':'Saudi Arabia','قطر':'Qatar','الكويت':'Kuwait',
+'ضعيفة':'Weak','متوسطة':'Medium','قوية':'Strong','مطلوب':'Required','تم الرفع':'Uploaded','تم':'Done',
+'التالي':'Next','التقييم':'Rating','الاسم':'Name','نتيجة':'result','الأرخص':'Cheapest','الأحدث':'Newest',
+'منتج':'product','مورد':'supplier','أخرى':'Other','السلة':'Cart','حسابي':'My account','الشحن':'Shipping',
+'تطبيق':'Apply','بطاقة':'Card','أكياس':'bags','أيام':'days','عرض الموسم':'Seasonal offer','وصل حديثاً':'New arrivals','موثوقية':'Reliability','منتجات':'Products',
+'اربح شارة تاجر موثوق':'Earn the Trusted Merchant badge','سدد فواتيرك في الوقت':'Pay your invoices on time',
+'فواتيرك':'your invoices','نقدي فقط':'Cash only','غير مستحق':'Nothing due','مرفوض':'Rejected',
+'شحن مجاني على أي طلب':'Free shipping on any order','شحن مجاني':'Free shipping','صنف جديد':'new items',
+'اختر التصنيف':'Choose category','اختر المنشأ':'Choose origin','اختر المورد':'Choose supplier','التصنيف':'Category',
+'خ':'G','أن':'A','نب':'N','بح':'B','وع':'W','بد':'D','ص':'AM','م':'PM','ن':'E','أو':'or',
+'التصنيفات الأساسية':'Essential categories','ابحث في التصنيفات':'Search categories','تصنيف':'categories',
+'كوبون جديد':'New coupon','على طلبك القادم':'on your next order','بقيمة':'of','أغذية':'Food','مشروبات':'Drinks',
+'الربح المتوقع':'Expected profit','حساب مفعّل':'Active account','مفعّل':'Active','جديدة':'new',
+'أصناف ناقصة':'short items','ملاحظة':'Note','الأصناف':'Items','إجمالي':'Total','فاتورة واحدة':'one invoice','فواتير':'invoices','فاتورة':'invoice',
+'أكمل ملفك واحصل على ائتمان':'Complete your profile to unlock credit','واحصل على ائتمان':'and unlock credit','ملفك':'your profile',
+'على المنظفات':'on Cleaning','على الأغذية':'on Food','حد أدنى':'min','خصم':'Discount',
+'من':'of','بعد':'in'
+};
+Object.assign(I18N, {
+'الطلبات الواردة':'Incoming orders','كل الطلبات الواردة':'All incoming orders','قبول الطلب وبدء التجهيز':'Accept order & start preparing',
+'قبول الطلب':'Accept order','عرض التفاصيل':'View details','طلب جديد':'New order','قيد التجهيز':'Preparing','في الطريق':'On the way',
+'تم التسليم':'Delivered','أصناف قاربت على النفاد':'Items running low','منتجاتي':'My products','إضافة صنف':'Add item',
+'لا توجد طلبات في هذه الحالة':'No orders in this state','جرّب حالة أخرى من الأعلى':'Try another state above',
+'طلبات جديدة':'New orders','مبيعات اليوم':'Sales today','تجار نشطون':'Active merchants','بانتظار القبول':'Awaiting acceptance',
+'اسم الشركة كما هو في الرخصة':'Company name as printed on the licence','إكمال ملف المورد':'Complete supplier profile',
+'عنوان المستودع':'Warehouse address','مورد موثوق':'Trusted supplier','ملف المورد والوثائق':'Supplier profile & documents',
+'الأندلس للأغذية — دبي':'Andalus Foods — Dubai','موزع معتمد':'Authorised distributor','مستورد':'Importer','مصنع':'Manufacturer',
+'وكيل حصري':'Exclusive agent','تاجر جملة':'Wholesaler','مورد خدمات طعام':'Food service supplier',
+'صنف منشور':'items published','نفد':'Out','منخفض':'Low','متوفر':'Available','مخزون':'Stock','الطلبات':'Orders',
+'طلبات بانتظار القبول':'orders awaiting acceptance','تسجيل مورد جديد':'Register a new supplier','هايبر الواحة':'Al Waha Hyper',
+'سوبر ماركت الخليج':'Gulf Supermarket','مطعم دلهي':'Delhi Restaurant','أكمل التحقق':'Complete verification'
+});
+Object.assign(I18N, {
+'أكمل ملف المورد لتفعيل استقبال الطلبات':'Complete your supplier profile to start receiving orders',
+'انشر منتجاتك واستقبل طلبات التجار بعد الاعتماد':'Publish your products and receive merchant orders once approved',
+'أكمل التحقق وفعّل حسابك':'Complete verification and activate your account',
+'تسجيل مورد جديد':'Register a new supplier','طلب جديد ORD-4182':'New order ORD-4182','طلب جديد ORD-4181':'New order ORD-4181',
+'هذا الشهر':'This month','ه':'A','س':'G','قبل ساعة':'1 hour ago','قبل 12 دقيقة':'12 minutes ago','قبل ساعتين':'2 hours ago',
+'أرز بسمتي، مسحوق غسيل، سكر أبيض — حدّث الكميات قبل استقبال طلبات جديدة.':'Basmati rice, washing powder, white sugar — update quantities before accepting new orders.',
+'بقالة النخبة — 7 أصناف بقيمة 1,284.50 د.إ بانتظار القبول.':'Elite Grocery — 7 items worth AED 1,284.50 awaiting acceptance.',
+'هايبر الواحة — 14 صنف بقيمة 3,620.00 د.إ.':'Al Waha Hyper — 14 items worth AED 3,620.00.',
+'سدد التاجر 3,410.00 د.إ عن الفاتورة المتأخرة.':'The merchant paid AED 3,410.00 for the overdue invoice.',
+'بانتظار القبول.':'awaiting acceptance.','حدّث الكميات قبل استقبال طلبات جديدة.':'Update quantities before accepting new orders.',
+'سدد التاجر':'The merchant paid','عن الفاتورة المتأخرة.':'for the overdue invoice.',
+'أكد التاجر الاستلام وتم إصدار الفاتورة.':'The merchant confirmed receipt and the invoice was issued.'
+});
+const I18N_EXACT = {'خ':'G','أن':'A','ن':'N','ب':'B','و':'W','د':'D','ص':'AM','م':'PM','أو':'or','ن ':'N','ه':'A','س':'G'};
+const AR_W = /[\u0621-\u063A\u0641-\u064A\u0640\u064B-\u0652\u0670\u0671\u06D5]+/g;
+const I18N_NORM = {};
+let I18N_MAXW = 1;
+Object.keys(I18N).forEach(k => {
+  const ws = k.match(AR_W);
+  if (!ws || !ws.length) return;
+  const norm = ws.join(' ');
+  if (I18N_NORM[norm] === undefined) I18N_NORM[norm] = I18N[k];
+  if (ws.length > I18N_MAXW) I18N_MAXW = ws.length;
+});
+const GAP_OK = /^[\s\u060C\u061B\u061F.,:;·—–\-«»()"'\/\u200f\u200e0-9\u0660-\u0669\u06F0-\u06F9%×*]*$/;
+function trAr(src){
+  if (!/[\u0600-\u06FF]/.test(src)) return src;
+  const words = [];
+  AR_W.lastIndex = 0;
+  let m;
+  while ((m = AR_W.exec(src))) words.push({i: m.index, j: m.index + m[0].length, w: m[0]});
+  if (!words.length) return src;
+  let out = '', pos = 0, k = 0;
+  while (k < words.length) {
+    let hit = false;
+    const maxLen = Math.min(I18N_MAXW, words.length - k);
+    for (let len = maxLen; len >= 1; len--) {
+      let gapsOk = true;
+      for (let g = k; g < k + len - 1; g++) {
+        if (!GAP_OK.test(src.slice(words[g].j, words[g + 1].i))) { gapsOk = false; break; }
+      }
+      if (!gapsOk) continue;
+      const phrase = words.slice(k, k + len).map(x => x.w).join(' ');
+      const en = I18N_NORM[phrase];
+      if (en !== undefined) {
+        out += src.slice(pos, words[k].i) + en;
+        pos = words[k + len - 1].j;
+        k += len;
+        hit = true;
+        break;
+      }
+    }
+    if (!hit) k++;
+  }
+  return out + src.slice(pos);
+}
+
+class Component extends DCLogic {
+  state = {
+    screen:'splash', kycStep:0, cart:{2:6, 4:10, 6:8},
+    pdId:1, pdQty:3, filter:'الكل', pay:'deferred', couponOn:false
+  };
+  set(k,v){ this.setState({[k]:v}); }
+  scrollRail(e, name, dir0){
+    const dir = ((this.state.lang || 'ar') === 'en') ? -dir0 : dir0;
+    const node = e && e.currentTarget;
+    if (!node) return;
+    const root = node.closest('[data-app]') || node.ownerDocument;
+    const rail = root.querySelector('[data-rail="' + name + '"]');
+    if (!rail) return;
+    const from = rail.scrollLeft;
+    const max = rail.scrollWidth - rail.clientWidth;
+    const raw = from + dir * Math.round(rail.clientWidth * 0.72);
+    const to = Math.max(Math.min(raw, Math.max(0, max)), Math.min(0, -max));
+    const t0 = performance.now(), dur = 380;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur);
+      rail.scrollLeft = from + (to - from) * (1 - Math.pow(1 - k, 3));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  _tr = new Map();
+  switchLang(code){
+    if ((this.state.lang || 'ar') === code) { this.setState({langSheet:false}); return; }
+    this.setState({langFading:true});
+    setTimeout(() => this.setState({lang:code, langSheet:false}), 260);
+    setTimeout(() => this.setState({langFading:false}), 300);
+  }
+  applyLang(){
+    const root = this._root;
+    if (!root) return;
+    const en = (this.state.lang || 'ar') === 'en';
+    root.setAttribute('dir', en ? 'ltr' : 'rtl');
+    root.style.fontFamily = en ? "'Montserrat',system-ui,sans-serif" : "'Cairo',system-ui,sans-serif";
+    root.querySelectorAll('[data-nav]').forEach(el => {
+      const side = el.getAttribute('data-nav');
+      const off = el.getAttribute('data-nav-off') || '9px';
+      el.style.right = ''; el.style.left = '';
+      el.style[((side === 'prev') === !en) ? 'right' : 'left'] = off;
+    });
+    root.querySelectorAll('[dir="ltr"]').forEach(el => {
+      if (el.dataset.taOrig === undefined) el.dataset.taOrig = el.style.textAlign || '';
+      if (el.dataset.jcOrig === undefined) el.dataset.jcOrig = el.style.justifyContent || '';
+      if (el.dataset.jcOrig === 'flex-end') el.style.justifyContent = en ? 'flex-start' : 'flex-end';
+      if (el.dataset.taOrig !== 'right') return;
+      el.style.textAlign = en ? 'left' : 'right';
+    });
+    root.querySelectorAll('div').forEach(el => {
+      const st = el.getAttribute('style') || '';
+      if (st.indexOf('rotate(') < 0 || el.offsetWidth > 16 || el.offsetHeight > 16) return;
+      if (el.dataset.chevOrig === undefined) el.dataset.chevOrig = el.style.transform || '';
+      const rot = /rotate\(\s*(-?[\d.]+)deg/.exec(el.dataset.chevOrig || st);
+      if (!rot) return;
+      const deg = ((parseFloat(rot[1]) % 360) + 360) % 360;
+      const cs = getComputedStyle(el);
+      const bt = parseFloat(cs.borderTopWidth) > 0, bb = parseFloat(cs.borderBottomWidth) > 0;
+      const bl = parseFloat(cs.borderLeftWidth) > 0, br = parseFloat(cs.borderRightWidth) > 0;
+      // horizontal chevrons only: (top+left @315) points left, (top+right @45) points right
+      const pointsLeft = bt && bl && !br && Math.abs(deg - 315) < 12;
+      const pointsRight = bt && br && !bl && Math.abs(deg - 45) < 12;
+      const pointsLeft2 = bb && bl && !br && Math.abs(deg - 45) < 12;
+      const pointsRight2 = bb && br && !bl && Math.abs(deg - 315) < 12;
+      if (!(pointsLeft || pointsRight || pointsLeft2 || pointsRight2)) return;
+      el.style.transform = en ? (el.dataset.chevOrig + ' rotate(180deg)') : el.dataset.chevOrig;
+    });
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const nodes = [];
+    while (w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(n => {
+      const memo = this._tr.get(n);
+      const src = (memo && memo.out === n.nodeValue) ? memo.src : n.nodeValue;
+      if (!en) {
+        if (n.nodeValue !== src) n.nodeValue = src;
+        this._tr.set(n, {src, out: src});
+        return;
+      }
+      const out = trAr(src).replace(/[\u0660-\u0669]/g, d => String.fromCharCode(d.charCodeAt(0) - 0x0660 + 48)).replace(/\u061F/g,'?').replace(/\u060C/g,',').replace(/\u061B/g,';');
+      if (n.nodeValue !== out) n.nodeValue = out;
+      this._tr.set(n, {src, out});
+    });
+  }
+  componentDidUpdate(){ this.applyLang(); }
+  componentDidMount(){
+    window.__setScreen = k => this.setState({screen: k});
+    setTimeout(() => this.applyLang(), 0);
+    if (this.props.screen) { this.setState({screen: this.props.screen}); return; }
+    this._splash = setTimeout(() => this.setState(st => st.screen === 'splash' ? {screen:'login'} : {}), 4200);
+    this._t = setInterval(() => {
+      if (this.state.screen !== 'home') return;
+      this.setState(st => ({tick: (st.tick||0) + 1}));
+    }, 1000);
+  }
+  componentWillUnmount(){ clearInterval(this._t); clearTimeout(this._splash); }
+  go = s => () => this.setState({screen:s});
+  addToCart(id, qty){
+    this.setState(st => ({cart: {...st.cart, [id]: (st.cart[id]||0) + qty}}));
+  }
+  bump(id, d){
+    this.setState(st => {
+      const c = {...st.cart}; c[id] = (c[id]||0) + d;
+      if (c[id] <= 0) delete c[id];
+      return {cart:c};
+    });
+  }
+  renderVals(){
+    const base = this._baseVals();
+    return Object.assign(base, this.supVals(base));
+  }
+  supVals(base){
+    const s = this.state;
+    const ov = s.supStatus || {};
+    const go = k => () => this.setState({screen: k});
+    const orders = SUP_ORDERS.map(o => {
+      const st = ov[o.id] || o.status, m = SUP_STATUS[st];
+      return Object.assign({}, o, {st, statusLabel: m.label, accent: m.accent, tint: m.tint,
+        isNew: st === 'new', totalStr: AED(o.total),
+        meta: o.items + ' صنف · ' + o.city,
+        accept: () => this.setState(x => ({supStatus: Object.assign({}, x.supStatus || {}, {[o.id]:'prep'})}))});
+    });
+    const news = orders.filter(o => o.st === 'new');
+    const tab = s.oTab || 'all';
+    const shown = orders.filter(o => tab === 'all' || o.st === tab);
+    const lowRows = PRODUCTS.filter(p => p.own <= 2).slice(0, 3).map(p => ({
+      name: p.name, img: p.img, pcsLine: 'الكرتونة ' + p.pcs + ' قطعة',
+      state: p.own === 0 ? 'نفد' : 'منخفض',
+      fg: p.own === 0 ? '#C0392B' : '#C26A00',
+      tint: p.own === 0 ? 'rgba(255,107,107,.12)' : 'rgba(255,138,0,.11)'
+    }));
+    const navDef = [['الرئيسية','home',''],['الطلبات','orders', news.length ? String(news.length) : ''],['منتجاتي','products',''],['الإشعارات','notifs','4'],['حسابي','account','']];
+    return {
+      isProducts: s.screen === 'products',
+      isAddProduct: s.screen === 'addProduct',
+      goAddProduct: go('addProduct'),
+      pendingCats: (s.pendingCats || []).map(name => ({name})),
+      hasPendingCats: (s.pendingCats || []).length > 0,
+      catPickOpen: !!s.catPickOpen,
+      catArrow: s.catPickOpen ? '-135deg' : '45deg',
+      toggleCatPick: () => this.setState({catPickOpen: !s.catPickOpen, catReqOpen: false}),
+      pickedCatLabel: s.pickedCat || 'اختر الصنف',
+      catFieldBg: s.pickedCat ? 'rgba(0,203,255,.07)' : 'var(--surf2)',
+      catFieldBd: s.pickedCat ? 'rgba(0,203,255,.38)' : 'var(--line)',
+      catFieldFg: s.pickedCat ? '#0B7FA8' : 'var(--muted)',
+      adminCats: MAIN_CATS.filter(c => c !== 'أفضل العروض').map(name => {
+        const on = s.pickedCat === name;
+        return {name,
+          bg: on ? 'rgba(0,203,255,.07)' : 'var(--surf)',
+          ring: on ? '#0B7FA8' : 'var(--line)',
+          dot: on ? '#0B7FA8' : 'transparent',
+          fg: on ? '#0B7FA8' : 'var(--text)',
+          pick: () => this.setState({pickedCat: name, catPickOpen: false, catReqOpen: false})};
+      }),
+      catReqOpen: !!s.catReqOpen,
+      openCatRequest: () => this.setState({catReqOpen: true, catPickOpen: false}),
+      cancelCatReq: () => this.setState({catReqOpen: false, catReqName: ''}),
+      catReqName: s.catReqName || '',
+      onCatReqName: e => this.set('catReqName', e.target.value),
+      submitCatReq: () => this.setState(st => {
+        const name = (st.catReqName || '').trim();
+        if (!name) return {};
+        return {pendingCats: (st.pendingCats || []).concat([name]),
+          catReqSent: name, catReqOpen: false, catReqName: '', pickedCat: ''};
+      }),
+      catReqSent: !!s.catReqSent,
+      catReqSentLine: 'أُرسل «' + (s.catReqSent || '') + '» إلى الإدارة للموافقة. سيظهر بالأصناف بعد الاعتماد.',
+      saveLabel: s.pickedCat ? 'نشر المنتج' : (s.catReqSent ? 'حفظ كمسودة' : 'اختر الصنف أولاً'),
+      saveHint: s.pickedCat
+        ? 'سيُنشر المنتج مباشرة تحت صنف معتمد.'
+        : (s.catReqSent ? 'المنتج يبقى مسودة حتى توافق الإدارة على الصنف المقترح.' : 'الصنف إلزامي — اختره من قائمة الأصناف المعتمدة.'),
+      saveBg: (s.pickedCat || s.catReqSent) ? '#FF8A00' : 'var(--surf2)',
+      saveFg: (s.pickedCat || s.catReqSent) ? '#071A33' : 'var(--muted)',
+      saveProduct: () => { if (s.pickedCat || s.catReqSent) this.setState({screen:'products'}); },
+      profileTitle: 'أكمل ملف المورد لتفعيل استقبال الطلبات',
+      profileSub: 'انشر منتجاتك واستقبل طلبات التجار بعد الاعتماد',
+      profileCta: s.profileSubmitted ? 'تم الإرسال للمراجعة' : 'أكمل التحقق وفعّل حسابك',
+      goProducts: go('products'), goOrders: go('orders'),
+      showNav: ['home','orders','products','notifs','account','addProduct'].indexOf(s.screen) >= 0,
+      navItems: navDef.map(function(d){
+        const label = d[0], key = d[1], badge = d[2];
+        const on = s.screen === key;
+        return {label: label, badge: badge, go: go(key),
+          iconBg: on ? 'linear-gradient(140deg,#0D47A1,#00CBFF)' : 'var(--chip)',
+          badgeBg: badge ? '#FF8A00' : 'transparent',
+          fg: on ? '#0D47A1' : 'var(--muted)'};
+      }),
+      supKpis: [
+        {label:'طلبات جديدة', value:String(news.length), sub:'بانتظار القبول', fg:'#C26A00'},
+        {label:'قيد التجهيز', value:String(orders.filter(o => o.st === 'prep').length), sub:'اليوم', fg:'#0B7FA8'},
+        {label:'مبيعات اليوم', value:'9,862', sub:'د.إ', fg:'var(--text)'},
+        {label:'تجار نشطون', value:'38', sub:'هذا الشهر', fg:'var(--text)'}
+      ],
+      newOrdersLine: news.length + ' طلبات بانتظار القبول',
+      newOrders: news,
+      supOrders: shown,
+      ordersEmpty: shown.length === 0,
+      orderTabs: [['الكل','all'],['طلب جديد','new'],['قيد التجهيز','prep'],['في الطريق','ship'],['تم التسليم','done']].map(d => {
+        const label = d[0], key = d[1], on = tab === key;
+        return {label: label, pick: () => this.setState({oTab: key}),
+          bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
+          bd: on ? '#0A1F3D' : 'var(--line)'};
+      }),
+      supLowStock: lowRows,
+      productsLine: PRODUCTS.length + ' صنف منشور',
+      supProducts: PRODUCTS.map(p => ({
+        name: p.name, img: p.img, priceStr: AED(p.cost), stock: p.stock,
+        pcsLine: p.cat + ' · الكرتونة ' + p.pcs + ' قطعة',
+        state: p.own === 0 ? 'نفد' : (p.own <= 2 ? 'منخفض' : 'متوفر'),
+        fg: p.own === 0 ? '#C0392B' : (p.own <= 2 ? '#C26A00' : '#1E9268'),
+        tint: p.own === 0 ? 'rgba(255,107,107,.12)' : (p.own <= 2 ? 'rgba(255,138,0,.11)' : 'rgba(55,201,139,.12)')
+      })),
+      accountRows: [
+        {label:'ملف المورد والوثائق', value: s.profileSubmitted ? 'قيد المراجعة' : 'أكمل التحقق', tint:'linear-gradient(135deg,#FF8A00,#FF8A00)', go: go('profile')},
+        {label:'الطلبات الواردة', value: orders.length + ' طلبات', tint:'linear-gradient(135deg,#0D47A1,#00CBFF)', go: go('orders')},
+        {label:'منتجاتي', value: PRODUCTS.length + ' صنف', tint:'linear-gradient(135deg,#123A6B,#0A1F3D)', go: go('products')},
+        {label:'الإشعارات', value:'4 جديدة', tint:'linear-gradient(135deg,#123A6B,#0A1F3D)', go: go('notifs')},
+        {label:'اللغة', value: base.isEn ? 'الإنكليزية' : 'العربية', tint:'linear-gradient(135deg,#0D47A1,#0D47A1)', go: () => this.setState({langSheet:true})}
+      ]
+    };
+  }
+  _baseVals(){
+    const s = this.state;
+    const mode = 'light';
+    const dark = false;
+    const canSee = (this.props.role ?? 'owner') === 'owner';
+    const isEn = (s.lang || 'ar') === 'en';
+    const cartIds = Object.keys(s.cart);
+    const lines = cartIds.map(id => {
+      const p = PRODUCTS.find(x => x.id === +id), q = s.cart[id];
+      return {p, q, total: p.cost*q, profit: (p.sell-p.cost)*q, revenue: p.sell*q};
+    });
+    const total = lines.reduce((a,l) => a+l.total, 0);
+    const revenue = lines.reduce((a,l) => a+l.revenue, 0);
+    const profit = revenue - total;
+    const marginPct = total ? profit/total*100 : 0;
+    const discount = s.couponOn ? total*0.05 : 0;
+    const pd = PRODUCTS.find(p => p.id === s.pdId) || PRODUCTS[0];
+    const since = (s.tick || 0) - (s.slideAt || 0);
+    const slide = ((s.slide || 0) + Math.floor(since / 5)) % BANNERS.length;
+    const sup = s.supplier || 'كل الموردين';
+    const filtered = PRODUCTS
+      .filter(p => {
+        const fl = s.filter;
+        const catOk = !fl || fl === 'الكل' || p.cat === fl || (p.tags || []).indexOf(fl) >= 0;
+        const og = s.pOrigin || 'كل المناشئ';
+        const ogOk = og === 'كل المناشئ' || (p.tags || []).indexOf(og) >= 0;
+        return catOk && ogOk && (sup === 'كل الموردين' || p.supplier === sup);
+      })
+      .slice()
+      .sort((a,b) => {
+        const k = s.sort || 'margin';
+        if (k === 'cheap') return a.cost - b.cost;
+        if (k === 'new') return b.id - a.id;
+        return (b.sell-b.cost)/b.cost - (a.sell-a.cost)/a.cost;
+      });
+    const pill = on => ({bg: on ? '#FF8A00' : 'rgba(255,255,255,.05)', fg: on ? '#071A33' : '#A9C6E8', dot: on ? '#071A33' : '#5C7396'});
+    const shortRows = SHORTAGE.map(r => ({...r, p: PRODUCTS.find(x => x.id === r.id)}));
+    const outRows = shortRows.filter(r => r.level === 'out');
+    const shortBySup = [];
+    shortRows.forEach(r => {
+      let g = shortBySup.find(x => x.name === r.p.supplier);
+      if (!g) {
+        const dir = SUPPLIER_DIR.find(d => d.name === r.p.supplier) || {};
+        g = {name: r.p.supplier, initial: dir.mono || '؟', logoBg: dir.logoBg || '#0A1F3D', rows: []};
+        shortBySup.push(g);
+      }
+      g.rows.push(r);
+    });
+    const orderFrom = rows => () => this.setState(st => {
+      const c = {...st.cart};
+      rows.forEach(r => { c[r.id] = (c[r.id] || 0) + r.need; });
+      return {cart: c, screen: 'cart'};
+    });
+    const autoTab = s.autoTab || 'out';
+    const pcsLine = p => p.pcs > 1 ? ('كرتون · ' + p.pcs + ' قطعة') : 'كرتون';
+    const pMonth = s.pMonth || 'أغسطس';
+
+
+    return {
+      mode, isDark: dark, deviceW: 412, deviceH: 892,
+      canSeeProfit: (this.props.role ?? 'owner') === 'owner',
+      hideProfit: (this.props.role ?? 'owner') !== 'owner',
+      bare: this.props.chrome === 'off',
+
+      isSplash: s.screen === 'splash', isLogin: s.screen === 'login', isKyc: s.screen === 'kyc', isHome: s.screen === 'home',
+      isBrowse: s.screen === 'browse', isProduct: s.screen === 'product', isCart: s.screen === 'cart',
+      isCheckout: s.screen === 'checkout', isSuccess: s.screen === 'success',
+      goLogin: this.go('login'), goSplash: this.go('splash'), goKyc: this.go('kyc'), goHome: this.go('home'), goBrowse: this.go('browse'),
+      goCart: this.go('cart'), goCheckout: this.go('checkout'), goOrders: this.go('orders'), goNotifs: this.go('notifs'),
+
+      phone: s.phone === undefined ? '50 418 2276' : s.phone,
+      dialCode: s.dial || '+971',
+      countryOpen: !!s.countryOpen,
+      countryArrow: s.countryOpen ? '-135deg' : '45deg',
+      rootRef: el => { if (el) { this._root = el; this.applyLang(); } },
+      isEn, bannerGradDeg: isEn ? '90deg' : '270deg', langSheet: !!s.langSheet, closeLangSheet: () => this.setState({langSheet:false}),
+      langOpts: [['العربية','Arabic','ar'],['الإنكليزية','English','en']].map(([ar,en,code]) => {
+        const on = (s.lang || 'ar') === code;
+        return {ar, en, on,
+          bg: on ? 'rgba(0,203,255,.09)' : 'var(--surf)',
+          bd: on ? 'rgba(0,203,255,.45)' : 'var(--line)',
+          pick: () => this.switchLang(code)};
+      }),
+      langFade: s.langFading ? 1 : 0,
+      navArBg: isEn ? 'transparent' : '#FF8A00', navArFg: isEn ? '#A9C6E8' : '#071A33',
+      navEnBg: isEn ? '#FF8A00' : 'transparent', navEnFg: isEn ? '#071A33' : '#A9C6E8',
+      arBg: isEn ? 'transparent' : '#FF8A00', arFg: isEn ? '#5C7396' : '#071A33',
+      enBg: isEn ? '#FF8A00' : 'transparent', enFg: isEn ? '#071A33' : '#5C7396',
+      setAr: () => this.switchLang('ar'), setEn: () => this.switchLang('en'),
+      isOtpLogin: s.screen === 'otpLogin',
+      goOtpLogin: this.go('otpLogin'),
+      isForgot: s.screen === 'forgot', isForgotOtp: s.screen === 'forgotOtp', isNewPass: s.screen === 'newPass',
+      goForgot: this.go('forgot'), goForgotOtp: this.go('forgotOtp'), goNewPass: this.go('newPass'),
+      resetOtpBoxes: [0,1,2,3].map(i => {
+        const otp = s.resetOtp === undefined ? '52' : s.resetOtp;
+        const filled = i < otp.length;
+        return {char: filled ? otp[i] : '',
+          bd: i === otp.length ? '#FF8A00' : 'var(--login-rule)',
+          fg: filled ? 'var(--login-fg)' : 'var(--muted)'};
+      }),
+      newPass: s.newPass === undefined ? 'Victory2026' : s.newPass,
+      onNewPass: e => this.set('newPass', e.target.value),
+      confirmPass: s.confirmPass === undefined ? 'Victory2026' : s.confirmPass,
+      onConfirmPass: e => this.set('confirmPass', e.target.value),
+      passMatch: (s.newPass === undefined ? 'Victory2026' : s.newPass) === (s.confirmPass === undefined ? 'Victory2026' : s.confirmPass),
+      strengthBars: (() => {
+        const p = s.newPass === undefined ? 'Victory2026' : s.newPass;
+        const score = (p.length >= 8 ? 1 : 0) + (/[A-Za-z]/.test(p) && /[0-9]/.test(p) ? 1 : 0) + (p.length >= 11 ? 1 : 0);
+        const col = ['#FF6B6B','#FF8A00','#37C98B'][Math.max(0, score-1)];
+        return [0,1,2].map(i => ({bg: i < score ? col : 'var(--chip)'}));
+      })(),
+      strengthLabel: (() => {
+        const p = s.newPass === undefined ? 'Victory2026' : s.newPass;
+        const score = (p.length >= 8 ? 1 : 0) + (/[A-Za-z]/.test(p) && /[0-9]/.test(p) ? 1 : 0) + (p.length >= 11 ? 1 : 0);
+        return ['ضعيفة','ضعيفة','متوسطة','قوية'][score];
+      })(),
+      strengthFg: (() => {
+        const p = s.newPass === undefined ? 'Victory2026' : s.newPass;
+        const score = (p.length >= 8 ? 1 : 0) + (/[A-Za-z]/.test(p) && /[0-9]/.test(p) ? 1 : 0) + (p.length >= 11 ? 1 : 0);
+        return ['#FF6B6B','#FF6B6B','#FF8A00','#37C98B'][score];
+      })(),
+      fullPhone: (s.dial || '+971') + ' ' + (s.phone === undefined ? '50 418 2276' : s.phone),
+      loginOtpBoxes: [0,1,2,3].map(i => {
+        const otp = s.loginOtp === undefined ? '739' : s.loginOtp;
+        const filled = i < otp.length;
+        return {char: filled ? otp[i] : '',
+          bd: i === otp.length ? '#FF8A00' : 'var(--login-rule)',
+          fg: filled ? 'var(--login-fg)' : 'var(--muted)'};
+      }),
+      toggleCountry: () => this.set('countryOpen', !s.countryOpen),
+      poDialCode: s.poDial || '+971',
+      poCountryOpen: !!s.poCountryOpen,
+      poCountryArrow: s.poCountryOpen ? '-135deg' : '45deg',
+      togglePoCountry: () => this.set('poCountryOpen', !s.poCountryOpen),
+      poCountries: [
+        {name:'الإمارات', code:'+971'}, {name:'السعودية', code:'+966'},
+        {name:'قطر', code:'+974'}, {name:'الكويت', code:'+965'}
+      ].map(c => {
+        const on = (s.poDial || '+971') === c.code;
+        return {name: c.name, code: c.code,
+          bg: on ? 'rgba(255,138,0,.10)' : 'transparent',
+          fg: on ? '#FF8A00' : 'var(--muted)',
+          pick: () => this.setState({poDial: c.code, poCountryOpen: false})};
+      }),
+      countries: [
+        {name:'الإمارات', code:'+971'}, {name:'السعودية', code:'+966'},
+        {name:'قطر', code:'+974'}, {name:'الكويت', code:'+965'}
+      ].map(c => {
+        const on = (s.dial || '+971') === c.code;
+        return {name:c.name, code:c.code,
+          bg: on ? 'rgba(255,138,0,.10)' : 'transparent',
+          fg: on ? '#FF8A00' : 'var(--muted)',
+          pick: () => this.setState({dial:c.code, countryOpen:false})};
+      }),
+      pass: s.pass === undefined ? 'Nokhba@2026' : s.pass,
+      passType: s.showPass ? 'text' : 'password',
+      passHidden: !s.showPass,
+      togglePass: () => this.set('showPass', !s.showPass),
+      onPhone: e => this.set('phone', e.target.value),
+      onPass: e => this.set('pass', e.target.value),
+      focusPhone: () => this.set('focus', 'phone'),
+      focusPass: () => this.set('focus', 'pass'),
+      blurField: () => this.set('focus', null),
+      phoneBd: s.focus === 'phone' ? '#00CBFF' : 'var(--login-field-bd)',
+      passBd: s.focus === 'pass' ? '#00CBFF' : 'var(--login-field-bd)',
+      phoneGlow: s.focus === 'phone' ? '0 0 0 4px rgba(0,203,255,.13)' : 'none',
+      passGlow: s.focus === 'pass' ? '0 0 0 4px rgba(0,203,255,.13)' : 'none',
+      remember: s.remember !== false,
+      rememberBd: s.remember !== false ? '#FF8A00' : 'var(--login-field-bd)',
+      rememberBg: s.remember !== false ? '#FF8A00' : 'transparent',
+      toggleRemember: () => this.set('remember', s.remember === false),
+
+      kycSteps: [0,1].map(i => ({bar: i <= s.kycStep ? '#FF8A00' : 'rgba(255,255,255,.16)'})),
+      kycStepLabel: KYC_LABELS[s.kycStep],
+      kycCounter: (s.kycStep + 1) + ' / 2',
+      kycHint: [
+        'أدخل البيانات الأساسية لإنشاء حسابك.',
+        'أرسلنا كود تحقق من أربع خانات إلى رقم جوالك.'
+      ][s.kycStep],
+      kycStep1: s.kycStep === 0, kycStep2: s.kycStep === 1,
+      kycBack: () => s.kycStep === 0 ? this.setState({screen:'login'}) : this.set('kycStep', s.kycStep - 1),
+      activity: s.activity || 'اختر نوع النشاط',
+      activityFg: s.activity ? 'var(--text)' : 'var(--muted)',
+      activityBd: s.activityOpen ? '#FF8A00' : 'var(--line)',
+      activityArrow: s.activityOpen ? '-135deg' : '45deg',
+      activityOpen: !!s.activityOpen,
+      toggleActivity: () => this.set('activityOpen', !s.activityOpen),
+      activities: ACTIVITIES.map(label => {
+        const on = s.activity === label;
+        return {label, on,
+          bg: on ? 'rgba(255,138,0,.10)' : 'transparent',
+          fg: on ? '#FF8A00' : 'var(--text)',
+          pick: () => this.setState({activity:label, activityOpen:false})};
+      }),
+      emirate: s.emirate || 'اختر الإمارة',
+      emirateFg: s.emirate ? 'var(--text)' : 'var(--muted)',
+      emirateBd: s.emirateOpen ? '#FF8A00' : 'var(--line)',
+      emirateArrow: s.emirateOpen ? '-135deg' : '45deg',
+      emirateOpen: !!s.emirateOpen,
+      toggleEmirate: () => this.set('emirateOpen', !s.emirateOpen),
+      emirates: EMIRATES.map(label => {
+        const on = s.emirate === label;
+        return {label, on,
+          bg: on ? 'rgba(255,138,0,.10)' : 'transparent',
+          fg: on ? '#FF8A00' : 'var(--text)',
+          pick: () => this.setState({emirate:label, emirateOpen:false})};
+      }),
+      sendOtp: () => this.setState({kycStep:1, otp:''}),
+      kycPassText: (s.showPass ? 'Nokhba@2026' : '••••••••'),
+      kycPassSpacing: (s.showPass ? '.02em' : '.14em'),
+      isProfile: s.screen === 'profile',
+      goProfile: this.go('profile'),
+      submitProfile: () => this.setState({profileSubmitted:true, screen:'account'}),
+      profilePct: (() => {
+        const docs = s.docs || {license:true};
+        const filled = (s.activity ? 1 : 0) + (s.emirate ? 1 : 0) + 2
+          + (docs.license ? 1 : 0) + (docs.tax ? 1 : 0) + (docs.id ? 1 : 0);
+        return Math.round(filled/7*100) + '%';
+      })(),
+      profilePending: !s.profileSubmitted,
+      profileTitle: 'أكمل ملفك واحصل على ائتمان حتى 50,000 د.إ',
+      profileSub: 'اشترِ الآن وادفع لاحقاً بعد إكمال التحقق',
+      profileCta: s.profileSubmitted ? 'تم الإرسال للمراجعة' : 'أكمل التحقق واحصل على ائتمان',
+      approvalTitle: s.profileSubmitted ? 'طلبك قيد المراجعة' : 'خطوة واحدة تفصلك عن الشراء الآجل',
+      approvalSub: s.profileSubmitted
+        ? 'سنمنحك شارة «تاجر موثوق» وحدود ائتمان لدى الموردين عند الاعتماد.'
+        : 'أكمل وثائقك واشترِ الآن وادفع لاحقاً — حتى 45 يوم سداد.',
+      approvalDot: s.profileSubmitted ? '#FF8A00' : '#FF8A00',
+      approvalFg: s.profileSubmitted ? '#C26A00' : '#C26A00',
+      approvalBg: s.profileSubmitted ? 'rgba(255,138,0,.10)' : 'rgba(255,138,0,.09)',
+      approvalBd: s.profileSubmitted ? 'rgba(255,138,0,.30)' : 'rgba(255,138,0,.28)',
+      otpBoxes: [0,1,2,3].map(i => {
+        const otp = s.otp === undefined ? '84' : s.otp;
+        const filled = i < otp.length;
+        return {char: filled ? otp[i] : '',
+          bd: i === otp.length ? '#00CBFF' : 'var(--line)',
+          fg: filled ? 'var(--text)' : 'var(--muted)'};
+      }),
+      kycDocs: [
+        {key:'license', label:'الرخصة التجارية'},
+        {key:'tax', label:'الشهادة الضريبية'},
+        {key:'id', label:'صورة هوية المالك'}
+      ].map(d => {
+        const done = (s.docs || {license:true})[d.key];
+        return {label:d.label, done: !!done, pending: !done,
+          state: done ? 'تم الرفع' : 'مطلوب',
+          stateFg: done ? '#37C98B' : '#FF8A00',
+          bd: done ? 'rgba(55,201,139,.34)' : 'var(--line)',
+          tint: done ? 'rgba(55,201,139,.10)' : 'var(--chip)',
+          icon: done ? '#37C98B' : 'var(--muted)',
+          toggle: () => this.setState(st => ({docs: {...(st.docs || {license:true}), [d.key]: !((st.docs || {license:true})[d.key])}}))};
+      }),
+      kycCta: ['التالي','تحقّق وإنشاء الحساب'][s.kycStep],
+      kycNext: () => s.kycStep < 1 ? this.set('kycStep', s.kycStep + 1) : this.setState({screen:'home', kycStep:0, newAccount:true}),
+
+      notifCount: 4,
+      availableStr: AED(SUPPLIER_CREDIT.reduce((a,c) => a + (c.limit - c.used), 0)),
+      usedTotalStr: AED(SUPPLIER_CREDIT.reduce((a,c) => a + c.used, 0)),
+      dueStr: AED(CREDIT.due),
+      supplierCredit: SUPPLIER_CREDIT.map(c => {
+        const avail = c.limit - c.used, pct = c.limit ? c.used/c.limit*100 : 0;
+        const days = c.nextDue ? Math.round((new Date(c.nextDue) - TODAY) / 86400000) : null;
+        const late = days !== null && days < 0;
+        const soon = days !== null && days >= 0 && days <= 7;
+        return {name:c.name, terms:c.terms, trusted:c.trusted, hasCredit: c.limit > 0, noCredit: c.limit === 0,
+          hasDue: !!c.nextDue, nextDue: c.nextDue || '', dueAmountStr: c.dueAmount ? AED(c.dueAmount) : '',
+          dueLabel: late ? ('متأخر ' + (-days) + ' يوم') : (days === 0 ? 'يستحق اليوم' : 'يستحق بعد ' + days + ' يوم'),
+          dueFg: late ? '#C0392B' : (soon ? '#C26A00' : '#0B7FA8'),
+          dueBg: late ? 'rgba(255,107,107,.10)' : (soon ? 'rgba(255,138,0,.09)' : 'rgba(0,203,255,.08)'),
+          dueBd: late ? 'rgba(255,107,107,.32)' : (soon ? 'rgba(255,138,0,.28)' : 'rgba(0,203,255,.26)'),
+          availableStr: AED(avail), limitStr: AED(c.limit),
+          bar: pct.toFixed(0) + '%',
+          fg: pct > 80 ? '#FF8A00' : '#00CBFF',
+          barBg: pct > 80 ? 'linear-gradient(90deg,#FF8A00,#FF8A00)' : 'linear-gradient(90deg,#0D47A1,#00CBFF)'};
+      }),
+      banners: BANNERS,
+      autoCount: SHORTAGE.length,
+      topTitle: 'أفضل العروض',
+      goAuto: this.go('auto'), goSuppliers: this.go('suppliers'),
+      shortageSummary: outRows.length + ' صنف نفد و' + (shortRows.length - outRows.length) + ' صنف قارب على النفاد — موزعة على ' + shortBySup.length + ' موردين',
+      outOfStockLine: 'نفد مخزون ' + outRows.length + ' أصناف — ' + outRows.slice(0,2).map(r => r.p.name).join(' · '),
+      homeShortage: shortBySup.slice(0,3).map(g => ({
+        name: g.name, initial: g.initial, logoBg: g.logoBg,
+        line: g.rows.length + ' صنف · ' + g.rows.reduce((a,r) => a + r.need, 0) + ' كرتون',
+        order: orderFrom(g.rows)
+      })),
+      autoGroups: shortBySup.map(g => {
+        const rows = g.rows.filter(r => autoTab === 'all' || r.level === autoTab);
+        const qty = rows.reduce((a,r) => a + r.need, 0);
+        return {name: g.name, initial: g.initial, logoBg: g.logoBg,
+          line: rows.length + ' صنف ناقص · ' + qty + ' كرتون مقترح',
+          qtyStr: qty + ' كرتون',
+          items: rows.map(r => ({
+            name: r.p.name, img: r.p.img, need: r.need,
+            state: r.level === 'out' ? 'نفد من المخزون' : 'قارب على النفاد',
+            accent: r.level === 'out' ? '#FF6B6B' : '#FF8A00'
+          })),
+          order: orderFrom(rows)};
+      }).filter(g => g.items.length > 0),
+      autoTabs: [['نفد من المخزون','out'],['قارب على النفاد','low'],['الكل','all']].map(([label,key]) => {
+        const on = (s.autoTab || 'out') === key;
+        return {label, pick: () => this.set('autoTab', key),
+          bg: on ? 'rgba(255,138,0,.14)' : 'var(--surf2)', fg: on ? '#C26A00' : 'var(--muted)',
+          bd: on ? 'rgba(255,138,0,.4)' : 'var(--line)'};
+      }),
+      addAllAuto: orderFrom(shortRows),
+      supplierCount: SUPPLIER_DIR.filter(sp => !s.origin || s.origin === 'الكل' || sp.origin === s.origin).length + ' مورد',
+      supSortChips: [['التقييم','rating'],['الأصناف','items'],['الاسم','name']].map(([label,key]) => {
+        const on = (s.supSort || 'rating') === key;
+        return {label, pick: () => this.set('supSort', key),
+          bg: on ? 'rgba(255,138,0,.14)' : 'transparent', fg: on ? '#C26A00' : 'var(--muted)'};
+      }),
+      supplierList: SUPPLIER_DIR
+        .filter(sp => !s.origin || s.origin === 'الكل' || sp.origin === s.origin)
+        .slice()
+        .sort((a,b) => {
+          const k = s.supSort || 'rating';
+          if (k === 'items') return b.items - a.items;
+          if (k === 'name') return a.name.localeCompare(b.name, 'ar');
+          return parseFloat(b.rating) - parseFloat(a.rating);
+        })
+        .map(sp => ({
+          name: sp.name, origin: sp.origin, items: sp.items, rating: sp.rating,
+          logoBg: sp.logoBg, initial: sp.mono,
+          badges: sp.badges.map(b => ({label:b, bg:(BADGE_STYLE[b]||[])[0], fg:(BADGE_STYLE[b]||[])[1]})),
+          ...(() => {
+            const cr = SUPPLIER_CREDIT.find(c => c.name === sp.name);
+            if (!cr || !cr.nextDue) return {hasDue:false, noDue:true};
+            const days = Math.round((new Date(cr.nextDue) - TODAY) / 86400000);
+            const late = days < 0, soon = days >= 0 && days <= 7;
+            return {hasDue:true, noDue:false,
+              dueDate: cr.nextDue, dueAmountStr: AED(cr.dueAmount),
+              dueLabel: late ? ('متأخر ' + (-days) + ' يوم') : (days === 0 ? 'يستحق اليوم' : 'يستحق بعد ' + days + ' يوم'),
+              remind: late ? 'تذكير مُرسل — يرجى السداد' : 'تذكير قبل 3 أيام من الاستحقاق',
+              dueFg: late ? '#C0392B' : (soon ? '#C26A00' : '#0B7FA8'),
+              dueBg: late ? 'rgba(255,107,107,.10)' : (soon ? 'rgba(255,138,0,.09)' : 'rgba(0,203,255,.08)'),
+              dueBd: late ? 'rgba(255,107,107,.32)' : (soon ? 'rgba(255,138,0,.28)' : 'rgba(0,203,255,.26)')};
+          })(),
+          open: () => this.setState({screen:'browse', supplier: sp.name})
+        })),
+      isAuto: s.screen === 'auto', isSuppliers: s.screen === 'suppliers',
+      originChips: ORIGINS.map(label => {
+        const on = (s.origin || 'الكل') === label;
+        return {label, pick: () => this.set('origin', label),
+          bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
+          bd: on ? '#0A1F3D' : 'var(--line)'};
+      }),
+      homeSuppliers: SUPPLIER_DIR
+        .filter(sp => !s.origin || s.origin === 'الكل' || sp.origin === s.origin)
+        .slice(0, 4)
+        .map(sp => ({
+          name: sp.name, origin: sp.origin, items: sp.items, rating: sp.rating,
+          logoBg: sp.logoBg, initial: sp.mono,
+          open: () => this.setState({screen:'browse', supplier: sp.name})
+        })),
+      goCategories: this.go('categories'),
+      supPrev: e => this.scrollRail(e, 'suppliers', 1),
+      supNext: e => this.scrollRail(e, 'suppliers', -1),
+      catPrev: e => this.scrollRail(e, 'categories', 1),
+      catNext: e => this.scrollRail(e, 'categories', -1),
+      bannerPrev: () => this.setState(st => ({slide: (((st.slide || 0) + Math.floor(((st.tick||0)-(st.slideAt||0))/5)) - 1 + BANNERS.length) % BANNERS.length, slideAt: st.tick || 0})),
+      bannerNext: () => this.setState(st => ({slide: (((st.slide || 0) + Math.floor(((st.tick||0)-(st.slideAt||0))/5)) + 1) % BANNERS.length, slideAt: st.tick || 0})),
+      isCategories: s.screen === 'categories',
+      isCatDetail: s.screen === 'catdetail',
+      catName: s.cat || 'أفضل العروض',
+      catImg: CAT_IMG[s.cat || 'أفضل العروض'],
+      ...(() => {
+        const cat = s.cat || 'أفضل العروض';
+        const inCat = PRODUCTS.filter(p => p.cat === cat || (p.tags || []).indexOf(cat) >= 0);
+        const origins = ORIGIN_CATS.filter(o => inCat.some(p => (p.tags || []).indexOf(o) >= 0));
+        const og = s.catOrigin || 'الكل';
+        const sort = s.catSort || 'الأكثر طلباً';
+        let rows = inCat.filter(p => og === 'الكل' || (p.tags || []).indexOf(og) >= 0);
+        if (sort === 'الأقل سعراً') rows = rows.slice().sort((a,b) => a.cost - b.cost);
+        else if (sort === 'أعلى ربح') rows = rows.slice().sort((a,b) => (b.sell-b.cost)/b.cost - (a.sell-a.cost)/a.cost);
+        const sups = [];
+        inCat.forEach(p => { if (sups.indexOf(p.supplier) < 0) sups.push(p.supplier); });
+        return {
+          catTotal: inCat.length + ' صنف من ' + sups.length + ' موردين',
+          catResultCount: rows.length + ' نتيجة',
+          catEmpty: rows.length === 0,
+          catOriginChips: ['الكل'].concat(origins).map(label => {
+            const on = og === label;
+            return {label, pick: () => this.set('catOrigin', label),
+              bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
+              bd: on ? '#0A1F3D' : 'var(--line)'};
+          }),
+          catSortChips: ['الأكثر طلباً','الأقل سعراً','أعلى ربح'].filter(l => canSee || l !== 'أعلى ربح').map(label => {
+            const on = sort === label;
+            return {label, pick: () => this.set('catSort', label),
+              bg: on ? 'var(--chip)' : 'transparent', fg: on ? 'var(--text)' : 'var(--muted)'};
+          }),
+          catProducts: rows.map(p => ({
+            name: p.name, en: p.en, img: p.img, badge: p.badge, supplier: p.supplier,
+            costStr: AED(p.cost), sellStr: AED(p.sell), pcsLine: pcsLine(p),
+            stockOut: p.own === 0,
+            open: () => this.setState({screen:'product', pdId: p.id, pdQty: 3}),
+            add: () => this.addToCart(p.id, 1)
+          }))
+        };
+      })(),
+      catCount: CATEGORIES.length + ' تصنيف',
+      keyCategories: KEY_CATEGORIES.map(name => {
+        const on = (s.homeCat || 'أفضل العروض') === name;
+        return {name, img: CAT_IMG[name],
+          bd: on ? '#FF8A00' : 'var(--line)',
+          veil: on ? 'linear-gradient(0deg,rgba(255,138,0,.22),rgba(255,138,0,.06))' : 'transparent',
+          fg: on ? '#C26A00' : 'var(--text)',
+          pick: () => this.setState({screen:'catdetail', cat: name, catOrigin:'الكل', catSort:'الأكثر طلباً'})};
+      }),
+      catQ: s.catQ || '',
+      setCatQ: e => this.set('catQ', e.target.value),
+      catGroupChips: [['الكل','all'],['حسب المنشأ','origin'],['مستلزمات المطاعم','resto'],['أغذية ومواد','food']].map(([label,key]) => {
+        const on = (s.catGroup || 'all') === key;
+        return {label, pick: () => this.set('catGroup', key),
+          bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
+          bd: on ? '#0A1F3D' : 'var(--line)'};
+      }),
+      catNoResults: (() => {
+        const q = (s.catQ || '').trim(), gk = s.catGroup || 'all';
+        return MAIN_CATS.filter(n => {
+          const inG = gk === 'all' || (gk === 'origin' && ORIGIN_CATS.indexOf(n) >= 0)
+            || (gk === 'resto' && RESTO_CATS.indexOf(n) >= 0)
+            || (gk === 'food' && ORIGIN_CATS.indexOf(n) < 0 && RESTO_CATS.indexOf(n) < 0);
+          return inG && (!q || n.indexOf(q) >= 0);
+        }).length === 0;
+      })(),
+      catGroups: CAT_GROUPS.map(([title, items]) => ({
+        title,
+        items: items.filter(name => {
+          const q = (s.catQ || '').trim(), gk = s.catGroup || 'all';
+          const inG = gk === 'all' || (gk === 'origin' && ORIGIN_CATS.indexOf(name) >= 0)
+            || (gk === 'resto' && RESTO_CATS.indexOf(name) >= 0)
+            || (gk === 'food' && ORIGIN_CATS.indexOf(name) < 0 && RESTO_CATS.indexOf(name) < 0);
+          return inG && (!q || name.indexOf(q) >= 0);
+        }).map(name => ({
+          name, img: CAT_IMG[name],
+          count: PRODUCTS.filter(p => p.cat === name || (p.tags || []).indexOf(name) >= 0).length,
+          open: () => this.setState({screen:'catdetail', cat: name, catOrigin:'الكل', catSort:'الأكثر طلباً'})
+        }))
+      })),
+      slideX: 'calc(' + (slide * 100) + '% + ' + (slide * 14) + 'px)',
+      dots: BANNERS.map((b,i) => ({
+        w: i === slide ? '18px' : '6px',
+        bg: i === slide ? '#FF8A00' : 'var(--chip)',
+        pick: () => this.setState({slide:i, slideAt: this.state.tick || 0})
+      })),
+      countdown: (() => {
+        const t = 12256 - (this.state.tick || 0);
+        const h = Math.floor(t/3600), m = Math.floor(t%3600/60), sec = t%60;
+        return [h,m,sec].map(v => String(v).padStart(2,'0')).join(':');
+      })(),
+      topProducts: (() => {
+        const cat = 'أفضل العروض';
+        const list = PRODUCTS.filter(p => p.cat === cat || (p.tags || []).indexOf(cat) >= 0);
+        return (list.length ? list : PRODUCTS).slice(0,4);
+      })().map((p,i) => ({
+        name:p.name, supplier:p.supplier, unit:p.unit, costStr:AED(p.cost), img:p.img, pcsLine: pcsLine(p),
+        marginStr: '+' + Math.round((p.sell-p.cost)/p.cost*100) + '%',
+        open: () => this.setState({screen:'product', pdId:p.id, pdQty:3})
+      })),
+
+      filterBar: [
+        {label:'التصنيف', value: s.filter || 'الكل', key:'cat'},
+        {label:'المنشأ', value: s.pOrigin || 'كل المناشئ', key:'origin'},
+        {label:'المورد', value: s.supplier || 'كل الموردين', key:'sup'}
+      ].map(f => {
+        const active = ['الكل','كل المناشئ','كل الموردين'].indexOf(f.value) < 0;
+        return {label: f.label, value: f.value,
+          bg: active ? 'rgba(0,203,255,.09)' : 'var(--surf2)',
+          bd: active ? 'rgba(0,203,255,.42)' : 'var(--line)',
+          fg: active ? '#0B7FA8' : 'var(--text)',
+          open: () => this.setState({fsheet: f.key})};
+      }),
+      anyFilter: (s.filter || 'الكل') !== 'الكل' || (s.pOrigin || 'كل المناشئ') !== 'كل المناشئ' || (s.supplier || 'كل الموردين') !== 'كل الموردين',
+      fsheetOpen: !!s.fsheet,
+      closeFsheet: () => this.setState({fsheet: ''}),
+      fsheetTitle: ({cat:'اختر التصنيف', origin:'اختر المنشأ', sup:'اختر المورد'})[s.fsheet] || '',
+      fsheetOpts: (() => {
+        const spec = {
+          cat: [['الكل'].concat(MAIN_CATS, ORIGIN_CATS, RESTO_CATS), s.filter || 'الكل', 'filter'],
+          origin: [['كل المناشئ'].concat(ORIGIN_CATS), s.pOrigin || 'كل المناشئ', 'pOrigin'],
+          sup: [['كل الموردين'].concat(SUPPLIERS), s.supplier || 'كل الموردين', 'supplier']
+        }[s.fsheet];
+        if (!spec) return [];
+        const list = spec[0], cur = spec[1], key = spec[2];
+        return list.map(label => {
+          const on = cur === label;
+          return {label, on,
+            bg: on ? 'rgba(0,203,255,.09)' : 'var(--surf)',
+            bd: on ? 'rgba(0,203,255,.45)' : 'var(--line)',
+            fg: on ? '#0B7FA8' : 'var(--text)',
+            pick: () => this.setState({[key]: label, fsheet: ''})};
+        });
+      })(),
+      filterChips: ['الكل'].concat(MAIN_CATS).map(label => {
+        const on = s.filter === label;
+        return {label, pick: () => this.set('filter', label),
+          bg: on ? 'rgba(255,138,0,.16)' : 'var(--surf2)', fg: on ? '#FF8A00' : 'var(--muted)',
+          bd: on ? 'rgba(255,138,0,.45)' : 'var(--line)'};
+      }),
+      supplierChips: ['كل الموردين'].concat(SUPPLIER_DIR.map(sp => sp.name)).map(label => {
+        const on = (s.supplier || 'كل الموردين') === label;
+        return {label, pick: () => this.set('supplier', label),
+          bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
+          bd: on ? '#0A1F3D' : 'var(--line)'};
+      }),
+      sortChips: [['ربح','margin'],['الأرخص','cheap'],['الأحدث','new']].map(([label,key]) => {
+        const on = (s.sort || 'margin') === key;
+        return {label, pick: () => this.set('sort', key),
+          bg: on ? 'rgba(255,138,0,.14)' : 'transparent', fg: on ? '#FF8A00' : 'var(--muted)'};
+      }),
+      resultCount: filtered.length + ' منتج',
+      browseEmpty: filtered.length === 0,
+      emptyLabel: (s.filter && s.filter !== 'الكل') ? s.filter : (s.supplier || 'هذا الفلتر'),
+      clearFilters: () => this.setState({filter:'الكل', supplier:'كل الموردين', pOrigin:'كل المناشئ'}),
+      originFilterChips: ['كل المناشئ'].concat(ORIGIN_CATS).map(label => {
+        const on = (s.pOrigin || 'كل المناشئ') === label;
+        return {label, pick: () => this.set('pOrigin', label),
+          bg: on ? 'rgba(0,203,255,.14)' : 'var(--surf2)', fg: on ? '#0B7FA8' : 'var(--muted)',
+          bd: on ? 'rgba(0,203,255,.45)' : 'var(--line)'};
+      }),
+      visibleProducts: filtered.map(p => ({
+        name:p.name, en:p.en, supplier:p.supplier, badge:p.badge, costStr:AED(p.cost), img:p.img, pcsLine: pcsLine(p),
+        marginStr: Math.round((p.sell-p.cost)/p.cost*100) + '%',
+        open: () => this.setState({screen:'product', pdId:p.id, pdQty:3}),
+        add: () => this.addToCart(p.id, 3)
+      })),
+
+      pdImg: pd.img, pdName: pd.name, pdEn: pd.en, pdSupplier: pd.supplier, pdUnit: pd.unit, pdStock: pd.stock,
+      pdCost: AED(pd.cost), pdSell: AED(pd.sell), pdProfit: AED(pd.sell - pd.cost),
+      pdPcs: pd.pcs, pdSingle: pd.pcs === 1,
+      pdPieceCost: AED(pd.cost / pd.pcs), pdPieceSell: AED(pd.sell / pd.pcs),
+      pdPieceProfit: AED((pd.sell - pd.cost) / pd.pcs),
+      pdMargin: Math.round((pd.sell-pd.cost)/pd.cost*100) + '%',
+      pdQty: s.pdQty,
+      pdInc: () => this.set('pdQty', s.pdQty+1),
+      pdDec: () => this.set('pdQty', Math.max(1, s.pdQty-1)),
+      pdAdd: () => { this.addToCart(pd.id, s.pdQty); this.setState({screen:'cart'}); },
+
+      cartCount: lines.length,
+      cartEmpty: lines.length === 0,
+      cartLines: lines.map(l => ({
+        name: l.p.name, img: l.p.img, qty: l.q, totalStr: AED(l.total), profitStr: AED(l.profit),
+        inc: () => this.bump(l.p.id, 1), dec: () => this.bump(l.p.id, -1)
+      })),
+      cartTotalStr: AED(total), cartRevenueStr: AED(revenue), cartProfitStr: AED(profit),
+      cartMarginStr: '+' + marginPct.toFixed(1) + '%',
+      cartMarginBar: Math.min(100, marginPct*3).toFixed(0) + '%',
+
+      payMethods: [
+        {key:'cash', label:'دفع نقدي عند الاستلام', sub:'يُسلَّم المبلغ لمندوب المورد'},
+        {key:'card', label:'دفع إلكتروني', sub:'Apple Pay · Samsung Pay · بطاقة'},
+        {key:'deferred', label:'دفع آجل (ائتمان)', sub:'خصم من حدك الائتماني'}
+      ].map(m => {
+        const on = s.pay === m.key;
+        return {...m, pick: () => this.set('pay', m.key),
+          bg: on ? 'rgba(0,203,255,.09)' : 'var(--surf)',
+          bd: on ? '#00CBFF' : 'var(--line)',
+          ring: on ? '#00CBFF' : 'var(--muted)',
+          dot: on ? '#00CBFF' : 'transparent'};
+      }),
+      isDeferred: s.pay === 'deferred',
+      limitStr: AED(SUPPLIER_CREDIT[0].limit), usedStr: AED(SUPPLIER_CREDIT[0].used + total),
+      creditBar: Math.min(100, (SUPPLIER_CREDIT[0].used + total)/SUPPLIER_CREDIT[0].limit*100).toFixed(0) + '%',
+      dueDate: '2026-10-09',
+      couponCode: s.couponOn ? 'VICTORY5' : 'أدخل رمز الكوبون',
+      couponCta: s.couponOn ? 'تم' : 'تطبيق',
+      applyCoupon: () => this.set('couponOn', !s.couponOn),
+      totals: [
+        {label:'إجمالي الأصناف', value:AED(total), size:'12.5px', weight:'500', fg:'var(--muted)', vfg:'var(--text)'},
+        {label:'خصم الكوبون', value:'− ' + AED(discount), size:'12.5px', weight:'500', fg:'var(--muted)', vfg:'#00CBFF'},
+        {label:'الشحن', value:'على المنصة', size:'12.5px', weight:'500', fg:'var(--muted)', vfg:'var(--text)'},
+        {label:'الإجمالي المستحق', value:AED(total - discount), size:'15px', weight:'800', fg:'var(--text)', vfg:'#FF8A00'}
+      ],
+      placeOrder: () => this.setState({screen:'success', cart:{}}),
+
+      isOrders: s.screen === 'orders', isTrack: s.screen === 'track', isReceive: s.screen === 'receive',
+      isCredit: s.screen === 'credit', isInvoice: s.screen === 'invoice', isReturns: s.screen === 'returns',
+      isReturnNew: s.screen === 'returnNew', isNotifs: s.screen === 'notifs', isCoupons: s.screen === 'coupons',
+      isReports: s.screen === 'reports', isAccount: s.screen === 'account',
+      goTrack: this.go('track'), goReceive: this.go('receive'), goCredit: this.go('credit'),
+      goReturns: this.go('returns'), goReturnNew: this.go('returnNew'), goCoupons: this.go('coupons'),
+      goAccount: this.go('account'), goReports: this.go('reports'),
+      confirmReceive: () => this.setState({screen:'orders', orderTab:'تم التسليم'}),
+      submitReturn: () => this.setState({screen:'returns'}),
+
+      orderTabs: ['الكل','قيد المراجعة','قيد التوصيل','تم التسليم'].map(label => {
+        const on = (s.orderTab || 'الكل') === label;
+        return {label, pick: () => this.set('orderTab', label),
+          bg: on ? 'rgba(255,138,0,.16)' : 'var(--surf2)', fg: on ? '#FF8A00' : 'var(--muted)',
+          bd: on ? 'rgba(255,138,0,.45)' : 'var(--line)'};
+      }),
+      visibleOrders: ORDERS.filter(o => !s.orderTab || s.orderTab === 'الكل' || o.status === s.orderTab).map(o => ({
+        id:o.id, supplier:o.supplier, items:o.items, date:o.date, status:o.status,
+        totalStr: AED(o.total),
+        chipBg: (STATUS_COLORS[o.status]||[])[0], chipFg: (STATUS_COLORS[o.status]||[])[1],
+        open: this.go('track')
+      })),
+
+      trackSteps: [
+        ['تم إرسال الطلب','أمس 4:40 م'],['وافق المورد','أمس 5:12 م'],['تم التجهيز','اليوم 8:20 ص'],
+        ['تم الاستلام من المورد','اليوم 11:05 ص'],['في الطريق إليك','اليوم 1:40 م'],['تم التسليم','—']
+      ].map(([label,time],i) => {
+        const done = i <= 4;
+        return {label, time,
+          dot: done ? '#00CBFF' : 'transparent', ring: done ? '#00CBFF' : 'var(--muted)',
+          line: i < 4 ? '#00CBFF' : 'var(--line)', fg: done ? 'var(--text)' : 'var(--muted)'};
+      }),
+      receiveLines: [
+        {name:'أرز بسمتي ٥ كغ', en:'Sunwhite Rice 12*1', expected:'12 كرتون', received:'12 ✓', ok:true},
+        {name:'سكر أبيض ١٠ كغ', en:'White Sugar 10kg*4', expected:'8 أكياس', received:'8 ✓', ok:true},
+        {name:'شاي أسود ١٠٠ ظرف', en:'Black Tea 12*100 Bags', expected:'6 كراتين', received:'5 ⚠', ok:false}
+      ].map(r => ({...r, fg: r.ok ? '#37C98B' : '#FF8A00'})),
+
+      invTabs: ['الكل','مستحقة','متأخرة','مدفوعة'].map(label => {
+        const on = (s.invTab || 'الكل') === label;
+        return {label, pick: () => this.set('invTab', label),
+          bg: on ? 'rgba(0,203,255,.14)' : 'var(--surf2)', fg: on ? '#00CBFF' : 'var(--muted)',
+          bd: on ? 'rgba(0,203,255,.4)' : 'var(--line)'};
+      }),
+      visibleInvoices: INVOICES.filter(i => !s.invTab || s.invTab === 'الكل' || i.status === s.invTab).map(i => ({
+        id:i.id, supplier:i.supplier, due:i.due, status:i.status,
+        amountStr: AED(i.amount), accent: INV_ACCENT[i.status],
+        open: () => this.setState({screen:'invoice', invId:i.id})
+      })),
+      invId: (INVOICES.find(i => i.id === s.invId) || INVOICES[0]).id,
+      invAmount: AED((INVOICES.find(i => i.id === s.invId) || INVOICES[0]).amount),
+      invStatus: (INVOICES.find(i => i.id === s.invId) || INVOICES[0]).status,
+      invChipBg: 'rgba(255,138,0,.16)', invChipFg: INV_ACCENT[(INVOICES.find(i => i.id === s.invId) || INVOICES[0]).status],
+      invMeta: (() => {
+        const iv = INVOICES.find(i => i.id === s.invId) || INVOICES[0];
+        return [
+          {label:'المورد', value:iv.supplier},
+          {label:'الطلب المرتبط', value:'ORD-2418'},
+          {label:'تاريخ الإصدار', value:'2026-07-19'},
+          {label:'تاريخ الاستحقاق', value:iv.due},
+          {label:'طريقة الدفع', value:'آجل — 45 يوم'}
+        ];
+      })(),
+
+      returnsList: RETURNS.map(r => ({
+        id:r.id, product:r.product, reason:r.reason, invoice:r.invoice, status:r.status,
+        amountStr: AED(r.amount),
+        chipBg: (STATUS_COLORS[r.status]||[])[0], chipFg: (STATUS_COLORS[r.status]||[])[1]
+      })),
+      reasonChips: ['تلف بالتغليف','خطأ في الطلب','عدم تطابق المواصفات','قرب انتهاء الصلاحية','أخرى'].map(label => {
+        const on = (s.reason || 'تلف بالتغليف') === label;
+        return {label, pick: () => this.set('reason', label),
+          bg: on ? 'rgba(255,138,0,.14)' : 'var(--surf)', fg: on ? '#FF8A00' : 'var(--text)',
+          bd: on ? '#FF8A00' : 'var(--line)'};
+      }),
+
+      notifications: NOTIFS.map(n => ({...n, bg: n.unread ? 'var(--surf)' : 'transparent'})),
+      coupons: COUPONS,
+
+      kpis: canSee ? [
+        {label:'المشتريات التي تم تسديدها', value:'28,700', delta:'من إجمالي 34,120 د.إ', fg:'var(--text)'},
+        {label:'الربح المتوقع — ' + pMonth, value:PROFIT_BY_MONTH[pMonth].toLocaleString('en-US'), delta:'هامش 23%', fg:'#0B7FA8'},
+        {label:'المستحقات', value:'18,450', delta:'من أصل 50,000', fg:'#FF8A00'},
+        {label:'متأخر السداد', value:'3,410', delta:'فاتورة واحدة', fg:'#FF6B6B'}
+      ] : [
+        {label:'عدد الطلبات', value:'42', delta:'+6 عن يوليو', fg:'var(--text)'},
+        {label:'أصناف ناقصة', value:String(shortRows.length), delta:outRows.length + ' نفدت تماماً', fg:'#FF6B6B'},
+        {label:'قيد التوصيل', value:'2', delta:'من 5 طلبات', fg:'#0B7FA8'},
+        {label:'مرتجعات مفتوحة', value:'1', delta:'قيد المراجعة', fg:'#FF8A00'}
+      ],
+      monthChips: Object.keys(PROFIT_BY_MONTH).map(label => {
+        const on = pMonth === label;
+        return {label, pick: () => this.set('pMonth', label),
+          bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
+          bd: on ? '#0A1F3D' : 'var(--line)'};
+      }),
+      profitMonthValue: PROFIT_BY_MONTH[pMonth].toLocaleString('en-US') + ' د.إ',
+      bars: Object.keys(PROFIT_BY_MONTH).map(label => {
+        const max = Math.max.apply(null, Object.keys(PROFIT_BY_MONTH).map(k => PROFIT_BY_MONTH[k]));
+        return {label, h: (PROFIT_BY_MONTH[label]/max*100).toFixed(0) + '%',
+          bg: label === pMonth ? 'linear-gradient(180deg,#FF8A00,#FF8A00)' : 'linear-gradient(180deg,#0D47A1,#00CBFF)'};
+      }),
+      inventory: PRODUCTS.slice().sort((a,b) => a.own - b.own).map(p => ({
+        name: p.name, img: p.img, supplier: p.supplier,
+        qty: p.own + ' كرتون',
+        pcsStr: (p.own * p.pcs) + ' قطعة',
+        state: p.own === 0 ? 'نفد' : (p.own <= 2 ? 'منخفض' : 'متوفر'),
+        fg: p.own === 0 ? '#C0392B' : (p.own <= 2 ? '#C26A00' : '#1E9268'),
+        tint: p.own === 0 ? 'rgba(255,107,107,.12)' : (p.own <= 2 ? 'rgba(255,138,0,.11)' : 'rgba(55,201,139,.12)')
+      })),
+      topSuppliers: [
+        {name:'الخليج للحبوب', value:'12,480', w:'86%', bg:'linear-gradient(90deg,#0D47A1,#00CBFF)'},
+        {name:'الأندلس للأغذية', value:'9,210', w:'64%', bg:'linear-gradient(90deg,#0D47A1,#00CBFF)'},
+        {name:'نظافة بلس', value:'6,540', w:'45%', bg:'linear-gradient(90deg,#FF8A00,#FF8A00)'}
+      ],
+
+      isTrusted: !s.newAccount,
+      statusLabel: s.newAccount ? (s.profileSubmitted ? 'قيد المراجعة' : 'أكمل ملفك') : 'حساب مفعّل',
+      statusBg: s.newAccount ? 'rgba(255,138,0,.22)' : 'rgba(255,255,255,.12)',
+      statusFg: s.newAccount ? '#FFE9AE' : '#A9C6E8',
+      accountRows: [
+        {label:'ملف المتجر والوثائق', value: s.profileSubmitted ? 'قيد المراجعة' : 'أكمل واحصل على ائتمان', tint:'linear-gradient(135deg,#FF8A00,#FF8A00)', go: this.go('profile')},
+        {label:'طلباتي', value:'5 طلبات', tint:'linear-gradient(135deg,#0D47A1,#00CBFF)', go: this.go('orders')},
+        {label:'الائتمان والفواتير', value:'2 مستحقة', tint:'linear-gradient(135deg,#FF8A00,#FF8A00)', go: this.go('credit')},
+        {label:'المرتجعات', value:'1 قيد المراجعة', tint:'linear-gradient(135deg,#00CBFF,#0D47A1)', go: this.go('returns')},
+        {label:'التقارير', value:'', tint:'linear-gradient(135deg,#FF8A00,#FF8A00)', go: this.go('reports')},
+        {label:'الإشعارات', value:'4 جديدة', tint:'linear-gradient(135deg,#123A6B,#0A1F3D)', go: this.go('notifs')},
+        {label:'اللغة', value: isEn ? 'الإنكليزية' : 'العربية', tint:'linear-gradient(135deg,#0D47A1,#0D47A1)', go: () => this.setState({langSheet:true})}
+      ].filter(r => canSee || ['الائتمان والفواتير'].indexOf(r.label) < 0),
+
+      showNav: ['home','browse','cart','orders','credit','account','notifs','reports','returns','catdetail'].indexOf(s.screen) >= 0,
+      navItems: [
+        {key:'home', label:'الرئيسية'},
+        {key:'browse', label:'المنتجات'},
+        {key:'cart', label:'السلة', badge: lines.length},
+        {key:'orders', label:'طلباتي'},
+        {key:'account', label:'حسابي'}
+      ].map(n => {
+        const on = s.screen === n.key;
+        return {label:n.label, go: this.go(n.key),
+          iconBg: on ? 'linear-gradient(135deg,#FF8A00,#FF8A00)' : 'var(--chip)',
+          fg: on ? 'var(--text)' : 'var(--muted)',
+          badge: n.badge || '', badgeBg: n.badge ? '#00CBFF' : 'transparent'};
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
