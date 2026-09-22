@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Victory — تجربة الماسح الضوئي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1F3D; --navy-tint:#123A6B; --cyan:#2E9BF0; --cyan-ink:#1B6FC4;
+  --amber:#F4761F; --ok:#37C98B; --ok-ink:#1E9268; --bad:#FF6B6B; --bad-ink:#C0392B;
+  --bg:#F2F5F9; --surf:#FFFFFF; --surf2:#F7FAFD;
+  --line:rgba(10,31,61,.11); --text:#0A1F3D;
+  --muted:#4A6386; --chip:rgba(10,31,61,.05); --shadow:0 8px 24px rgba(10,31,61,.07);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Cairo','Segoe UI',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; min-height:100vh;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 56px}
+
+/* ——— الترويسة ——— */
+.top{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:var(--navy);color:#fff;border-radius:16px;
+  padding:16px 18px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.top h1{font-size:17px;font-weight:800;margin:0;flex:1;min-width:180px}
+.top p{margin:4px 0 0;font-size:12.5px;font-weight:400;color:rgba(255,255,255,.82);line-height:1.8}
+.live{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(55,201,139,.16);color:#9BEFC9;
+  border:1px solid rgba(55,201,139,.4);
+  border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:700;
+}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
+
+/* ——— لوحة آخر مسح ——— */
+.stage{
+  background:var(--surf);border:1px solid var(--line);border-radius:16px;
+  padding:26px 20px;text-align:center;box-shadow:var(--shadow);margin-bottom:16px;
+  transition:border-color .2s, background .2s;
+}
+.stage.hit{border-color:var(--ok);background:linear-gradient(180deg,rgba(55,201,139,.09),var(--surf))}
+.stage.unknown{border-color:var(--amber);background:linear-gradient(180deg,rgba(244,118,31,.09),var(--surf))}
+.stage .cap{font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:10px}
+.code{
+  font-family:'Montserrat','Courier New',monospace;font-weight:800;
+  font-size:clamp(24px,7vw,42px);letter-spacing:.06em;line-height:1.25;
+  word-break:break-all;color:var(--navy);direction:ltr;
+}
+.code.idle{color:var(--muted);font-size:clamp(15px,4vw,19px);letter-spacing:0;font-weight:600;font-family:'Cairo',sans-serif}
+.dup{margin-top:12px;font-size:12.5px;font-weight:700;color:var(--amber)}
+.meta{margin-top:12px;font-size:12.5px;color:var(--muted);display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.meta b{color:var(--cyan-ink);font-weight:800}
+
+/* ——— شريط الربط ——— */
+.bind{
+  display:none;background:#FFF6EE;border:1px solid rgba(244,118,31,.42);
+  border-radius:14px;padding:14px 16px;margin-bottom:16px;
+}
+.bind.on{display:block;animation:slide .22s ease}
+@keyframes slide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.bind h3{margin:0 0 4px;font-size:13.5px;font-weight:800;color:#8A4410}
+.bind p{margin:0 0 12px;font-size:12.5px;color:#8A4410;line-height:1.85;opacity:.92}
+.bind .row{display:flex;gap:10px;flex-wrap:wrap}
+select,input[type=text]{
+  font-family:inherit;font-size:14px;color:var(--text);background:var(--surf);
+  border:1px solid var(--line);border-radius:10px;padding:11px 12px;
+  min-height:44px;flex:1;min-width:190px;
+}
+select:focus,input[type=text]:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:var(--cyan)}
+.btn{
+  font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;
+  border-radius:10px;padding:11px 18px;min-height:44px;border:1px solid transparent;
+  transition:filter .15s,background .15s;
+}
+.btn:hover{filter:brightness(1.07)}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-warn{background:var(--amber);color:#fff}
+.btn-ghost{background:transparent;color:var(--muted);border-color:var(--line)}
+.btn-ghost:hover{background:var(--chip)}
+
+/* ——— المنتجات ——— */
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0 12px}
+.bar h2{font-size:14px;font-weight:800;margin:0;flex:1;min-width:150px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{
+  background:var(--surf);border:1px solid var(--line);border-radius:14px;
+  padding:13px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow);
+  transition:border-color .25s, box-shadow .25s;position:relative;overflow:hidden;
+}
+.card.flash{border-color:var(--ok);box-shadow:0 0 0 3px rgba(55,201,139,.2)}
+.card img{width:52px;height:52px;border-radius:10px;object-fit:cover;background:var(--surf2);flex:none}
+.info{flex:1;min-width:0}
+.name{font-size:13px;font-weight:700;line-height:1.55;margin-bottom:5px}
+.tag{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:5px;font-weight:600;flex-wrap:wrap;line-height:1.7}
+.tag.linked{color:var(--ok-ink)}
+.tag code{font-family:'Courier New',monospace;direction:ltr;font-size:11px}
+.qty{text-align:center;flex:none;min-width:62px}
+.qty .n{font-size:21px;font-weight:800;color:var(--cyan-ink);line-height:1;font-family:'Montserrat',sans-serif}
+.qty .n.low{color:var(--amber)}
+.qty .n.out{color:var(--bad)}
+.qty .u{font-size:11px;color:var(--muted);margin-top:4px;font-weight:600}
+.minus{
+  position:absolute;inset-inline-end:10px;top:8px;font-size:12px;font-weight:800;
+  color:var(--ok-ink);opacity:0;font-family:'Montserrat',sans-serif;
+}
+.minus.go{animation:fly .85s ease-out}
+@keyframes fly{0%{opacity:0;transform:translateY(6px)}25%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-14px)}}
+
+/* ——— تذييل ——— */
+.note{
+  background:var(--surf);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;margin-top:22px;font-size:12.5px;color:var(--muted);line-height:2;
+}
+.note h3{font-size:13px;font-weight:800;color:var(--text);margin:0 0 8px}
+.note ol{margin:0;padding-inline-start:20px}
+.note b{color:var(--text)}
+.manual{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+@media (min-width:640px){.btn{padding:10px 16px;min-height:38px}select,input[type=text]{min-height:38px;padding:9px 12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div style="flex:1;min-width:180px">
+      <h1>تجربة الماسح الضوئي — Victory</h1>
+      <p>امسح أي منتج من الرف. الصفحة تلتقط الرمز تلقائياً وتُنقص المخزون واحداً، دون لمس لوحة المفاتيح.</p>
+    </div>
+    <span class="live"><span class="dot"></span><span id="liveTxt">جاهز للاستقبال</span></span>
+  </header>
+
+  <section class="stage" id="stage">
+    <div class="cap">آخر رمز مقروء</div>
+    <div class="code idle" id="code">بانتظار أول مسح…</div>
+    <div class="dup" id="dup" hidden>قراءة مكررة خلال أقل من ثانية — أُهملت منعاً للخصم مرتين</div>
+    <div class="meta" id="meta" hidden>
+      <span>زمن القراءة <b id="ms">—</b></span>
+      <span>عدد المسحات <b id="count">0</b></span>
+    </div>
+  </section>
+
+  <section class="bind" id="bind">
+    <h3>رمز غير معروف</h3>
+    <p>هذا الرمز غير مرتبط بأي منتج. اختر المنتج الذي يقابله ليُنقص مخزونه في كل مسح لاحق.</p>
+    <div class="row">
+      <select id="pick" aria-label="اختر المنتج"></select>
+      <button class="btn btn-warn" id="doBind">اربط الرمز</button>
+      <button class="btn btn-ghost" id="doMute">تجاهل هذا الرمز دائماً</button>
+    </div>
+  </section>
+
+  <div class="bar">
+    <h2>مخزون المتجر</h2>
+    <button class="btn btn-ghost" id="reset">إعادة ضبط التجربة</button>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <section class="note">
+    <h3>كيف تُجري العرض أمام العميل</h3>
+    <ol>
+      <li>شغّل الماسح بوضع محاكاة لوحة المفاتيح، ثم افتح هذه الصفحة واتركها ظاهرة.</li>
+      <li>امسح أي منتج حقيقي من الرف. سيظهر رمزه فوراً وتُطلب منك مطابقته بمنتج — مرة واحدة فقط.</li>
+      <li>امسح المنتج ذاته ثانية: ينقص مخزونه واحداً أمام العميل، وهذا هو جوهر الفكرة.</li>
+      <li>إن ظهر رمز يتكرر وحده بلا مسح فهو <b>نبض إبقاء الاتصال</b> الصادر عن الجهاز، لا قراءة. اضغط «تجاهل هذا الرمز دائماً» ليختفي.</li>
+    </ol>
+    <div class="manual">
+      <input type="text" id="typed" placeholder="أو أدخل رمزاً يدوياً للتجربة بلا جهاز" aria-label="إدخال رمز يدوي">
+      <button class="btn btn-primary" id="doTyped">تنفيذ</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+'use strict';
+
+/* ————— بيانات المتجر (مطابقة لأصناف صفحة التاجر) ————— */
+const SEED = [
+  {id:1,  name:'زيت زيتون بكر فاخر ١ل', img:'assets/clean/cat-oil.png',    stock:420},
+  {id:2,  name:'أرز بسمتي ٥ كغ',        img:'assets/clean/cat-rice.png',   stock:180},
+  {id:3,  name:'مناديل ورقية ×٦',       img:'assets/clean/cat-clean.png',  stock:900},
+  {id:4,  name:'تونة معلبة ×٤',         img:'assets/clean/cat-canned.png', stock:260},
+  {id:5,  name:'مسحوق غسيل ٣ كغ',       img:'assets/clean/cat-clean.png',  stock:340},
+  {id:6,  name:'شاي أسود ١٠٠ ظرف',      img:'assets/clean/cat-spices.png', stock:510},
+  {id:7,  name:'عصير برتقال ١ل ×٦',     img:'assets/clean/cat-drinks.png', stock:150},
+  {id:8,  name:'سكر أبيض ١٠ كغ',        img:'assets/clean/cat-food.png',   stock:220}
+];
+
+const KEY = 'victory.scan.demo.v1';
+const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } };
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+
+const fresh = () => ({ stock:Object.fromEntries(SEED.map(p => [p.id, p.stock])), links:{}, muted:[], count:0 });
+let state = load() || fresh();
+
+/* ————— الرسم ————— */
+const grid = document.getElementById('grid');
+const pick = document.getElementById('pick');
+
+function codeOf(id){
+  const hit = Object.keys(state.links).find(c => state.links[c] === id);
+  return hit || null;
+}
+
+function draw(){
+  grid.innerHTML = '';
+  SEED.forEach(p => {
+    const n = state.stock[p.id];
+    const bound = codeOf(p.id);
+    const cls = n === 0 ? 'out' : n <= 20 ? 'low' : '';
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.dataset.id = p.id;
+    el.innerHTML =
+      '<span class="minus" data-minus>−1</span>' +
+      '<img src="' + p.img + '" alt="">' +
+      '<div class="info"><div class="name"></div>' +
+        '<div class="tag' + (bound ? ' linked' : '') + '"></div></div>' +
+      '<div class="qty"><div class="n ' + cls + '">' + n + '</div><div class="u">كرتون</div></div>';
+    el.querySelector('.name').textContent = p.name;
+    const tag = el.querySelector('.tag');
+    if (bound) { tag.textContent = 'مرتبط بالرمز '; const c = document.createElement('code'); c.textContent = bound; tag.appendChild(c); }
+    else { tag.textContent = 'بلا رمز — امسحه لربطه'; }
+    grid.appendChild(el);
+  });
+  pick.innerHTML = '';
+  SEED.forEach(p => { const o = document.createElement('option'); o.value = p.id; o.textContent = p.name; pick.appendChild(o); });
+}
+
+/* ————— الصوت ————— */
+let ac;
+function beep(ok){
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.connect(g); g.connect(ac.destination);
+    o.frequency.value = ok ? 1180 : 420;
+    g.gain.setValueAtTime(.001, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(.16, ac.currentTime + .01);
+    g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + .13);
+    o.start(); o.stop(ac.currentTime + .14);
+  } catch (e) {}
+}
+
+/* ————— معالجة رمز ————— */
+const stage  = document.getElementById('stage');
+const codeEl = document.getElementById('code');
+const metaEl = document.getElementById('meta');
+const msEl   = document.getElementById('ms');
+const cntEl  = document.getElementById('count');
+const bind   = document.getElementById('bind');
+const dupEl = document.getElementById('dup');
+const GUARD = 700;                       // نافذة منع الخصم المزدوج بالمللي ثانية
+let pending = null, pendingMs = null, lastCode = '', lastAt = 0, dupT = null;
+
+function flagDup(){
+  dupEl.hidden = false;
+  clearTimeout(dupT);
+  dupT = setTimeout(() => { dupEl.hidden = true; }, 1400);
+}
+
+function handle(code, ms, replay){
+  code = code.trim();
+  if (!code) return;
+  if (state.muted.indexOf(code) !== -1) return;              // نبض مُتجاهَل
+  const now = Date.now();
+  if (code === lastCode && now - lastAt < GUARD) { flagDup(); return; }  // قراءة مكررة فورية
+  lastCode = code; lastAt = now;
+  dupEl.hidden = true;
+
+  if (!replay) { state.count++; cntEl.textContent = state.count; }
+  codeEl.textContent = code; codeEl.classList.remove('idle');
+  metaEl.hidden = false; msEl.textContent = (ms != null ? ms + ' م.ث' : 'يدوي');
+
+  const id = state.links[code];
+  if (id) {
+    pending = null; bind.classList.remove('on');
+    stage.className = 'stage hit';
+    if (state.stock[id] > 0) { state.stock[id]--; beep(true); } else { beep(false); }
+    save(); draw();
+    const card = grid.querySelector('[data-id="' + id + '"]');
+    if (card) {
+      card.classList.add('flash');
+      const m = card.querySelector('[data-minus]');
+      m.classList.add('go');
+      card.scrollIntoView({ behavior:'smooth', block:'nearest' });
+      setTimeout(() => { card.classList.remove('flash'); m.classList.remove('go'); }, 900);
+    }
+  } else {
+    pending = code; pendingMs = ms; stage.className = 'stage unknown';
+    bind.classList.add('on'); beep(false);
+    save();
+  }
+}
+
+/* ————— التقاط الماسح كلوحة مفاتيح ————— */
+/* الماسح يكتب أسرع من الإنسان بكثير. نجمع الحروف، وننهي القراءة عند Enter
+   أو بعد صمت قصير — فبعض الأجهزة تُرسَل بلا فاصل نهاية مضبوط. */
+let buf = '', t0 = 0, tLast = 0, gaps = [], timer = null;
+const END_WAIT = 90, MIN_LEN = 4, MAX_GAP = 55;
+
+function flush(){
+  clearTimeout(timer); timer = null;
+  const s = buf, t = t0; const g = gaps.slice();
+  buf = ''; gaps = [];
+  if (s.length < MIN_LEN) return;
+  const avg = g.length ? g.reduce((a,b) => a+b, 0) / g.length : 0;
+  if (avg > MAX_GAP) return;                                  // كتابة بشرية، لا ماسح
+  handle(s, Date.now() - t);
+}
+
+document.addEventListener('keydown', e => {
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'SELECT' || t.tagName === 'TEXTAREA')) return;
+  if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+  if (e.key === 'Enter') { if (buf) { e.preventDefault(); clearTimeout(timer); const s = buf, t0v = t0, g = gaps.slice(); buf=''; gaps=[];
+      if (s.length >= MIN_LEN) handle(s, Date.now() - t0v); } return; }
+  if (e.key.length !== 1) return;
+
+  const now = Date.now();
+  if (!buf) { t0 = now; gaps = []; } else { gaps.push(now - tLast); }
+  tLast = now; buf += e.key;
+  clearTimeout(timer); timer = setTimeout(flush, END_WAIT);
+});
+
+/* ————— الأزرار ————— */
+document.getElementById('doBind').addEventListener('click', () => {
+  if (!pending) return;
+  const id = Number(pick.value);
+  Object.keys(state.links).forEach(c => { if (state.links[c] === id) delete state.links[c]; });
+  state.links[pending] = id;
+  const done = pending, ms = pendingMs; pending = null; pendingMs = null;
+  bind.classList.remove('on'); stage.className = 'stage hit';
+  save(); draw(); beep(true);
+  lastCode = ''; handle(done, ms, true);
+});
+
+document.getElementById('doMute').addEventListener('click', () => {
+  if (!pending) return;
+  state.muted.push(pending); pending = null; pendingMs = null;
+  bind.classList.remove('on'); stage.className = 'stage';
+  codeEl.textContent = 'تم تجاهل الرمز. لن يظهر بعد الآن.';
+  codeEl.classList.add('idle');
+  save();
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  state = fresh(); save(); draw();
+  pending = null; pendingMs = null; lastCode = '';
+  bind.classList.remove('on'); stage.className = 'stage';
+  codeEl.textContent = 'بانتظار أول مسح…'; codeEl.classList.add('idle');
+  metaEl.hidden = true; dupEl.hidden = true; cntEl.textContent = '0';
+});
+
+const typed = document.getElementById('typed');
+document.getElementById('doTyped').addEventListener('click', () => {
+  if (typed.value.trim()) { handle(typed.value, null); typed.value = ''; }
+});
+typed.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); document.getElementById('doTyped').click(); } });
+
+draw();
+cntEl.textContent = state.count;
+</script>
+</body>
+</html>
