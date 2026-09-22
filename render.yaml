@@ -3,7 +3,7 @@ services:
     name: victory-scan
     runtime: node
     plan: free
-    buildCommand: ""
+    buildCommand: npm install
     startCommand: node server.js
     envVars:
       - key: NODE_VERSION
