@@ -5,6 +5,7 @@
 const http = require('http');
 const fs   = require('fs');
 const path = require('path');
+const os   = require('os');
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
@@ -174,4 +175,33 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-server.listen(PORT, () => console.log('scan server listening on ' + PORT));
+/* نطبع عناوين الشبكة المحلية كي يفتح هاتف العميل الصفحة من الجهاز نفسه */
+function lanAddresses(){
+  const out = [];
+  const nets = os.networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const ni of nets[name] || []) {
+      if (ni.family === 'IPv4' && !ni.internal) out.push(ni.address);
+    }
+  }
+  return out;
+}
+
+server.listen(PORT, () => {
+  const lan = lanAddresses();
+  console.log('');
+  console.log('  خادم تجربة الماسح يعمل الآن.');
+  console.log('');
+  console.log('  على هذا الجهاز:   http://localhost:' + PORT + '/scan.html');
+  if (lan.length) {
+    console.log('');
+    console.log('  على هاتف العميل (نفس شبكة الواي فاي):');
+    for (const ip of lan) console.log('     http://' + ip + ':' + PORT + '/scan.html');
+  } else {
+    console.log('');
+    console.log('  تعذّر إيجاد عنوان شبكة محلي — تأكد من اتصال الجهاز بالواي فاي.');
+  }
+  console.log('');
+  console.log('  لإيقاف الخادم: أغلق هذه النافذة أو اضغط Ctrl + C');
+  console.log('');
+});
