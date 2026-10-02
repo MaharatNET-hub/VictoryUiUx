@@ -141,7 +141,9 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
                     </div>
                     <input dir="ltr" value="{{ phone }}" placeholder="50 418 2276" onChange="{{ onPhone }}" onFocus="{{ focusPhone }}" onBlur="{{ blurField }}" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.06em;text-align:left;padding:0;margin:0" />
                     <div style="width:34px;height:34px;border-radius:50%;background:rgba(27,63,160,.08);display:flex;align-items:center;justify-content:center;flex:none;margin-right:6px">
-                      <div style="width:13px;height:13px;border:1.8px solid #1B3FA0;border-radius:4px 9px 4px 4px;transform:rotate(8deg)"></div>
+                      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                        <path d="M7.2 3.6h2.5l1.5 3.8-1.9 1.3a10.6 10.6 0 0 0 4.9 4.9l1.3-1.9 3.8 1.5v2.5a2 2 0 0 1-2.2 2A16.4 16.4 0 0 1 5.2 5.8a2 2 0 0 1 2-2.2z"></path>
+                      </svg>
                     </div>
                   </div>
                   <sc-if value="{{ countryOpen }}">
@@ -561,7 +563,9 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
                     </div>
                     <div dir="ltr" style="flex:1;min-width:0;font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:600;color:var(--login-fg);letter-spacing:.06em;text-align:left">50 418 2276</div>
                     <div style="width:34px;height:34px;border-radius:50%;background:rgba(27,63,160,.08);display:flex;align-items:center;justify-content:center;flex:none;margin-right:6px">
-                      <div style="width:13px;height:13px;border:1.8px solid #1B3FA0;border-radius:4px 9px 4px 4px;transform:rotate(8deg)"></div>
+                      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                        <path d="M7.2 3.6h2.5l1.5 3.8-1.9 1.3a10.6 10.6 0 0 0 4.9 4.9l1.3-1.9 3.8 1.5v2.5a2 2 0 0 1-2.2 2A16.4 16.4 0 0 1 5.2 5.8a2 2 0 0 1 2-2.2z"></path>
+                      </svg>
                     </div>
                   </div>
                   <sc-if value="{{ countryOpen }}">
@@ -875,6 +879,61 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
                   </div>
                   <div style="font-size:10.5px;font-weight:700;text-align:center;line-height:1.35;color:var(--text)">الإشعارات</div>
                 </div>
+                <div onClick="{{ goSupInvoices }}" style="display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer">
+                  <div style="width:100%;aspect-ratio:1/1;border-radius:19px;background:rgba(27,63,160,.09);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(10,31,61,.07)">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                      <path d="M6.5 3.6h11v16.8l-2.8-1.7-2.7 1.7-2.7-1.7-2.8 1.7zM9.5 8.4h5M9.5 12.4h5"></path>
+                    </svg>
+                  </div>
+                  <div style="font-size:10.5px;font-weight:700;text-align:center;line-height:1.35;color:var(--text)">الفواتير</div>
+                </div>
+                <div onClick="{{ goSupReports }}" style="display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer">
+                  <div style="width:100%;aspect-ratio:1/1;border-radius:19px;background:rgba(46,155,240,.11);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(10,31,61,.07)">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#1B6FC4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                      <path d="M4.2 19.4h15.6M7.4 19.4v-6.2M12 19.4V6.4M16.6 19.4v-9.4"></path>
+                    </svg>
+                  </div>
+                  <div style="font-size:10.5px;font-weight:700;text-align:center;line-height:1.35;color:var(--text)">التقارير</div>
+                </div>
+                <div onClick="{{ goSupport }}" style="display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer">
+                  <div style="width:100%;aspect-ratio:1/1;border-radius:19px;background:rgba(10,31,61,.08);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(10,31,61,.07)">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#0A1F3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                      <path d="M4.4 16.4V11a7.6 7.6 0 0 1 15.2 0v5.4M4.4 12.6h2.4v5.2H4.4zM17.2 12.6h2.4v5.2h-2.4z"></path>
+                    </svg>
+                  </div>
+                  <div style="font-size:10.5px;font-weight:700;text-align:center;line-height:1.35;color:var(--text)">الدعم</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding:18px 16px 0">
+              <div style="position:relative">
+                <div style="overflow:hidden;border-radius:18px">
+                  <div style="display:flex;gap:12px;transform:translateX({{ slideX }});transition:transform .6s cubic-bezier(.4,0,.2,1)">
+                    <sc-for list="{{ banners }}" as="b" hint-placeholder-count="3">
+                      <div style="flex:none;width:100%;height:158px;border-radius:18px;position:relative;overflow:hidden;background:#0A1F3D">
+                        <div style="position:absolute;inset:0;background-image:url({{ b.img }});background-size:cover;background-position:left center"></div>
+                        <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient({{ bannerGradDeg }},rgba(7,26,51,.94) 6%,rgba(7,26,51,.74) 44%,rgba(7,26,51,.10) 88%)"></div>
+                        <div style="position:absolute;inset:0;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;pointer-events:none">
+                          <div style="font-size:10px;color:{{ b.tag }};font-weight:700;letter-spacing:.08em">{{ b.kicker }}</div>
+                          <div style="font-size:16.5px;font-weight:800;color:#fff;margin-top:8px;line-height:1.45;max-width:76%">{{ b.title }}</div>
+                          <div style="font-size:11.5px;color:rgba(255,255,255,.78);margin-top:7px">{{ b.sub }}</div>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div onClick="{{ bannerPrev }}" data-nav="prev" data-nav-off="9px" style="position:absolute;top:50%;right:9px;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;cursor:pointer">
+                  <div style="width:6px;height:6px;border-top:1.6px solid #fff;border-right:1.6px solid #fff;transform:rotate(45deg);margin-left:1.5px"></div>
+                </div>
+                <div onClick="{{ bannerNext }}" data-nav="next" data-nav-off="9px" style="position:absolute;top:50%;left:9px;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;cursor:pointer">
+                  <div style="width:6px;height:6px;border-top:1.6px solid #fff;border-left:1.6px solid #fff;transform:rotate(-45deg);margin-right:1.5px"></div>
+                </div>
+              </div>
+              <div style="display:flex;gap:5px;justify-content:center;margin-top:11px">
+                <sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
+                  <div onClick="{{ d.pick }}" style="width:{{ d.w }};height:4px;border-radius:2px;background:{{ d.bg }};cursor:pointer;transition:width .3s,background .3s"></div>
+                </sc-for>
               </div>
             </div>
 
@@ -966,8 +1025,31 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
                   <div style="font-size:10.5px;color:var(--muted)">{{ o.meta }}</div>
                   <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ o.totalStr }}</div>
                 </div>
+                <sc-if value="{{ o.isRejected }}">
+                  <div style="margin-top:11px;background:rgba(255,107,107,.10);border:1px solid rgba(255,107,107,.30);border-radius:10px;padding:9px 11px;font-size:11px;font-weight:700;color:#C0392B">سبب الرفض: {{ o.rejectReason }}</div>
+                </sc-if>
                 <sc-if value="{{ o.isNew }}">
-                  <div onClick="{{ o.accept }}" style="margin-top:11px;height:40px;border-radius:10px;background:#F4761F;color:#071A33;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">قبول الطلب وبدء التجهيز</div>
+                  <div style="display:flex;gap:9px;margin-top:11px">
+                    <div onClick="{{ o.accept }}" style="flex:1;height:40px;border-radius:10px;background:#F4761F;color:#071A33;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">قبول الطلب</div>
+                    <div onClick="{{ o.askReject }}" style="flex:none;padding:0 15px;height:40px;border-radius:10px;background:var(--surf2);border:1px solid rgba(255,107,107,.34);color:#C0392B;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">رفض</div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ o.askingReject }}">
+                  <div style="margin-top:10px;background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.26);border-radius:11px;padding:11px">
+                    <div style="font-size:11.5px;font-weight:800;color:#C0392B">سبب الرفض</div>
+                    <div style="display:flex;flex-direction:column;gap:7px;margin-top:9px">
+                      <sc-for list="{{ o.rejectOptions }}" as="r" hint-placeholder-count="3">
+                        <div onClick="{{ r.pick }}" style="padding:9px 11px;border-radius:9px;background:var(--surf);border:1px solid var(--line);font-size:11.5px;font-weight:700;cursor:pointer">{{ r.label }}</div>
+                      </sc-for>
+                    </div>
+                    <div onClick="{{ o.cancelReject }}" style="margin-top:9px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;text-align:center">إلغاء</div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ o.isPrep }}">
+                  <div onClick="{{ o.markReady }}" style="margin-top:11px;height:40px;border-radius:10px;background:#1B3FA0;color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">تم التجهيز — جاهز للشحن</div>
+                </sc-if>
+                <sc-if value="{{ o.isReady }}">
+                  <div onClick="{{ o.markShip }}" style="margin-top:11px;height:40px;border-radius:10px;background:#1E9268;color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">تسليم للشحن</div>
                 </sc-if>
               </div>
             </sc-for>
@@ -1008,13 +1090,34 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
                   <div style="font-size:12.5px;font-weight:700;line-height:1.4">{{ p.name }}</div>
                   <div style="font-size:10.5px;color:var(--muted);margin-top:4px">{{ p.pcsLine }}</div>
                   <div style="display:flex;align-items:baseline;gap:9px;margin-top:8px">
-                    <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ p.priceStr }}</div>
+                    <sc-if value="{{ p.offerOn }}">
+                      <div style="display:flex;align-items:baseline;gap:7px">
+                        <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800;color:#C2551A">{{ p.offerPriceStr }}</div>
+                        <div style="font-family:'Montserrat',sans-serif;font-size:10.5px;color:var(--muted);text-decoration:line-through">{{ p.priceStr }}</div>
+                        <div style="font-size:9.5px;font-weight:800;padding:3px 7px;border-radius:6px;background:rgba(244,118,31,.14);color:#C2551A">{{ p.offerLabel }}</div>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ p.noOffer }}" hint-placeholder-val="{{ true }}">
+                      <div style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ p.priceStr }}</div>
+                    </sc-if>
                     <div style="font-size:10px;color:var(--muted)">مخزون {{ p.stock }}</div>
+                  </div>
+                  <div onClick="{{ p.edit }}" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 11px;border-radius:9px;background:var(--surf2);border:1px solid var(--line);cursor:pointer">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#1B3FA0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                      <path d="M4.5 19.5h4l10-10a2.1 2.1 0 0 0-3-3l-10 10zM14.5 6.5l3 3"></path>
+                    </svg>
+                    <div style="font-size:11px;font-weight:800;color:#1B3FA0">تعديل</div>
                   </div>
                 </div>
                 <div style="flex:none;align-self:flex-start;padding:4px 9px;border-radius:7px;background:{{ p.tint }};color:{{ p.fg }};font-size:10px;font-weight:800">{{ p.state }}</div>
               </div>
             </sc-for>
+            <sc-if value="{{ productsEmpty }}">
+              <div style="padding:48px 24px;text-align:center">
+                <div style="font-size:14px;font-weight:800">لا توجد أصناف منشورة</div>
+                <div style="font-size:11.5px;color:var(--muted);margin-top:8px">أضف صنفاً جديداً لتبدأ استقبال الطلبات</div>
+              </div>
+            </sc-if>
           </div>
         </sc-if>
 
@@ -1028,7 +1131,7 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
           <div style="flex:1;overflow:auto;padding:16px 18px 22px">
             <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:14px">
               <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">اسم المنتج</div>
-              <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;font-size:12.5px;color:var(--muted)">مثال: زيت زيتون بكر ١ ل</div>
+              <div style="height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;padding:0 13px;display:flex;align-items:center;font-size:12.5px;color:var(--muted)">مثال: زيت زيتون بكر</div>
               <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin:14px 0 8px">الصنف</div>
               <div onClick="{{ toggleCatPick }}" style="height:44px;box-sizing:border-box;background:{{ catFieldBg }};border:1px solid {{ catFieldBd }};border-radius:10px;padding:0 13px;display:flex;align-items:center;gap:10px;cursor:pointer">
                 <div style="flex:1;min-width:0;font-size:12.5px;font-weight:700;color:{{ catFieldFg }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ pickedCatLabel }}</div>
@@ -1083,6 +1186,285 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
             </div>
             <div onClick="{{ saveProduct }}" style="margin-top:16px;height:50px;border-radius:13px;background:{{ saveBg }};color:{{ saveFg }};font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">{{ saveLabel }}</div>
             <div style="font-size:10.5px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.7">{{ saveHint }}</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isEditProduct }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex:none">
+            <div onClick="{{ goProducts }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+              <div style="width:8px;height:8px;border-top:2px solid var(--text);border-right:2px solid var(--text);transform:rotate(45deg)"></div>
+            </div>
+            <div style="font-size:16.5px;font-weight:800">تعديل الصنف</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:16px 18px 22px">
+            <div style="display:flex;gap:12px;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:12px">
+              <div style="width:62px;height:62px;border-radius:11px;flex:none;overflow:hidden;background:#FFFFFF;border:1px solid var(--line)">
+                <div style="width:100%;height:100%;background-image:url({{ ep.img }});background-size:cover;background-position:center"></div>
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:13px;font-weight:800;line-height:1.45">{{ ep.name }}</div>
+                <div style="font-size:10.5px;color:var(--muted);margin-top:5px">{{ ep.cat }} · مخزون {{ ep.stock }}</div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:14px">
+              <div style="font-size:12.5px;font-weight:800">السعر والوحدة</div>
+              <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin:12px 0 8px">سعر الكرتونة</div>
+              <div style="display:flex;align-items:center;gap:9px">
+                <div onClick="{{ epPriceDown }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;font-size:17px;font-weight:800;color:var(--text);line-height:1">−</div>
+                <div style="flex:1;min-width:0;height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:5px">
+                  <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800">{{ ep.priceStr }}</div>
+                  <div style="font-size:10.5px;color:var(--muted)">د.إ</div>
+                </div>
+                <div onClick="{{ epPriceUp }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;font-size:17px;font-weight:800;color:var(--text);line-height:1">+</div>
+              </div>
+              <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin:14px 0 8px">القطع بالكرتونة</div>
+              <div style="display:flex;align-items:center;gap:9px">
+                <div onClick="{{ epPcsDown }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;font-size:17px;font-weight:800;color:var(--text);line-height:1">−</div>
+                <div style="flex:1;min-width:0;height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:5px">
+                  <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800">{{ ep.pcs }}</div>
+                  <div style="font-size:10.5px;color:var(--muted)">قطعة</div>
+                </div>
+                <div onClick="{{ epPcsUp }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;font-size:17px;font-weight:800;color:var(--text);line-height:1">+</div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:14px">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:12.5px;font-weight:800">تحديد عرض على الصنف</div>
+                  <div style="font-size:10.5px;color:var(--muted);margin-top:5px">يظهر السعر المخفّض للتجّار مباشرة</div>
+                </div>
+                <div onClick="{{ epToggleOffer }}" style="width:36px;height:21px;border-radius:11px;background:{{ epTrack }};position:relative;cursor:pointer;flex:none;transition:background .2s">
+                  <div style="position:absolute;top:2px;right:{{ epKnobX }};width:17px;height:17px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(4,16,32,.28);transition:right .2s"></div>
+                </div>
+              </div>
+              <sc-if value="{{ epOfferOn }}">
+                <div style="margin-top:14px">
+                  <div style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:8px">نسبة الخصم</div>
+              <div style="display:flex;align-items:center;gap:9px">
+                <div onClick="{{ epOfferDown }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;font-size:17px;font-weight:800;color:var(--text);line-height:1">−</div>
+                <div style="flex:1;min-width:0;height:44px;box-sizing:border-box;background:var(--surf2);border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;gap:5px">
+                  <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800">{{ ep.offerPct }}</div>
+                  <div style="font-size:10.5px;color:var(--muted)">%</div>
+                </div>
+                <div onClick="{{ epOfferUp }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;font-size:17px;font-weight:800;color:var(--text);line-height:1">+</div>
+              </div>
+                  <div style="display:flex;align-items:center;gap:9px;margin-top:12px;background:rgba(244,118,31,.09);border:1px solid rgba(244,118,31,.28);border-radius:10px;padding:10px 12px">
+                    <div style="width:7px;height:7px;border-radius:50%;background:#F4761F;flex:none"></div>
+                    <div style="flex:1;min-width:0;font-size:11.5px;font-weight:800;color:#C2551A">سعر العرض للتاجر: {{ ep.offerPriceStr }}</div>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+
+            <div onClick="{{ epSave }}" style="margin-top:16px;height:50px;border-radius:13px;background:#F4761F;color:#071A33;font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">حفظ التعديلات</div>
+            <sc-if value="{{ epDelAsk }}">
+              <div style="margin-top:12px;background:rgba(255,107,107,.09);border:1px solid rgba(255,107,107,.30);border-radius:13px;padding:14px">
+                <div style="font-size:12.5px;font-weight:800;color:#C0392B">حذف الصنف من كتالوغك؟</div>
+                <div style="font-size:11.5px;color:var(--muted);margin-top:6px">لن يظهر للتجّار بعد الحذف، ويمكن إضافته مجدداً لاحقاً.</div>
+                <div style="display:flex;gap:9px;margin-top:12px">
+                  <div onClick="{{ epDelete }}" style="flex:1;height:40px;border-radius:10px;background:#C0392B;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">نعم، احذفه</div>
+                  <div onClick="{{ epCancelDelete }}" style="flex:1;height:40px;border-radius:10px;background:var(--surf);border:1px solid var(--line);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">إلغاء</div>
+                </div>
+              </div>
+            </sc-if>
+            <div onClick="{{ epAskDelete }}" style="margin-top:12px;height:44px;border-radius:12px;background:var(--surf);border:1px solid rgba(255,107,107,.30);color:#C0392B;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">حذف الصنف</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isSupInvoices }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex:none">
+            <div onClick="{{ goAccount }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+              <div style="width:8px;height:8px;border-top:2px solid var(--text);border-right:2px solid var(--text);transform:rotate(45deg)"></div>
+            </div>
+            <div style="font-size:16.5px;font-weight:800">الفواتير</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:16px 18px 22px">
+            <div style="display:flex;gap:10px">
+              <div style="flex:1;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:13px">
+                <div style="font-size:10.5px;color:var(--muted)">إجمالي المستحق</div>
+                <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;margin-top:6px;text-align:right;color:#C2551A">{{ invOutstandingStr }}</div>
+              </div>
+              <div style="flex:1;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:13px">
+                <div style="font-size:10.5px;color:var(--muted)">تنبيه</div>
+                <div style="font-size:12.5px;font-weight:800;margin-top:7px;color:#C0392B;line-height:1.5">{{ invLateLine }}</div>
+              </div>
+            </div>
+            <div style="font-size:11px;color:var(--muted);margin:14px 0 10px;line-height:1.7">{{ invoicesLine }}</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ invoices }}" as="iv" hint-placeholder-count="3">
+                <div onClick="{{ iv.open }}" style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:13px;cursor:pointer">
+                  <div style="display:flex;align-items:center;gap:11px">
+                    <div style="width:36px;height:36px;border-radius:11px;background:{{ iv.bg }};color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">{{ iv.mono }}</div>
+                    <div style="flex:1;min-width:0">
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;text-align:right">{{ iv.no }}</div>
+                      <div style="font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ iv.buyer }} · {{ iv.items }} صنف</div>
+                    </div>
+                    <div style="flex:none;padding:4px 10px;border-radius:8px;background:{{ iv.tint }};color:{{ iv.fg }};font-size:10.5px;font-weight:800">{{ iv.statusLabel }}</div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)">
+                    <div style="font-size:10.5px;color:var(--muted)">مرتبطة بالطلب <span dir="ltr" style="unicode-bidi:isolate;font-family:'Montserrat',sans-serif">{{ iv.order }}</span> · سداد {{ iv.terms }}</div>
+                    <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800">{{ iv.totalStr }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isInvoiceDoc }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex:none">
+            <div onClick="{{ goSupInvoices }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+              <div style="width:8px;height:8px;border-top:2px solid var(--text);border-right:2px solid var(--text);transform:rotate(45deg)"></div>
+            </div>
+            <div style="font-size:16.5px;font-weight:800">الفاتورة</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:16px 18px 22px">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+                <div style="min-width:0">
+                  <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;color:#1B3FA0">VICTORY</div>
+                  <div style="font-size:12px;font-weight:800;margin-top:6px">الأندلس للأغذية</div>
+                  <div style="font-size:10.5px;color:var(--muted);margin-top:3px">دبي — الإمارات</div>
+                </div>
+                <div style="flex:none;padding:4px 10px;border-radius:8px;background:{{ invDoc.tint }};color:{{ invDoc.fg }};font-size:10.5px;font-weight:800">{{ invDoc.statusLabel }}</div>
+              </div>
+              <div style="height:1px;background:var(--line);margin:14px 0"></div>
+              <div style="display:flex;gap:12px">
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:10px;color:var(--muted)">رقم الفاتورة</div>
+                  <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;margin-top:4px;text-align:right">{{ invDoc.no }}</div>
+                </div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:10px;color:var(--muted)">الطلب المرتبط</div>
+                  <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;margin-top:4px;text-align:right">{{ invDoc.order }}</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px;margin-top:12px">
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:10px;color:var(--muted)">تاريخ الإصدار</div>
+                  <div style="font-size:12px;font-weight:700;margin-top:4px">{{ invDoc.issued }}</div>
+                </div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:10px;color:var(--muted)">مدة السداد</div>
+                  <div style="font-size:12px;font-weight:700;margin-top:4px">{{ invDoc.terms }}</div>
+                </div>
+              </div>
+              <div style="height:1px;background:var(--line);margin:14px 0"></div>
+              <div style="font-size:10px;color:var(--muted)">التاجر</div>
+              <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+                <div style="width:32px;height:32px;border-radius:10px;background:{{ invDoc.bg }};color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">{{ invDoc.mono }}</div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:12.5px;font-weight:800">{{ invDoc.buyer }}</div>
+                  <div style="font-size:10.5px;color:var(--muted);margin-top:3px">{{ invDoc.city }} · {{ invDoc.items }} صنف</div>
+                </div>
+              </div>
+              <div style="height:1px;background:var(--line);margin:14px 0"></div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:11.5px;color:var(--muted)">الإجمالي قبل الضريبة</div>
+                <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700">{{ invDoc.subStr }}</div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px">
+                <div style="font-size:11.5px;color:var(--muted)">ضريبة القيمة المضافة 5%</div>
+                <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700">{{ invDoc.vatStr }}</div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">
+                <div style="font-size:13px;font-weight:800">الإجمالي</div>
+                <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#1B3FA0">{{ invDoc.totalStr }}</div>
+              </div>
+            </div>
+            <div onClick="{{ printInvoice }}" style="margin-top:16px;height:50px;border-radius:13px;background:#1B3FA0;color:#fff;font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                <path d="M7 9V4.5h10V9M7 17.5H5.4A1.4 1.4 0 0 1 4 16V11a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a1.4 1.4 0 0 1-1.4 1.5H17M7 14h10v5.5H7z"></path>
+              </svg>
+              <div>طباعة الفاتورة</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isSupReports }}">
+          <div style="padding:16px 18px 12px;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex:none">
+            <div onClick="{{ goAccount }}" style="width:34px;height:34px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
+              <div style="width:8px;height:8px;border-top:2px solid var(--text);border-right:2px solid var(--text);transform:rotate(45deg)"></div>
+            </div>
+            <div style="font-size:16.5px;font-weight:800">التقارير</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:16px 18px 22px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <sc-for list="{{ repKpis }}" as="k" hint-placeholder-count="4">
+                <div style="background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:13px">
+                  <div style="font-size:10.5px;color:var(--muted);line-height:1.5">{{ k.label }}</div>
+                  <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;margin-top:7px;text-align:right;color:{{ k.fg }}">{{ k.value }}</div>
+                  <div style="font-size:10px;color:var(--muted);margin-top:4px">{{ k.sub }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="margin-top:16px;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:16px">
+              <div style="font-size:13px;font-weight:800;margin-bottom:13px">المبيعات حسب التاجر</div>
+              <div style="display:flex;flex-direction:column;gap:13px">
+                <sc-for list="{{ salesByMerchant }}" as="m" hint-placeholder-count="4">
+                  <div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                      <div style="width:30px;height:30px;border-radius:9px;background:{{ m.logoBg }};color:#fff;font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">{{ m.mono }}</div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ m.name }}</div>
+                        <div style="font-size:10px;color:var(--muted);margin-top:3px">{{ m.city }} · {{ m.line }}</div>
+                      </div>
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;flex:none">{{ m.totalStr }}</div>
+                    </div>
+                    <div style="height:5px;border-radius:3px;background:var(--chip);margin-top:9px;overflow:hidden">
+                      <div style="height:100%;width:{{ m.w }};background:linear-gradient(90deg,#1B3FA0,#2E9BF0);border-radius:3px"></div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:16px">
+              <div style="font-size:13px;font-weight:800;margin-bottom:13px">المبيعات حسب المنتج</div>
+              <div style="display:flex;flex-direction:column;gap:13px">
+                <sc-for list="{{ salesByProduct }}" as="p" hint-placeholder-count="5">
+                  <div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                      <div style="width:32px;height:32px;border-radius:9px;flex:none;overflow:hidden;background:#FFFFFF;border:1px solid var(--line)">
+                        <div style="width:100%;height:100%;background-image:url({{ p.img }});background-size:cover;background-position:center"></div>
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.name }}</div>
+                        <div style="font-size:10px;color:var(--muted);margin-top:3px">{{ p.line }}</div>
+                      </div>
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;flex:none">{{ p.totalStr }}</div>
+                    </div>
+                    <div style="height:5px;border-radius:3px;background:var(--chip);margin-top:9px;overflow:hidden">
+                      <div style="height:100%;width:{{ p.w }};background:linear-gradient(90deg,#F4761F,#FFC107);border-radius:3px"></div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:16px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:13px">
+                <div style="font-size:13px;font-weight:800">الفواتير المستحقة</div>
+                <div onClick="{{ goSupInvoices }}" style="font-size:11px;font-weight:700;color:#1B3FA0;cursor:pointer">كل الفواتير</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <sc-for list="{{ dueInvoices }}" as="iv" hint-placeholder-count="2">
+                  <div onClick="{{ iv.open }}" style="display:flex;align-items:center;gap:10px;background:var(--surf2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer">
+                    <div style="flex:1;min-width:0">
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;text-align:right">{{ iv.no }}</div>
+                      <div style="font-size:10.5px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ iv.buyer }} · سداد {{ iv.terms }}</div>
+                    </div>
+                    <div style="flex:none;text-align:left">
+                      <div dir="ltr" style="font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800">{{ iv.totalStr }}</div>
+                      <div style="font-size:9.5px;font-weight:800;color:{{ iv.fg }};margin-top:3px">{{ iv.statusLabel }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
           </div>
         </sc-if>
 
@@ -1250,7 +1632,7 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
               <div style="position:absolute;bottom:0;right:0;width:11px;height:11px;border-radius:50%;background:#37C98B;border:2px solid #1B3FA0;box-sizing:border-box"></div>
             </div>
             <div style="flex:1;min-width:0">
-              <div style="font-size:14.5px;font-weight:800;color:#fff">دعم Victory</div>
+              <div style="font-size:14.5px;font-weight:800;color:#fff">دعم فيكتوري</div>
               <div style="font-size:11px;color:rgba(255,255,255,.86);margin-top:4px">متصلون الآن</div>
             </div>
             <div onClick="{{ goAccount }}" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.20);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none">
@@ -1269,9 +1651,9 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
                 </div>
               </div>
               <div style="flex:1;min-width:0;background:var(--surf);border:1px solid var(--line);border-radius:16px;border-top-right-radius:5px;padding:14px">
-                <div style="font-size:12.5px;font-weight:800;color:#1B6FC4">فريق Victory</div>
+                <div style="font-size:12.5px;font-weight:800;color:#1B6FC4">فريق فيكتوري</div>
                 <div style="font-size:11px;color:var(--muted);margin-top:5px">أهلاً بك في شبكة التوريد الذكية</div>
-                <div style="font-size:12.5px;color:var(--text);margin-top:11px;line-height:1.9">شكراً لتواصلك مع خدمة عملاء Victory. تم استلام رسالتك وسيتواصل معك أحد ممثلي الدعم خلال ساعة العمل.</div>
+                <div style="font-size:12.5px;color:var(--text);margin-top:11px;line-height:1.9">شكراً لتواصلك مع خدمة عملاء فيكتوري. تم استلام رسالتك وسيتواصل معك أحد ممثلي الدعم خلال ساعة العمل.</div>
                 <div style="font-size:10.5px;color:var(--muted);margin-top:11px">ساعات العمل: 09:00 — 22:00</div>
               </div>
             </div>
@@ -1293,8 +1675,11 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
           <div style="display:flex;background:var(--surf);border-top:1px solid var(--line);padding:8px 6px 6px">
             <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
               <div onClick="{{ n.go }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 0;cursor:pointer;position:relative">
-                <div style="width:22px;height:22px;border-radius:7px;background:{{ n.iconBg }};position:relative">
-                  <div style="position:absolute;top:-6px;left:-8px;min-width:16px;height:16px;border-radius:8px;background:{{ n.badgeBg }};color:#071A33;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 3px">{{ n.badge }}</div>
+                <div style="width:34px;height:30px;border-radius:11px;background:{{ n.iconBg }};display:flex;align-items:center;justify-content:center;position:relative;transition:background .2s">
+                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="{{ n.stroke }}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+                    <path d="{{ n.d }}"></path>
+                  </svg>
+                  <div style="position:absolute;top:-5px;left:-6px;min-width:16px;height:16px;border-radius:8px;background:{{ n.badgeBg }};color:#fff;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 3px">{{ n.badge }}</div>
                 </div>
                 <div style="font-size:10.5px;font-weight:700;color:{{ n.fg }}">{{ n.label }}</div>
               </div>
@@ -1309,6 +1694,7 @@ a{color:#2E9BF0;text-decoration:none}a:hover{color:#F4761F}
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;role&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;owner&quot;,&quot;staff&quot;],&quot;default&quot;:&quot;owner&quot;,&quot;tsType&quot;:&quot;'owner'|'staff'&quot;,&quot;section&quot;:&quot;الصلاحيات&quot;},&quot;mode&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;screen&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;},&quot;chrome&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string&quot;}}">
+const NAV_ICONS = {"home":"M3.5 10.6 12 3.6l8.5 7v8.6a1.2 1.2 0 0 1-1.2 1.2H15v-6H9v6H4.7a1.2 1.2 0 0 1-1.2-1.2z","orders":"M7.5 3.5h9a1 1 0 0 1 1 1v16l-2.8-1.9-2.7 1.9-2.7-1.9L6.5 20.5v-16a1 1 0 0 1 1-1zM9.5 8.5h5M9.5 12.5h5","products":"M12 3.4l7.8 4.3v8.6L12 20.6l-7.8-4.3V7.7zM4.2 7.7 12 12m0 0 7.8-4.3M12 12v8.6","notifs":"M18 16.2v-4.9a6 6 0 1 0-12 0v4.9l-1.8 2h15.6zM10 20.8h4","account":"M12 11.8a3.9 3.9 0 1 0 0-7.8 3.9 3.9 0 0 0 0 7.8zM4.4 20.6c0-3.7 3.4-5.6 7.6-5.6s7.6 1.9 7.6 5.6","browse":"M11 4.2a6.8 6.8 0 1 1 0 13.6 6.8 6.8 0 0 1 0-13.6zM16.2 16.2 20.4 20.4","cart":"M3.6 4.4h2.6l2.2 10.4h9.3l2-7.3H7.2M9.6 19.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2zM16.8 19.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"};
 const AED = n => n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' د.إ';
 const PRODUCTS = [
   {id:1, tags:['الأغذية','منتجات عربية','مستلزمات مطعم عربي','أفضل العروض'], img:'assets/clean/cat-oil.png', name:'زيت زيتون بكر فاخر ١ل', en:'Extra Virgin Olive Oil 12*1L', cat:'الأغذية', supplier:'الأندلس للأغذية', cost:22.5, sell:29, unit:'كرتون', pcs:12, own:6, stock:'420 كرتون', badge:'جديد'},
@@ -1342,9 +1728,10 @@ const CATS = [
   {name:'معلبات', img:'assets/clean/cat-canned.png'}
 ];
 const BANNERS = [
-  {kicker:'عرض الموسم', title:'خصم 12% على المنظفات', sub:'حتى 30 سبتمبر', tag:'#F4761F', img:'assets/clean/cat-clean.png'},
-  {kicker:'وصل حديثاً', title:'منتجات الأندلس للأغذية', sub:'42 صنف جديد', tag:'#2E9BF0', img:'assets/clean/cat-food.png'},
-  {kicker:'موثوقية', title:'اربح شارة تاجر موثوق', sub:'سدد فواتيرك في الوقت', tag:'#F4761F', img:'assets/clean/cat-dairy.png'}
+  {kicker:'حملة الموسم', title:'أدرج منتجاتك في عروض سبتمبر', sub:'التسجيل مفتوح حتى 25 سبتمبر', tag:'#F4761F', img:'assets/clean/cat-clean.png'},
+  {kicker:'تجار جدد', title:'38 متجر جديد في منطقتك', sub:'ارفع تغطيتك بعرض تعريفي', tag:'#2E9BF0', img:'assets/clean/cat-food.png'},
+  {kicker:'أداء الشهر', title:'معدل تلبية طلباتك 96%', sub:'أعلى من متوسط الشبكة بـ 9%', tag:'#37C98B', img:'assets/clean/cat-rice.png'}
+
 ];
 const CREDIT = {limit:50000, used:18450, due:9820};
 
@@ -1433,8 +1820,22 @@ const SUP_ORDERS = [
   {id:'ORD-4175', buyer:'مطعم دلهي', city:'دبي', mono:'م', bg:'#123A6B', items:9, total:2140.00, status:'ship', time:'أمس'},
   {id:'ORD-4168', buyer:'بقالة النخبة', city:'أبو ظبي', mono:'ن', bg:'#1B3FA0', items:11, total:1975.25, status:'done', time:'28 أغسطس'}
 ];
+const MERCHANT_CREDIT = [
+  {name:'بقالة النخبة', city:'أبو ظبي', mono:'ن', bg:'#1B3FA0', limit:20000, used:8420, terms:30, score:'ممتاز'},
+  {name:'هايبر الواحة', city:'دبي', mono:'ه', bg:'#123A6B', limit:35000, used:19480, terms:45, score:'ممتاز'},
+  {name:'سوبر ماركت الخليج', city:'الشارقة', mono:'س', bg:'#0A1F3D', limit:12000, used:9740, terms:30, score:'متوسط'},
+  {name:'مطعم دلهي', city:'دبي', mono:'م', bg:'#123A6B', limit:8000, used:2140, terms:15, score:'جيد'}
+];
+const INV_PAY = {'ORD-4168':'paid', 'ORD-4175':'open', 'ORD-4179':'late'};
+const INV_STATUS = {
+  paid: {label:'مدفوعة', fg:'#1E9268', tint:'rgba(55,201,139,.12)'},
+  open: {label:'مستحقة', fg:'#C2551A', tint:'rgba(244,118,31,.12)'},
+  late: {label:'متأخرة', fg:'#C0392B', tint:'rgba(255,107,107,.12)'}
+};
 const SUP_STATUS = {
   'new': {label:'طلب جديد', accent:'#C2551A', tint:'rgba(244,118,31,.12)'},
+  'rejected': {label:'مرفوض', accent:'#C0392B', tint:'rgba(255,107,107,.12)'},
+  'ready': {label:'جاهز للشحن', accent:'#1E9268', tint:'rgba(55,201,139,.12)'},
   'prep': {label:'قيد التجهيز', accent:'#1B6FC4', tint:'rgba(46,155,240,.11)'},
   'ship': {label:'في الطريق', accent:'#1B3FA0', tint:'rgba(27,63,160,.11)'},
   'done': {label:'تم التسليم', accent:'#1E9268', tint:'rgba(55,201,139,.12)'}
@@ -1487,6 +1888,106 @@ const I18N = {
 'مسح الباركود للتحقق (اختياري)':'Scan barcode to verify (optional)',
 'فتح تذكرة إرجاع بدلاً من ذلك':'Open a return ticket instead',
 'اسم الشركة كما هو في الرخصة':'Store name as printed on the licence',
+'حملة الموسم':'Seasonal campaign','أدرج منتجاتك في عروض':'List your products in the offers of',
+'التسجيل مفتوح حتى':'Enrolment open until','سبتمبر':'September','تجار جدد':'New merchants',
+'متجر جديد في منطقتك':'new stores in your area','ارفع تغطيتك بعرض تعريفي':'Grow your coverage with an intro offer',
+'أداء الشهر':'Month performance','معدل تلبية طلباتك':'Your order fulfilment rate is',
+'أعلى من متوسط الشبكة بـ':'above the network average by',
+'ابحث في منتجاتك وطلباتك':'Search your products and orders',
+'بيانات مؤسستك وإعدادات الحساب':'Your company details and account settings',
+'أكمل التحقق لتفعيل الاستقبال':'Complete verification to start receiving orders',
+'الوثائق قيد المراجعة':'Documents under review',
+'طلبات التجّار الحالية والسابقة':'Current and past merchant orders',
+'الأصناف والأسعار والمخزون':'Items, prices and stock',
+'تنبيهات الطلبات والمدفوعات':'Order and payment alerts',
+'أضف صنفاً جديداً لكتالوغك':'Add a new item to your catalogue',
+'مثال':'e.g.',
+'زيت زيتون بكر':'Extra virgin olive oil',
+'تعديل':'Edit',
+'الرسائل':'Messages',
+'الدعم':'Support',
+'خروج':'Sign out',
+'دعم فيكتوري':'Victory Support',
+'فريق فيكتوري':'Victory team',
+'متصلون الآن':'Online now',
+'أهلاً بك في شبكة التوريد الذكية':'Welcome to the Smart Supply Network',
+'شكراً لتواصلك مع خدمة عملاء فيكتوري':'Thank you for contacting Victory customer service',
+'تم استلام رسالتك وسيتواصل معك أحد ممثلي الدعم خلال ساعة العمل':'Your message was received and a support agent will contact you within business hours',
+'ساعات العمل':'Working hours',
+'استفسار عن طلب':'Order enquiry',
+'مشكلة بالفاتورة':'Invoice issue',
+'طلب إضافة صنف':'Request to add an item',
+'تعديل بيانات المورد':'Edit supplier details',
+'تعديل بيانات المتجر':'Edit store details',
+'اكتب رسالتك هنا':'Type your message here',
+'أهلاً بعودتك':'Welcome back',
+'أدخل بياناتك لإدارة طلباتك ومشترياتك':'Enter your details to manage your orders and purchases',
+'تعديل الصنف':'Edit item',
+'السعر والوحدة':'Price and unit',
+'سعر الكرتونة (د.إ)':'Carton price (AED)',
+'تحديد عرض على الصنف':'Set an offer on this item',
+'يظهر السعر المخفّض للتجّار مباشرة':'The discounted price shows to merchants immediately',
+'نسبة الخصم':'Discount rate',
+'سعر العرض للتاجر':'Offer price for the merchant',
+'حفظ التعديلات':'Save changes',
+'حذف الصنف':'Delete item',
+'حذف الصنف من كتالوغك؟':'Delete this item from your catalogue?',
+'لن يظهر للتجّار بعد الحذف، ويمكن إضافته مجدداً لاحقاً.':'It will no longer show to merchants, and can be added again later.',
+'نعم، احذفه':'Yes, delete it',
+'لا توجد أصناف منشورة':'No published items',
+'أضف صنفاً جديداً لتبدأ استقبال الطلبات':'Add a new item to start receiving orders',
+'رفض':'Reject',
+'سبب الرفض':'Rejection reason',
+'الكمية غير متوفرة':'Quantity unavailable',
+'تجاوز حد الائتمان':'Credit limit exceeded',
+'خارج نطاق التوصيل':'Outside delivery range',
+'تم التجهيز — جاهز للشحن':'Prepared — ready to ship',
+'جاهز للشحن':'Ready to ship',
+'تسليم للشحن':'Hand over to shipping',
+'الفواتير':'Invoices',
+'الفاتورة':'Invoice',
+'إجمالي المستحق':'Total outstanding',
+'تنبيه':'Alert',
+'فاتورة · تُنشأ تلقائياً عند قبول الطلب':'invoices · created automatically when an order is accepted',
+'مرتبطة بالطلب':'Linked to order',
+'سداد':'terms',
+'مدة السداد':'Payment terms',
+'التاجر':'Merchant',
+'الإجمالي قبل الضريبة':'Subtotal before VAT',
+'ضريبة القيمة المضافة':'VAT',
+'الإجمالي':'Total',
+'طباعة الفاتورة':'Print invoice',
+'إدارة الائتمان':'Credit management',
+'إجمالي الحدود الممنوحة':'Total limits granted',
+'الحد الائتماني':'Credit limit',
+'مستخدم':'Used',
+'ممتاز':'Excellent',
+'متوسط':'Average',
+'جيد':'Good',
+'مبيعات الشهر':'Month sales',
+'الفواتير المستحقة':'Outstanding invoices',
+'معدل التلبية':'Fulfilment rate',
+'من الطلبات':'of orders',
+'المبيعات حسب التاجر':'Sales by merchant',
+'المبيعات حسب المنتج':'Sales by product',
+'كل الفواتير':'All invoices',
+'الائتمان':'Credit',
+'إنشاء تلقائي وطباعة':'Auto-created and printable',
+'حدود السداد لكل تاجر':'Payment limits per merchant',
+'المبيعات والمستحقات':'Sales and receivables',
+'تجّار':'merchants',
+'طلب جديد من بقالة النخبة':'New order from Elite Grocery',
+'أصناف بقيمة 1,284.50 د.إ — بانتظار القبول.':'items worth AED 1,284.50 — awaiting acceptance.',
+'طلب جديد من هايبر الواحة':'New order from Oasis Hyper',
+'صنف بقيمة 3,620.00 د.إ — بانتظار القبول.':'items worth AED 3,620.00 — awaiting acceptance.',
+'تحصيل مستحق من سوبر ماركت الخليج':'Collection due from Gulf Supermarket',
+'فاتورة متأخرة بقيمة 842.75 د.إ — تواصل مع مندوب التحصيل.':'Overdue invoice of AED 842.75 — contact the collection agent.',
+'تم تسديد فاتورة':'An invoice was paid',
+'بقالة النخبة سدّدت 1,975.25 د.إ عن فاتورة أغسطس.':'Elite Grocery paid AED 1,975.25 for the August invoice.',
+'جدول تحصيل الأسبوع':'This week collection schedule',
+'زيارات تحصيل مجدولة — الأحد والثلاثاء والخميس.':'collection visits scheduled — Sunday, Tuesday and Thursday.',
+'التصنيف الائتماني':'Credit rating',
+'إجمالي الطلبات المقبولة':'Total accepted orders',
 'الكرتونة =':'Carton =','ربح متوقع':'Expected profit','وصلت كرتونتان بأكياس ممزقة':'Two cartons arrived with torn bags',
 'اطلب الآن':'Order now','بالفاتورة':'On invoice','لا توجد أصناف بهذا المنشأ':'No items from this origin',
 'بيع مقترح':'Suggested price','رقم هاتف مسؤول المشتريات':'Purchasing officer phone',
@@ -1643,7 +2144,7 @@ Object.keys(I18N).forEach(k => {
   const ws = k.match(AR_W);
   if (!ws || !ws.length) return;
   const norm = ws.join(' ');
-  if (I18N_NORM[norm] === undefined) I18N_NORM[norm] = I18N[k];
+  if (I18N_NORM[norm] === undefined) I18N_NORM[norm] = String(I18N[k]).replace(/[.\u060C\u061B\u2026]+$/, '');
   if (ws.length > I18N_MAXW) I18N_MAXW = ws.length;
 });
 const GAP_OK = /^[\s\u060C\u061B\u061F.,:;·—–\-«»()"'\/\u200f\u200e0-9\u0660-\u0669\u06F0-\u06F9%×*]*$/;
@@ -1752,6 +2253,7 @@ class Component extends DCLogic {
     const nodes = [];
     while (w.nextNode()) nodes.push(w.currentNode);
     nodes.forEach(n => {
+      if (/^\s*[\u0621-\u064A]\s*$/.test(n.nodeValue)) return;
       const memo = this._tr.get(n);
       const src = (memo && memo.out === n.nodeValue) ? memo.src : n.nodeValue;
       if (!en) {
@@ -1797,10 +2299,24 @@ class Component extends DCLogic {
     const go = k => () => this.setState({screen: k});
     const orders = SUP_ORDERS.map(o => {
       const st = ov[o.id] || o.status, m = SUP_STATUS[st];
+      const set = v => () => this.setState(x => ({supStatus: Object.assign({}, x.supStatus || {}, {[o.id]:v}), rejectFor:''}));
       return Object.assign({}, o, {st, statusLabel: m.label, accent: m.accent, tint: m.tint,
-        isNew: st === 'new', totalStr: AED(o.total),
+        isNew: st === 'new', isPrep: st === 'prep', isReady: st === 'ready',
+        isRejected: st === 'rejected',
+        rejectReason: (s.rejectNotes || {})[o.id] || '',
+        askingReject: s.rejectFor === o.id,
+        totalStr: AED(o.total),
         meta: o.items + ' صنف · ' + o.city,
-        accept: () => this.setState(x => ({supStatus: Object.assign({}, x.supStatus || {}, {[o.id]:'prep'})}))});
+        accept: set('prep'), markReady: set('ready'), markShip: set('ship'),
+        askReject: () => this.set('rejectFor', o.id),
+        cancelReject: () => this.set('rejectFor', ''),
+        rejectOptions: ['الكمية غير متوفرة','خارج نطاق التوصيل'].map(r => ({
+          label: r,
+          pick: () => this.setState(x => ({
+            supStatus: Object.assign({}, x.supStatus || {}, {[o.id]:'rejected'}),
+            rejectNotes: Object.assign({}, x.rejectNotes || {}, {[o.id]: r}),
+            rejectFor: ''}))
+        }))});
     });
     const news = orders.filter(o => o.st === 'new');
     const tab = s.oTab || 'all';
@@ -1811,6 +2327,48 @@ class Component extends DCLogic {
       fg: p.own === 0 ? '#C0392B' : '#C2551A',
       tint: p.own === 0 ? 'rgba(255,107,107,.12)' : 'rgba(244,118,31,.11)'
     }));
+    const edits = s.prodEdits || {};
+    const deleted = s.prodDeleted || [];
+    const livePR = PRODUCTS.filter(p => deleted.indexOf(p.id) < 0).map(p => {
+      const e = edits[p.id] || {};
+      return Object.assign({}, p, {
+        price: e.price !== undefined ? e.price : p.cost,
+        pcs: e.pcs !== undefined ? e.pcs : p.pcs,
+        offerOn: e.offerOn !== undefined ? e.offerOn : p.badge === 'عرض',
+        offer: e.offer !== undefined ? e.offer : 10});
+    });
+    const bumpEdit = (id, key, d) => this.setState(x => {
+      const src = PRODUCTS.find(p => p.id === id) || PRODUCTS[0];
+      const e = Object.assign({}, x.prodEdits || {});
+      const cur = e[id] || {};
+      const base = {price: src.cost, pcs: src.pcs, offer: 10};
+      const step = key === 'price' ? 0.5 : 1;
+      const now = cur[key] !== undefined ? cur[key] : base[key];
+      const min = key === 'offer' ? 0 : 1;
+      const max = key === 'offer' ? 60 : 9999;
+      e[id] = Object.assign({}, cur, {[key]: Math.min(max, Math.max(min, +(now + d*step).toFixed(2)))});
+      return {prodEdits: e};
+    });
+    const mc = s.mCredit || {};
+    const merchCredit = MERCHANT_CREDIT.map(c => {
+      const o = mc[c.name] || {};
+      return Object.assign({}, c, {limit: o.limit !== undefined ? o.limit : c.limit,
+        terms: o.terms !== undefined ? o.terms : c.terms});
+    });
+    const invoices = SUP_ORDERS.filter(o => {
+        const st = (s.supStatus||{})[o.id] || o.status;
+        return st !== 'new' && st !== 'rejected';
+      }).map((o, i) => {
+        const pay = INV_PAY[o.id] || 'open';
+        const m = INV_STATUS[pay];
+        const cr = merchCredit.find(c => c.name === o.buyer) || {terms: 30};
+        const no = 'INV-2026-' + (912 - i*3);
+        return {no, order: o.id, buyer: o.buyer, mono: o.mono, bg: o.bg,
+          total: o.total, totalStr: AED(o.total), items: o.items, issued: o.time,
+          terms: cr.terms + ' يوم', pay,
+          statusLabel: m.label, fg: m.fg, tint: m.tint,
+          open: () => this.setState({screen:'invoiceDoc', invNo: no})};
+      });
     const navDef = [['الرئيسية','home',''],['الطلبات','orders', news.length ? String(news.length) : ''],['منتجاتي','products',''],['الإشعارات','notifs','4'],['حسابي','account','']];
     return {
       isProducts: s.screen === 'products',
@@ -1858,12 +2416,13 @@ class Component extends DCLogic {
       profileSub: 'انشر منتجاتك واستقبل طلبات التجار بعد الاعتماد',
       profileCta: s.profileSubmitted ? 'تم الإرسال للمراجعة' : 'أكمل التحقق وفعّل حسابك',
       goProducts: go('products'), goOrders: go('orders'),
-      showNav: ['home','orders','products','notifs','account','addProduct','support'].indexOf(s.screen) >= 0,
+      showNav: ['home','orders','products','notifs','account','addProduct','support','editProduct','supInvoices','supCredit','supReports'].indexOf(s.screen) >= 0,
       navItems: navDef.map(function(d){
         const label = d[0], key = d[1], badge = d[2];
         const on = s.screen === key;
-        return {label: label, badge: badge, go: go(key),
-          iconBg: on ? 'linear-gradient(140deg,#1B3FA0,#2E9BF0)' : 'var(--chip)',
+        return {label: label, badge: badge, go: go(key), d: NAV_ICONS[key],
+          iconBg: on ? 'linear-gradient(140deg,#1B3FA0,#2E9BF0)' : 'transparent',
+          stroke: on ? '#FFFFFF' : 'var(--muted)',
           badgeBg: badge ? '#F4761F' : 'transparent',
           fg: on ? '#1B3FA0' : 'var(--muted)'};
       }),
@@ -1877,21 +2436,130 @@ class Component extends DCLogic {
       newOrders: news,
       supOrders: shown,
       ordersEmpty: shown.length === 0,
-      orderTabs: [['الكل','all'],['طلب جديد','new'],['قيد التجهيز','prep'],['في الطريق','ship'],['تم التسليم','done']].map(d => {
+      orderTabs: [['الكل','all'],['طلب جديد','new'],['قيد التجهيز','prep'],['جاهز للشحن','ready'],['في الطريق','ship'],['تم التسليم','done'],['مرفوض','rejected']].map(d => {
         const label = d[0], key = d[1], on = tab === key;
         return {label: label, pick: () => this.setState({oTab: key}),
           bg: on ? '#0A1F3D' : 'var(--surf2)', fg: on ? '#fff' : 'var(--muted)',
           bd: on ? '#0A1F3D' : 'var(--line)'};
       }),
       supLowStock: lowRows,
-      productsLine: PRODUCTS.length + ' صنف منشور',
-      supProducts: PRODUCTS.map(p => ({
-        name: p.name, img: p.img, priceStr: AED(p.cost), stock: p.stock,
+      productsLine: livePR.length + ' صنف منشور · ' + livePR.filter(p => p.offerOn).length + ' عليها عرض',
+      supProducts: livePR.map(p => ({
+        name: p.name, img: p.img, priceStr: AED(p.price), stock: p.stock,
         pcsLine: p.cat + ' · الكرتونة ' + p.pcs + ' قطعة',
+        offerOn: p.offerOn, noOffer: !p.offerOn, offerLabel: 'عرض ' + p.offer + '%',
+        offerPriceStr: AED(+(p.price * (1 - p.offer/100)).toFixed(2)),
         state: p.own === 0 ? 'نفد' : (p.own <= 2 ? 'منخفض' : 'متوفر'),
         fg: p.own === 0 ? '#C0392B' : (p.own <= 2 ? '#C2551A' : '#1E9268'),
-        tint: p.own === 0 ? 'rgba(255,107,107,.12)' : (p.own <= 2 ? 'rgba(244,118,31,.11)' : 'rgba(55,201,139,.12)')
+        tint: p.own === 0 ? 'rgba(255,107,107,.12)' : (p.own <= 2 ? 'rgba(244,118,31,.11)' : 'rgba(55,201,139,.12)'),
+        edit: () => this.setState({screen:'editProduct', editId: p.id, delAsk: false})
       })),
+      productsEmpty: livePR.length === 0,
+
+      isEditProduct: s.screen === 'editProduct',
+      ep: (() => {
+        const p = livePR.find(x => x.id === s.editId) || livePR[0] || PRODUCTS[0];
+        return {name: p.name, img: p.img, cat: p.cat,
+          priceStr: (p.price || p.cost).toFixed(2), pcs: String(p.pcs), stock: p.stock,
+          offerPriceStr: AED(+((p.price || p.cost) * (1 - (p.offer||0)/100)).toFixed(2)),
+          offerPct: String(p.offer || 0)};
+      })(),
+      epOfferOn: !!(livePR.find(x => x.id === s.editId) || {}).offerOn,
+      epKnobX: (livePR.find(x => x.id === s.editId) || {}).offerOn ? '17px' : '2px',
+      epTrack: (livePR.find(x => x.id === s.editId) || {}).offerOn ? '#F4761F' : 'var(--line)',
+      epPriceUp: () => bumpEdit(s.editId, 'price', 1),
+      epPriceDown: () => bumpEdit(s.editId, 'price', -1),
+      epPcsUp: () => bumpEdit(s.editId, 'pcs', 1),
+      epPcsDown: () => bumpEdit(s.editId, 'pcs', -1),
+      epOfferUp: () => bumpEdit(s.editId, 'offer', 1),
+      epOfferDown: () => bumpEdit(s.editId, 'offer', -1),
+      epToggleOffer: () => this.setState(x => {
+        const src = livePR.find(p => p.id === x.editId) || {};
+        const e = Object.assign({}, x.prodEdits || {});
+        const cur = e[x.editId] || {};
+        e[x.editId] = Object.assign({}, cur, {offerOn: !src.offerOn, offer: cur.offer !== undefined ? cur.offer : 10});
+        return {prodEdits: e};
+      }),
+      epSave: () => this.setState({screen:'products'}),
+      epAskDelete: () => this.set('delAsk', true),
+      epCancelDelete: () => this.set('delAsk', false),
+      epDelAsk: !!s.delAsk,
+      epDelete: () => this.setState(x => ({
+        prodDeleted: (x.prodDeleted || []).concat([x.editId]),
+        delAsk: false, screen: 'products'})),
+      isSupInvoices: s.screen === 'supInvoices',
+      goSupInvoices: go('supInvoices'),
+      invoices: invoices,
+      invoicesLine: invoices.length + ' فاتورة · تُنشأ تلقائياً عند قبول الطلب',
+      invOutstandingStr: AED(invoices.filter(i => i.pay !== 'paid').reduce((a,i) => a + i.total, 0)),
+      invLateLine: invoices.filter(i => i.pay === 'late').length + ' فاتورة متأخرة',
+      isInvoiceDoc: s.screen === 'invoiceDoc',
+      invDoc: (() => {
+        const iv = invoices.find(x => x.no === s.invNo) || invoices[0] || {};
+        const cr = merchCredit.find(c => c.name === iv.buyer) || {};
+        const sub = (iv.total || 0) / 1.05;
+        return {no: iv.no || '', order: iv.order || '', buyer: iv.buyer || '', mono: iv.mono || '', bg: iv.bg || '#1B3FA0',
+          city: cr.city || '', issued: iv.issued || '', terms: iv.terms || '',
+          statusLabel: iv.statusLabel || '', fg: iv.fg || 'var(--muted)', tint: iv.tint || 'var(--chip)',
+          items: iv.items || 0, subStr: AED(+sub.toFixed(2)), vatStr: AED(+((iv.total||0) - sub).toFixed(2)),
+          totalStr: iv.totalStr || ''};
+      })(),
+      printInvoice: () => window.print(),
+
+      isSupCredit: s.screen === 'supCredit',
+      goSupCredit: go('supCredit'),
+      creditTotalStr: AED(merchCredit.reduce((a,c) => a + c.limit, 0)),
+      creditUsedStr: AED(merchCredit.reduce((a,c) => a + c.used, 0)),
+      merchCredit: merchCredit.map(c => {
+        const avail = c.limit - c.used, pct = c.limit ? Math.min(100, c.used/c.limit*100) : 0;
+        const setC = (key, d) => () => this.setState(x => {
+          const o = Object.assign({}, x.mCredit || {});
+          const cur = o[c.name] || {};
+          const now = cur[key] !== undefined ? cur[key] : c[key];
+          const next = key === 'limit' ? Math.max(0, now + d*1000) : Math.min(90, Math.max(0, now + d*15));
+          o[c.name] = Object.assign({}, cur, {[key]: next});
+          return {mCredit: o};
+        });
+        return {name: c.name, city: c.city, mono: c.mono, logoBg: c.bg, score: c.score,
+          limitStr: AED(c.limit), usedStr: AED(c.used), availStr: AED(avail),
+          termsStr: c.terms === 0 ? 'نقدي فقط' : c.terms + ' يوم',
+          pct: pct.toFixed(0) + '%',
+          barBg: pct >= 80 ? '#C0392B' : (pct >= 55 ? '#F4761F' : '#1E9268'),
+          limitUp: setC('limit', 1), limitDown: setC('limit', -1),
+          termsUp: setC('terms', 1), termsDown: setC('terms', -1)};
+      }),
+
+      isSupReports: s.screen === 'supReports',
+      goSupReports: go('supReports'),
+      repKpis: [
+        {label:'مبيعات الشهر', value: AED(orders.filter(o => o.st !== 'rejected').reduce((a,o) => a + o.total, 0)), sub:'إجمالي الطلبات المقبولة', fg:'var(--text)'},
+        {label:'الفواتير المستحقة', value: AED(invoices.filter(i => i.pay !== 'paid').reduce((a,i) => a + i.total, 0)), sub: invoices.filter(i => i.pay !== 'paid').length + ' فاتورة', fg:'#C2551A'},
+        {label:'تجار نشطون', value:'38', sub:'هذا الشهر', fg:'#1B3FA0'},
+        {label:'معدل التلبية', value:'96%', sub:'من الطلبات', fg:'#1E9268'}
+      ],
+      salesByMerchant: (() => {
+        const g = [];
+        orders.filter(o => o.st !== 'rejected').forEach(o => {
+          let r = g.find(x => x.name === o.buyer);
+          if (!r) { r = {name: o.buyer, mono: o.mono, logoBg: o.bg, city: o.city, total: 0, n: 0}; g.push(r); }
+          r.total += o.total; r.n++;
+        });
+        g.sort((a,b) => b.total - a.total);
+        const max = g.length ? g[0].total : 1;
+        return g.map(r => ({name: r.name, mono: r.mono, logoBg: r.logoBg, city: r.city,
+          totalStr: AED(r.total), line: r.n + ' طلبات', w: (r.total/max*100).toFixed(0) + '%'}));
+      })(),
+      salesByProduct: (() => {
+        const rows = livePR.map(p => {
+          const sold = (p.id * 7) % 23 + 4;
+          return {name: p.name, img: p.img, sold: sold, total: sold * p.price};
+        }).sort((a,b) => b.total - a.total).slice(0, 6);
+        const max = rows.length ? rows[0].total : 1;
+        return rows.map(r => ({name: r.name, img: r.img, line: r.sold + ' كرتون',
+          totalStr: AED(+r.total.toFixed(2)), w: (r.total/max*100).toFixed(0) + '%'}));
+      })(),
+      dueInvoices: invoices.filter(i => i.pay !== 'paid'),
+
       isSupport: s.screen === 'support',
       goSupport: go('support'),
       goAccount: go('account'),
@@ -1906,6 +2574,8 @@ class Component extends DCLogic {
         {label:'الطلبات الواردة', sub:'طلبات التجّار الحالية والسابقة — ' + orders.length + ' طلبات', tint:'rgba(27,63,160,.10)', fg:'#1B3FA0', isDoc: false, isBox: true, isCard: false, isReturn: false, isChart: false, isBell: false, isPlus: false, go: go('orders')},
         {label:'منتجاتي', sub:'الأصناف والأسعار والمخزون — ' + PRODUCTS.length + ' صنف', tint:'rgba(46,155,240,.12)', fg:'#1B6FC4', isDoc: false, isBox: false, isCard: false, isReturn: false, isChart: true, isBell: false, isPlus: false, go: go('products')},
         {label:'إضافة صنف', sub:'أضف صنفاً جديداً لكتالوغك', tint:'rgba(55,201,139,.12)', fg:'#1E9268', isDoc: false, isBox: false, isCard: false, isReturn: false, isChart: false, isBell: false, isPlus: true, go: go('addProduct')},
+        {label:'الفواتير', sub:'إنشاء تلقائي وطباعة — ' + invoices.length + ' فاتورة', tint:'rgba(27,63,160,.10)', fg:'#1B3FA0', isDoc: false, isBox: false, isCard: true, isReturn: false, isChart: false, isBell: false, isPlus: false, go: go('supInvoices')},
+        {label:'التقارير', sub:'المبيعات والمستحقات', tint:'rgba(46,155,240,.12)', fg:'#1B6FC4', isDoc: false, isBox: false, isCard: false, isReturn: false, isChart: true, isBell: false, isPlus: false, go: go('supReports')},
         {label:'الإشعارات', sub:'تنبيهات الطلبات والمدفوعات — 4 جديدة', tint:'rgba(10,31,61,.09)', fg:'#0A1F3D', isDoc: false, isBox: false, isCard: false, isReturn: false, isChart: false, isBell: true, isPlus: false, go: go('notifs')}
       ]
     };
@@ -2353,7 +3023,7 @@ class Component extends DCLogic {
           open: () => this.setState({screen:'catdetail', cat: name, catOrigin:'الكل', catSort:'الأكثر طلباً'})
         }))
       })),
-      slideX: 'calc(' + (slide * 100) + '% + ' + (slide * 14) + 'px)',
+      slideX: 'calc(' + (isEn ? '-' : '') + (slide * 100) + '% ' + (isEn ? '-' : '+') + ' ' + (slide * 14) + 'px)',
       dots: BANNERS.map((b,i) => ({
         w: i === slide ? '18px' : '6px',
         bg: i === slide ? '#F4761F' : 'var(--chip)',
@@ -2565,7 +3235,13 @@ class Component extends DCLogic {
           bd: on ? '#F4761F' : 'var(--line)'};
       }),
 
-      notifications: NOTIFS.map(n => ({...n, bg: n.unread ? 'var(--surf)' : 'transparent'})),
+      notifications: [
+        {title:'طلب جديد من بقالة النخبة', body:'7 أصناف بقيمة 1,284.50 د.إ — بانتظار القبول.', time:'قبل 12 دقيقة', unread:true, tint:'rgba(244,118,31,.14)', icon:'#F4761F', call:''},
+        {title:'طلب جديد من هايبر الواحة', body:'14 صنف بقيمة 3,620.00 د.إ — بانتظار القبول.', time:'قبل ساعة', unread:true, tint:'rgba(244,118,31,.14)', icon:'#F4761F', call:''},
+        {title:'تحصيل مستحق من سوبر ماركت الخليج', body:'فاتورة متأخرة بقيمة 842.75 د.إ — تواصل مع مندوب التحصيل.', time:'اليوم 8:15 ص', unread:true, tint:'rgba(255,107,107,.14)', icon:'#C0392B', call:'+971 55 118 4402'},
+        {title:'تم تسديد فاتورة', body:'بقالة النخبة سدّدت 1,975.25 د.إ عن فاتورة أغسطس.', time:'أمس', unread:false, tint:'rgba(55,201,139,.14)', icon:'#1E9268', call:''},
+        {title:'جدول تحصيل الأسبوع', body:'3 زيارات تحصيل مجدولة — الأحد والثلاثاء والخميس.', time:'أمس', unread:false, tint:'rgba(27,63,160,.12)', icon:'#1B3FA0', call:'+971 55 118 4402'}
+      ].map(n => ({...n, bg: n.unread ? 'var(--surf)' : 'transparent'})),
       coupons: COUPONS,
 
       kpis: canSee ? [
